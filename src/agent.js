@@ -19,6 +19,11 @@ const BusinessLogic = require('./business/business-logic');
 const AICore = require('./ai/ai-core');
 const Logger = require('./utils/logger');
 const Dashboard = require('./dashboard/dashboard');
+const SMSManager = require('./integrations/sms-manager');
+const CalendarManager = require('./integrations/calendar-manager');
+const VoiceAI = require('./integrations/voice-ai');
+const AnalyticsEngine = require('./analytics/analytics-engine');
+const CRMIntegration = require('./integrations/crm-integration');
 
 class ForwardHorizonAIAgent {
   constructor() {
@@ -33,6 +38,11 @@ class ForwardHorizonAIAgent {
     this._business = null;
     this._ai = null;
     this._dashboard = null;
+    this._sms = null;
+    this._calendar = null;
+    this._voice = null;
+    this._analytics = null;
+    this._crm = null;
     
     this.logger = new Logger('AI-Agent');
     this.isRunning = false;
@@ -118,6 +128,61 @@ class ForwardHorizonAIAgent {
       }
     }
     return this._dashboard;
+  }
+
+  async getSMS() {
+    if (!this._sms) {
+      this._sms = new SMSManager();
+      if (!this.initializedComponents.has('sms')) {
+        await this._sms.initialize();
+        this.initializedComponents.add('sms');
+      }
+    }
+    return this._sms;
+  }
+
+  async getCalendar() {
+    if (!this._calendar) {
+      this._calendar = new CalendarManager();
+      if (!this.initializedComponents.has('calendar')) {
+        await this._calendar.initialize();
+        this.initializedComponents.add('calendar');
+      }
+    }
+    return this._calendar;
+  }
+
+  async getVoice() {
+    if (!this._voice) {
+      this._voice = new VoiceAI();
+      if (!this.initializedComponents.has('voice')) {
+        await this._voice.initialize();
+        this.initializedComponents.add('voice');
+      }
+    }
+    return this._voice;
+  }
+
+  async getAnalytics() {
+    if (!this._analytics) {
+      this._analytics = new AnalyticsEngine();
+      if (!this.initializedComponents.has('analytics')) {
+        await this._analytics.initialize();
+        this.initializedComponents.add('analytics');
+      }
+    }
+    return this._analytics;
+  }
+
+  async getCRM() {
+    if (!this._crm) {
+      this._crm = new CRMIntegration();
+      if (!this.initializedComponents.has('crm')) {
+        await this._crm.initialize();
+        this.initializedComponents.add('crm');
+      }
+    }
+    return this._crm;
   }
 
   async initialize() {
@@ -298,12 +363,36 @@ class ForwardHorizonAIAgent {
           leadData.is_veteran || leadData.currently_homeless ? 'high' : 'medium'
         );
 
-        // Trigger immediate lead processing
+        // Trigger immediate lead processing with all integrations
         if (this.initializedComponents.has('automation')) {
           const automation = await this.getAutomation();
           if (typeof automation.triggerTask === 'function') {
             automation.triggerTask('lead_processing');
           }
+        }
+
+        // Auto-sync to CRM systems
+        try {
+          const crm = await this.getCRM();
+          await crm.syncLead(leadData);
+        } catch (error) {
+          this.logger.error('CRM sync failed:', error.message);
+        }
+
+        // Send SMS notification
+        try {
+          const sms = await this.getSMS();
+          await sms.sendLeadNotification(leadData);
+        } catch (error) {
+          this.logger.error('SMS notification failed:', error.message);
+        }
+
+        // Track in analytics
+        try {
+          const analytics = await this.getAnalytics();
+          analytics.trackLead(leadData, 'created');
+        } catch (error) {
+          this.logger.error('Analytics tracking failed:', error.message);
         }
 
         res.json({
@@ -327,6 +416,156 @@ class ForwardHorizonAIAgent {
         });
       }
     });
+
+    // SMS & WhatsApp Routes
+    this.app.post('/api/sms/send', async (req, res) => {
+      try {
+        const { to, message, type = 'sms' } = req.body;
+        const sms = await this.getSMS();
+        
+        const result = type === 'whatsapp' 
+          ? await sms.sendWhatsApp(to, message)
+          : await sms.sendSMS(to, message);
+        
+        res.json(result);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/sms/webhook', async (req, res) => {
+      try {
+        const { From, Body, MessageSid } = req.body;
+        const sms = await this.getSMS();
+        await sms.handleIncomingMessage(From, Body);
+        res.status(200).send('OK');
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Voice AI Routes
+    this.app.post('/api/voice/incoming', async (req, res) => {
+      try {
+        const { CallSid, From, To } = req.body;
+        const voice = await this.getVoice();
+        const response = await voice.handleIncomingCall(CallSid, From, To);
+        res.set('Content-Type', 'text/xml');
+        res.send(response);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/voice/gather', async (req, res) => {
+      try {
+        const { CallSid, SpeechResult, Confidence } = req.body;
+        const voice = await this.getVoice();
+        const response = await voice.processSpeechInput(CallSid, SpeechResult, parseFloat(Confidence));
+        res.set('Content-Type', 'text/xml');
+        res.send(response);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Calendar Routes
+    this.app.get('/api/calendar/slots', async (req, res) => {
+      try {
+        const { date, days = 7 } = req.query;
+        const calendar = await this.getCalendar();
+        const slots = await calendar.getAvailableSlots(date ? new Date(date) : new Date(), parseInt(days));
+        res.json(slots);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/calendar/book', async (req, res) => {
+      try {
+        const { leadData, slot } = req.body;
+        const calendar = await this.getCalendar();
+        const appointment = await calendar.bookAppointment(leadData, slot);
+        res.json(appointment);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Analytics Routes
+    this.app.get('/api/analytics/dashboard', async (req, res) => {
+      try {
+        const analytics = await this.getAnalytics();
+        const metrics = analytics.getDashboardMetrics();
+        res.json(metrics);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.get('/api/analytics/funnel', async (req, res) => {
+      try {
+        const { timeframe = '30d' } = req.query;
+        const analytics = await this.getAnalytics();
+        const funnel = analytics.getConversionFunnel(timeframe);
+        res.json(funnel);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/analytics/track', async (req, res) => {
+      try {
+        const { event, data } = req.body;
+        const analytics = await this.getAnalytics();
+        
+        switch (event) {
+          case 'lead':
+            analytics.trackLead(data.lead, data.event);
+            break;
+          case 'conversion':
+            analytics.trackConversion(data.leadId, data.type, data.value);
+            break;
+          case 'email':
+            analytics.trackEmail(data.emailId, data.event, data);
+            break;
+          default:
+            return res.status(400).json({ error: 'Invalid event type' });
+        }
+        
+        res.json({ success: true });
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // CRM Routes
+    this.app.post('/api/crm/sync', async (req, res) => {
+      try {
+        const { leadData } = req.body;
+        const crm = await this.getCRM();
+        const results = await crm.syncLead(leadData);
+        res.json(results);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    this.app.post('/api/crm/webhook/:crmName', async (req, res) => {
+      try {
+        const { crmName } = req.params;
+        const crm = await this.getCRM();
+        await crm.processWebhook(crmName, req.body);
+        res.status(200).send('OK');
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    // Enhanced Lead Processing with Integrations
+    const originalLeadsRoute = this.app._router.stack.find(layer => 
+      layer.route && layer.route.path === '/api/leads' && layer.route.methods.post
+    );
 
     // Dashboard
     this.app.get('/', (req, res) => {
