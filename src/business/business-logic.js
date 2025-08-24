@@ -12,6 +12,9 @@ class BusinessLogic {
     this.supabase = null;
     this.initialized = false;
     
+    // In-memory storage fallback
+    this.memoryLeads = [];
+    
     // Business configuration
     this.config = {
       autoRespond: process.env.AUTO_RESPOND_LEADS === 'true',
@@ -61,6 +64,38 @@ class BusinessLogic {
     try {
       // Ensure business-specific tables exist
       const tables = [
+        {
+          name: 'leads',
+          sql: `
+            CREATE TABLE IF NOT EXISTS leads (
+              id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+              name VARCHAR(255) NOT NULL,
+              email VARCHAR(255) NOT NULL,
+              phone VARCHAR(50),
+              status VARCHAR(50) DEFAULT 'new',
+              source VARCHAR(100),
+              is_veteran BOOLEAN DEFAULT false,
+              currently_homeless BOOLEAN DEFAULT false,
+              in_recovery BOOLEAN DEFAULT false,
+              is_reentry BOOLEAN DEFAULT false,
+              eviction_risk BOOLEAN DEFAULT false,
+              employment_status VARCHAR(50),
+              housing_needs TEXT,
+              income_qualified BOOLEAN DEFAULT false,
+              preferred_contact_method VARCHAR(50),
+              score INTEGER DEFAULT 0,
+              next_action VARCHAR(100),
+              metadata JSONB DEFAULT '{}',
+              created_at TIMESTAMPTZ DEFAULT NOW(),
+              updated_at TIMESTAMPTZ DEFAULT NOW()
+            );
+            
+            CREATE INDEX IF NOT EXISTS leads_status_idx ON leads(status);
+            CREATE INDEX IF NOT EXISTS leads_email_idx ON leads(email);
+            CREATE INDEX IF NOT EXISTS leads_score_idx ON leads(score);
+            CREATE INDEX IF NOT EXISTS leads_created_idx ON leads(created_at);
+          `
+        },
         {
           name: 'business_metrics',
           sql: `
@@ -168,8 +203,9 @@ class BusinessLogic {
    * Process a new incoming lead
    */
   async processNewLead(leadData) {
+    // Use memory storage if database not available
     if (!this.supabase) {
-      throw new Error('Database not available');
+      return this.processLeadInMemory(leadData);
     }
 
     try {
@@ -188,16 +224,23 @@ class BusinessLogic {
         next_action: this.determineNextAction(leadData)
       };
 
-      // Insert lead into database
-      const { data, error } = await this.supabase
-        .from('leads')
-        .insert([lead])
-        .select()
-        .single();
-
-      if (error) {
-        this.logger.error('Failed to insert lead:', error);
-        throw error;
+      // Try to insert lead into database, fallback to memory
+      let data;
+      try {
+        const result = await this.supabase
+          .from('leads')
+          .insert([lead])
+          .select()
+          .single();
+          
+        if (result.error) {
+          this.logger.warn('Database insert failed, using memory storage:', result.error.message);
+          return this.processLeadInMemory(leadData);
+        }
+        data = result.data;
+      } catch (dbError) {
+        this.logger.warn('Database insert failed, using memory storage:', dbError.message);
+        return this.processLeadInMemory(leadData);
       }
 
       // Update metrics
@@ -257,6 +300,32 @@ class BusinessLogic {
     } else {
       return 'nurture_sequence';
     }
+  }
+
+  /**
+   * Process lead in memory when database is unavailable
+   */
+  processLeadInMemory(leadData) {
+    const lead = {
+      id: `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      ...leadData,
+      status: 'new',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      score: this.calculateInitialScore(leadData),
+      next_action: this.determineNextAction(leadData)
+    };
+
+    this.memoryLeads.push(lead);
+    
+    // Update metrics
+    this.metrics.leads.total++;
+    this.metrics.leads.new++;
+
+    this.logger.info(`📋 Lead stored in memory: ${lead.name} (Score: ${lead.score})`);
+    this.logger.info(`💾 Total leads in memory: ${this.memoryLeads.length}`);
+    
+    return lead;
   }
 
   /**

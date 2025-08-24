@@ -13,7 +13,7 @@ require('dotenv').config();
 // Core modules
 const Memory = require('./memory/memory');
 const InternetAccess = require('./internet/web-access');
-const EmailManager = require('./email/email-manager');
+const EmailManager = require('./email/enhanced-email-manager');
 const TaskAutomation = require('./automation/task-automation');
 const BusinessLogic = require('./business/business-logic');
 const AICore = require('./ai/ai-core');
@@ -167,7 +167,9 @@ class ForwardHorizonAIAgent {
         );
 
         // Trigger immediate lead processing
-        this.automation.triggerTask('lead_processing');
+        if (this.automation && typeof this.automation.triggerTask === 'function') {
+          this.automation.triggerTask('lead_processing');
+        }
 
         res.json({
           success: true,

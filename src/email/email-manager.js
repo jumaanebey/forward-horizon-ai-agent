@@ -37,7 +37,9 @@ class EmailManager {
     
     // Check if email credentials are configured
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      this.logger.warn('⚠️ Email credentials not configured - running in simulation mode');
+      this.logger.error('❌ Email credentials not configured');
+      this.logger.info('💡 EMAIL_USER:', process.env.EMAIL_USER ? 'configured' : 'missing');
+      this.logger.info('💡 EMAIL_PASS:', process.env.EMAIL_PASS ? 'configured' : 'missing');
       this.initialized = false;
       return true; // Return true to not block agent startup
     }

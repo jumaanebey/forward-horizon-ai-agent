@@ -33,8 +33,9 @@ class AICore {
     
     // Check if API key is configured
     const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey || apiKey === 'your-anthropic-api-key-here') {
-      this.logger.warn('⚠️ Anthropic API key not configured - running in fallback mode');
+    if (!apiKey || apiKey === 'your-anthropic-api-key-here' || apiKey.length < 20) {
+      this.logger.error('❌ Anthropic API key not configured properly');
+      this.logger.info('💡 Using key from env:', apiKey ? `${apiKey.substring(0, 10)}...` : 'undefined');
       this.initialized = false;
       return true; // Return true to not block agent startup
     }
