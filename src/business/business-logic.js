@@ -165,6 +165,101 @@ class BusinessLogic {
   }
 
   /**
+   * Process a new incoming lead
+   */
+  async processNewLead(leadData) {
+    if (!this.supabase) {
+      throw new Error('Database not available');
+    }
+
+    try {
+      // Ensure required fields
+      if (!leadData.name || !leadData.email) {
+        throw new Error('Name and email are required');
+      }
+
+      // Add metadata
+      const lead = {
+        ...leadData,
+        status: 'new',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        score: this.calculateInitialScore(leadData),
+        next_action: this.determineNextAction(leadData)
+      };
+
+      // Insert lead into database
+      const { data, error } = await this.supabase
+        .from('leads')
+        .insert([lead])
+        .select()
+        .single();
+
+      if (error) {
+        this.logger.error('Failed to insert lead:', error);
+        throw error;
+      }
+
+      // Update metrics
+      this.metrics.leads.total++;
+      this.metrics.leads.new++;
+
+      // Record initial interaction
+      await this.recordInteraction(data.id, 'lead_created', {
+        source: leadData.source || 'unknown',
+        initial_score: lead.score
+      });
+
+      this.logger.info(`📋 New lead processed: ${lead.name} (Score: ${lead.score})`);
+      return data;
+
+    } catch (error) {
+      this.logger.error('Error processing new lead:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Calculate initial lead score based on demographics and urgency
+   */
+  calculateInitialScore(leadData) {
+    let score = 50; // Base score
+
+    // Demographic factors
+    if (leadData.is_veteran) score += 25;
+    if (leadData.in_recovery) score += 20;
+    if (leadData.is_reentry) score += 18;
+    
+    // Urgency factors
+    if (leadData.currently_homeless) score += 30;
+    if (leadData.eviction_risk) score += 15;
+    if (leadData.income_qualified) score += 10;
+    
+    // Employment status
+    if (leadData.employment_status === 'employed') score += 10;
+    else if (leadData.employment_status === 'seeking') score += 5;
+    
+    // Contact preferences
+    if (leadData.phone) score += 5;
+    if (leadData.preferred_contact_method) score += 3;
+
+    return Math.min(100, Math.max(0, score));
+  }
+
+  /**
+   * Determine next action for a new lead
+   */
+  determineNextAction(leadData) {
+    if (leadData.currently_homeless) {
+      return 'immediate_outreach';
+    } else if (leadData.is_veteran || leadData.eviction_risk) {
+      return 'priority_contact';
+    } else {
+      return 'nurture_sequence';
+    }
+  }
+
+  /**
    * Determine if a lead should receive auto-response
    */
   shouldAutoRespond(lead) {

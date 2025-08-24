@@ -117,7 +117,7 @@ class SetupWizard {
       
       console.log('✅ Supabase connection successful\n');
     } catch (error) {
-      throw new Error(\`Failed to connect to Supabase: \${error.message}\`);
+      throw new Error(`Failed to connect to Supabase: ${error.message}`);
     }
   }
 
@@ -127,7 +127,7 @@ class SetupWizard {
     const tables = [
       {
         name: 'leads',
-        sql: \`
+        sql: `
           -- Create leads table
           CREATE TABLE IF NOT EXISTS leads (
             id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -149,11 +149,11 @@ class SetupWizard {
           CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads(created_at DESC);
           CREATE INDEX IF NOT EXISTS leads_status_idx ON leads(status);
           CREATE INDEX IF NOT EXISTS leads_email_idx ON leads(email) WHERE email IS NOT NULL;
-        \`
+        `
       },
       {
         name: 'agent_memories',
-        sql: \`
+        sql: `
           -- Create agent memories table
           CREATE TABLE IF NOT EXISTS agent_memories (
             id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -175,11 +175,11 @@ class SetupWizard {
           CREATE INDEX IF NOT EXISTS memories_importance_idx ON agent_memories(importance);
           CREATE INDEX IF NOT EXISTS memories_created_at_idx ON agent_memories(created_at DESC);
           CREATE INDEX IF NOT EXISTS memories_expires_at_idx ON agent_memories(expires_at) WHERE expires_at IS NOT NULL;
-        \`
+        `
       },
       {
         name: 'lead_interactions',
-        sql: \`
+        sql: `
           -- Create lead interactions table
           CREATE TABLE IF NOT EXISTS lead_interactions (
             id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -199,11 +199,11 @@ class SetupWizard {
           CREATE INDEX IF NOT EXISTS lead_interactions_lead_id_idx ON lead_interactions(lead_id);
           CREATE INDEX IF NOT EXISTS lead_interactions_type_status_idx ON lead_interactions(interaction_type, status);
           CREATE INDEX IF NOT EXISTS lead_interactions_scheduled_idx ON lead_interactions(scheduled_at) WHERE scheduled_at IS NOT NULL;
-        \`
+        `
       },
       {
         name: 'business_metrics',
-        sql: \`
+        sql: `
           -- Create business metrics table
           CREATE TABLE IF NOT EXISTS business_metrics (
             id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -219,12 +219,12 @@ class SetupWizard {
           -- Create indexes
           CREATE INDEX IF NOT EXISTS business_metrics_type_date_idx ON business_metrics(metric_type, date);
           CREATE INDEX IF NOT EXISTS business_metrics_name_date_idx ON business_metrics(metric_name, date);
-        \`
+        `
       }
     ];
 
     // Create triggers for updated_at
-    const triggerSQL = \`
+    const triggerSQL = `
       -- Create updated_at trigger function
       CREATE OR REPLACE FUNCTION update_updated_at_column()
       RETURNS TRIGGER AS \$\$
@@ -258,32 +258,48 @@ class SetupWizard {
         BEFORE UPDATE ON business_metrics
         FOR EACH ROW
         EXECUTE FUNCTION update_updated_at_column();
-    \`;
+    `;
 
     // Execute table creation
     for (const table of tables) {
       try {
-        const { error } = await this.supabase.rpc('exec_sql', { sql: table.sql });
-        
-        if (error) {
-          // Try alternative approach
-          console.log(\`  ⚠️  Could not create \${table.name} via RPC, trying direct approach...\`);
+        // Check if we have service role key for RPC
+        if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+          const { error } = await this.supabase.rpc('exec_sql', { sql: table.sql });
+          
+          if (error) {
+            console.log(`  ⚠️  Could not create ${table.name} via RPC: ${error.message}`);
+            console.log(`  💡  Please run the SQL commands manually in your Supabase SQL editor`);
+          } else {
+            console.log(`  ✅ Created table: ${table.name}`);
+          }
         } else {
-          console.log(\`  ✅ Created table: \${table.name}\`);
+          console.log(`  ⚠️  ${table.name}: Requires SUPABASE_SERVICE_ROLE_KEY for automatic creation`);
+          console.log(`  💡  Please run schema.sql manually in your Supabase SQL editor`);
         }
       } catch (error) {
-        console.log(\`  ⚠️  \${table.name}: \${error.message}\`);
+        console.log(`  ⚠️  ${table.name}: ${error.message}`);
+        console.log(`  💡  This is normal with placeholder credentials - run schema.sql manually when ready`);
       }
     }
 
     // Setup triggers
     try {
-      const { error } = await this.supabase.rpc('exec_sql', { sql: triggerSQL });
-      if (!error) {
-        console.log('  ✅ Created update triggers');
+      if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+        const { error } = await this.supabase.rpc('exec_sql', { sql: triggerSQL });
+        if (!error) {
+          console.log('  ✅ Created update triggers');
+        } else {
+          console.log(`  ⚠️  Triggers: ${error.message}`);
+          console.log(`  💡  Please run schema.sql manually for triggers`);
+        }
+      } else {
+        console.log('  ⚠️  Triggers: Requires SUPABASE_SERVICE_ROLE_KEY for automatic creation');
+        console.log('  💡  Please run schema.sql manually in your Supabase SQL editor');
       }
     } catch (error) {
-      console.log(\`  ⚠️  Triggers: \${error.message}\`);
+      console.log(`  ⚠️  Triggers: ${error.message}`);
+      console.log(`  💡  This is normal with placeholder credentials - run schema.sql manually when ready`);
     }
 
     console.log('✅ Database setup completed\n');
@@ -306,7 +322,7 @@ class SetupWizard {
         .single();
 
       if (error) {
-        console.log(\`  ⚠️  Supabase insert test: \${error.message}\`);
+        console.log(`  ⚠️  Supabase insert test: ${error.message}`);
       } else {
         console.log('  ✅ Supabase insert test');
         
@@ -317,7 +333,7 @@ class SetupWizard {
           .eq('id', data.id);
       }
     } catch (error) {
-      console.log(\`  ⚠️  Supabase test: \${error.message}\`);
+      console.log(`  ⚠️  Supabase test: ${error.message}`);
     }
 
     // Test AI API if configured
@@ -338,7 +354,7 @@ class SetupWizard {
           console.log('  ✅ Anthropic API test');
         }
       } catch (error) {
-        console.log(\`  ⚠️  Anthropic API test: \${error.message}\`);
+        console.log(`  ⚠️  Anthropic API test: ${error.message}`);
       }
     } else {
       console.log('  ⚠️  Anthropic API: Not configured');
@@ -362,7 +378,7 @@ class SetupWizard {
         await transporter.verify();
         console.log('  ✅ Email configuration test');
       } catch (error) {
-        console.log(\`  ⚠️  Email test: \${error.message}\`);
+        console.log(`  ⚠️  Email test: ${error.message}`);
       }
     } else {
       console.log('  ⚠️  Email: Not configured');
@@ -384,9 +400,9 @@ class SetupWizard {
       const dirPath = path.join(process.cwd(), dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
-        console.log(\`  ✅ Created directory: \${dir}\`);
+        console.log(`  ✅ Created directory: ${dir}`);
       } else {
-        console.log(\`  ✅ Directory exists: \${dir}\`);
+        console.log(`  ✅ Directory exists: ${dir}`);
       }
     });
 
@@ -404,7 +420,7 @@ class SetupWizard {
     console.log('✅ Directories created');
     
     if (this.warnings.length > 0) {
-      console.log(\`\n⚠️  \${this.warnings.length} warnings (see above)\`);
+      console.log(`\n⚠️  \${this.warnings.length} warnings (see above)`);
     }
     
     console.log('\n🚀 Setup completed successfully!');

@@ -35,6 +35,13 @@ class EmailManager {
   async initialize() {
     this.logger.info('📧 Initializing Email Manager...');
     
+    // Check if email credentials are configured
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      this.logger.warn('⚠️ Email credentials not configured - running in simulation mode');
+      this.initialized = false;
+      return true; // Return true to not block agent startup
+    }
+    
     try {
       // Create transporter
       this.transporter = nodemailer.createTransporter({
@@ -54,15 +61,16 @@ class EmailManager {
       await this.transporter.verify();
       
       this.initialized = true;
-      this.logger.info('✅ Email Manager initialized');
+      this.logger.info('✅ Email Manager initialized successfully');
       
       return true;
     } catch (error) {
       this.logger.error('❌ Failed to initialize email manager:', error);
       
-      // Continue without email if not configured
-      this.logger.warn('⚠️ Email functionality disabled - configure EMAIL_* environment variables');
-      return false;
+      // Continue without email if not configured properly
+      this.logger.warn('⚠️ Email functionality disabled - check EMAIL_* environment variables');
+      this.initialized = false;
+      return true; // Don't block agent startup
     }
   }
 

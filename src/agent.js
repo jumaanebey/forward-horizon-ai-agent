@@ -7,6 +7,7 @@
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 // Core modules
@@ -137,6 +138,57 @@ class ForwardHorizonAIAgent {
     this.app.get('/api/business/tasks', async (req, res) => {
       const tasks = await this.automation.getTasks();
       res.json(tasks);
+    });
+
+    // Lead Capture API - This is where live leads are received
+    this.app.post('/api/leads', async (req, res) => {
+      try {
+        const leadData = req.body;
+        
+        // Validate required fields
+        if (!leadData.name || !leadData.email) {
+          return res.status(400).json({
+            success: false,
+            error: 'Name and email are required'
+          });
+        }
+
+        // Process the lead through business logic
+        const lead = await this.business.processNewLead(leadData);
+        
+        // Log the new lead
+        this.logger.info(`📋 New lead received: ${leadData.name} (${leadData.email})`);
+        
+        // Store in memory
+        await this.memory.store(
+          `New lead: ${leadData.name} from ${leadData.source || 'unknown source'}`,
+          'lead',
+          leadData.is_veteran || leadData.currently_homeless ? 'high' : 'medium'
+        );
+
+        // Trigger immediate lead processing
+        this.automation.triggerTask('lead_processing');
+
+        res.json({
+          success: true,
+          lead: {
+            id: lead.id,
+            name: lead.name,
+            status: lead.status,
+            score: lead.score || 0,
+            next_action: lead.next_action
+          },
+          message: 'Lead successfully captured and processing initiated'
+        });
+
+      } catch (error) {
+        this.logger.error('Failed to process new lead:', error);
+        res.status(500).json({
+          success: false,
+          error: 'Failed to process lead',
+          details: error.message
+        });
+      }
     });
 
     // Dashboard

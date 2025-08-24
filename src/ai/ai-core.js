@@ -14,7 +14,7 @@ class AICore {
     
     // AI configuration
     this.config = {
-      model: 'claude-3-sonnet-20240229',
+      model: 'claude-3-5-sonnet-20241022',
       maxTokens: 1000,
       temperature: 0.7
     };
@@ -31,13 +31,15 @@ class AICore {
   async initialize() {
     this.logger.info('🤖 Initializing AI Core...');
     
+    // Check if API key is configured
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey || apiKey === 'your-anthropic-api-key-here') {
+      this.logger.warn('⚠️ Anthropic API key not configured - running in fallback mode');
+      this.initialized = false;
+      return true; // Return true to not block agent startup
+    }
+    
     try {
-      const apiKey = process.env.ANTHROPIC_API_KEY;
-      
-      if (!apiKey) {
-        throw new Error('ANTHROPIC_API_KEY not found in environment variables');
-      }
-      
       this.client = new Anthropic({
         apiKey: apiKey
       });
@@ -51,7 +53,11 @@ class AICore {
       return true;
     } catch (error) {
       this.logger.error('❌ Failed to initialize AI Core:', error);
-      throw error;
+      
+      // Continue without AI if not configured properly
+      this.logger.warn('⚠️ AI functionality disabled - check ANTHROPIC_API_KEY environment variable');
+      this.initialized = false;
+      return true; // Don't block agent startup
     }
   }
 
@@ -80,7 +86,8 @@ class AICore {
    */
   async generateResponse(message, context = {}) {
     if (!this.initialized) {
-      throw new Error('AI Core not initialized');
+      this.logger.warn('AI Core not initialized - returning fallback response');
+      return this.getFallbackResponse(message);
     }
 
     try {
