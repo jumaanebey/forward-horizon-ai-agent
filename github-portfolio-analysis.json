@@ -1,0 +1,1423 @@
+{
+  "timestamp": "2025-08-24T07:22:52.272Z",
+  "username": "jumaanebey",
+  "portfolio": {
+    "totalRepositories": 10,
+    "publicRepositories": 10,
+    "privateRepositories": 0,
+    "totalStars": 0,
+    "totalForks": 0,
+    "languages": {
+      "JavaScript": 1,
+      "TypeScript": 4,
+      "Python": 1,
+      "HTML": 3
+    }
+  },
+  "repositories": [
+    {
+      "name": "forward-horizon-ai-agent",
+      "full_name": "jumaanebey/forward-horizon-ai-agent",
+      "html_url": "https://github.com/jumaanebey/forward-horizon-ai-agent",
+      "clone_url": "https://github.com/jumaanebey/forward-horizon-ai-agent.git",
+      "language": "JavaScript",
+      "size": 158,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-08-24T06:07:07Z",
+      "updated_at": "2025-08-24T07:12:02Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "forward-horizon-marketing",
+      "full_name": "jumaanebey/forward-horizon-marketing",
+      "html_url": "https://github.com/jumaanebey/forward-horizon-marketing",
+      "clone_url": "https://github.com/jumaanebey/forward-horizon-marketing.git",
+      "language": "TypeScript",
+      "size": 7274,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-27T01:46:39Z",
+      "updated_at": "2025-08-24T04:38:39Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "forward-horizon-api",
+      "full_name": "jumaanebey/forward-horizon-api",
+      "html_url": "https://github.com/jumaanebey/forward-horizon-api",
+      "clone_url": "https://github.com/jumaanebey/forward-horizon-api.git",
+      "language": "Python",
+      "size": 28,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-08-24T00:20:34Z",
+      "updated_at": "2025-08-24T03:02:28Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "the-forward-horizon",
+      "full_name": "jumaanebey/the-forward-horizon",
+      "html_url": "https://github.com/jumaanebey/the-forward-horizon",
+      "clone_url": "https://github.com/jumaanebey/the-forward-horizon.git",
+      "language": "TypeScript",
+      "size": 35860,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-16T05:15:10Z",
+      "updated_at": "2025-08-24T02:27:39Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": "The Forward Horizon - Structured Living Communities and   Housing Solutions"
+    },
+    {
+      "name": "stop-foreclosure-fast",
+      "full_name": "jumaanebey/stop-foreclosure-fast",
+      "html_url": "https://github.com/jumaanebey/stop-foreclosure-fast",
+      "clone_url": "https://github.com/jumaanebey/stop-foreclosure-fast.git",
+      "language": "HTML",
+      "size": 815,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-08-12T03:05:50Z",
+      "updated_at": "2025-08-19T18:59:55Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "tbd-property-management",
+      "full_name": "jumaanebey/tbd-property-management",
+      "html_url": "https://github.com/jumaanebey/tbd-property-management",
+      "clone_url": "https://github.com/jumaanebey/tbd-property-management.git",
+      "language": "TypeScript",
+      "size": 305,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-30T04:04:20Z",
+      "updated_at": "2025-08-01T02:36:02Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": "Complete property management ecosystem with luxury focus and modern technology stack"
+    },
+    {
+      "name": "roster-rumble-unleashed",
+      "full_name": "jumaanebey/roster-rumble-unleashed",
+      "html_url": "https://github.com/jumaanebey/roster-rumble-unleashed",
+      "clone_url": "https://github.com/jumaanebey/roster-rumble-unleashed.git",
+      "language": "TypeScript",
+      "size": 501,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-25T06:06:30Z",
+      "updated_at": "2025-07-29T14:15:26Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "Fantasy-League",
+      "full_name": "jumaanebey/Fantasy-League",
+      "html_url": "https://github.com/jumaanebey/Fantasy-League",
+      "clone_url": "https://github.com/jumaanebey/Fantasy-League.git",
+      "language": null,
+      "size": 0,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-25T06:50:57Z",
+      "updated_at": "2025-07-25T06:50:58Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    },
+    {
+      "name": "Property-Management",
+      "full_name": "jumaanebey/Property-Management",
+      "html_url": "https://github.com/jumaanebey/Property-Management",
+      "clone_url": "https://github.com/jumaanebey/Property-Management.git",
+      "language": "HTML",
+      "size": 102,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-18T02:10:59Z",
+      "updated_at": "2025-07-18T03:54:52Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": "Professional Property Management Website"
+    },
+    {
+      "name": "github.io",
+      "full_name": "jumaanebey/github.io",
+      "html_url": "https://github.com/jumaanebey/github.io",
+      "clone_url": "https://github.com/jumaanebey/github.io.git",
+      "language": "HTML",
+      "size": 36,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "created_at": "2025-07-07T01:57:08Z",
+      "updated_at": "2025-07-16T03:31:28Z",
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "description": null
+    }
+  ],
+  "codeAnalysis": {
+    "forward-horizon-ai-agent": {
+      "name": "forward-horizon-ai-agent",
+      "path": ".",
+      "language": "JavaScript",
+      "isCurrentRepo": true,
+      "analysis": {
+        "metrics": {
+          "totalFiles": 41,
+          "linesOfCode": 167,
+          "complexity": 0,
+          "duplicatedLines": 0
+        },
+        "issues": [
+          {
+            "file": ".eslintrc.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (756 characters)"
+          },
+          {
+            "file": ".github/workflows/ci-cd.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": ".github/workflows/ci-cd.yml",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (7873 characters)"
+          },
+          {
+            "file": ".github/workflows/security.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": ".github/workflows/security.yml",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2738 characters)"
+          },
+          {
+            "file": "CI-CD-CONTAINERS-GUIDE.md",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "CI-CD-CONTAINERS-GUIDE.md",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (9805 characters)"
+          },
+          {
+            "file": "DEPLOYMENT.md",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "DEPLOYMENT.md",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (8670 characters)"
+          },
+          {
+            "file": "README.md",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "README.md",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (9609 characters)"
+          },
+          {
+            "file": "SONARQUBE-REPORT.md",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "SONARQUBE-REPORT.md",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4133 characters)"
+          },
+          {
+            "file": "docker-compose.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "docker-compose.yml",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2572 characters)"
+          },
+          {
+            "file": "eslint.config.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1328 characters)"
+          },
+          {
+            "file": "github-portfolio-analysis.json",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "github-portfolio-analysis.json",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (44787 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (573 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (3347 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (852 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (200 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1218 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (489 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (590 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (704 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1571 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (317 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 11,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1542 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 12,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4789 characters)"
+          },
+          {
+            "file": "github-repo-scanner.js",
+            "line": 13,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4160 characters)"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2197 characters)"
+          },
+          {
+            "file": "k8s/configmap.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "k8s/configmap.yml",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1373 characters)"
+          },
+          {
+            "file": "k8s/deployment.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "k8s/deployment.yml",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4125 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (823 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2627 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (3233 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (187 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (430 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (532 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (808 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1038 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (739 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (633 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 11,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (290 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 12,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (284 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 13,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (929 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 14,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4325 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 15,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2709 characters)"
+          },
+          {
+            "file": "package-lock.json",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "package-lock.json",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (176151 characters)"
+          },
+          {
+            "file": "package.json",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "package.json",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2394 characters)"
+          },
+          {
+            "file": "portfolio-sonar-report.json",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "portfolio-sonar-report.json",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124282 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (932 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (198 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (13535 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (414 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (574 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (144 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 11,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (158 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (300 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (14461 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (480 characters)"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (5232 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (486 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1524 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (263 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (197 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (648 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (7842 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2326 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (530 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (412 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 12,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (252 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 13,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (369 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (932 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (184 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2960 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (574 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (144 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (158 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (650 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (262 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (321 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2097 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (337 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (357 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (281 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (169 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 11,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (410 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 13,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (128 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 14,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (170 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 15,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (317 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 16,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2284 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 18,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (123 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 19,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (392 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 21,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (578 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 23,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (305 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 25,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (150 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (297 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1535 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (453 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (6621 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (793 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1208 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (290 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 12,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (821 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 14,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (389 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (387 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1465 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1139 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (4084 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (259 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (214 characters)"
+          },
+          {
+            "file": "scripts/test.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (286 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (16254 characters)"
+          },
+          {
+            "file": "sonar-report.json",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "sonar-report.json",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1521721 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (649 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 2,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1009 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1881 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1557 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1846 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 6,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (1459 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (457 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 8,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (152 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 9,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (339 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 10,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (635 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 11,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (499 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 12,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (348 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 13,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (2617 characters)"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "line": 14,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (176 characters)"
+          },
+          {
+            "file": "src/agent.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (12504 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (5614 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 3,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 5,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 7,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (5612 characters)"
+          },
+          {
+            "file": "src/automation/task-automation.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (12563 characters)"
+          },
+          {
+            "file": "src/business/business-logic.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/business/business-logic.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (19705 characters)"
+          },
+          {
+            "file": "src/campaigns/lead-scoring.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (16292 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (34481 characters)"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (25749 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (15119 characters)"
+          },
+          {
+            "file": "src/email/enhanced-email-manager.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (15584 characters)"
+          },
+          {
+            "file": "src/internet/web-access.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/internet/web-access.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (10975 characters)"
+          },
+          {
+            "file": "src/memory/memory.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/memory/memory.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (10075 characters)"
+          },
+          {
+            "file": "src/utils/logger.js",
+            "line": 1,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (3495 characters)"
+          }
+        ],
+        "technologies": {
+          "Docker": 8,
+          "Supabase": 14,
+          "Kubernetes": 4,
+          "Anthropic AI": 9,
+          "React": 1,
+          "Express.js": 5,
+          "Email (Nodemailer)": 11
+        },
+        "qualityRating": "E"
+      },
+      "timestamp": "2025-08-24T07:22:52.249Z"
+    }
+  },
+  "recommendations": [
+    "Add comprehensive README files to all repositories",
+    "Implement consistent CI/CD pipelines",
+    "Use semantic versioning and proper tagging",
+    "Maintain active development on core projects",
+    "Document code architecture and setup instructions",
+    "Add unit tests and code coverage reporting",
+    "Implement security scanning in all repositories"
+  ]
+}

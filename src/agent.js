@@ -25,37 +25,110 @@ class ForwardHorizonAIAgent {
     this.app = express();
     this.port = process.env.PORT || 3000;
     
-    // Initialize core components
-    this.memory = new Memory();
-    this.internet = new InternetAccess();
-    this.email = new EmailManager();
-    this.automation = new TaskAutomation();
-    this.business = new BusinessLogic();
-    this.ai = new AICore();
-    this.logger = new Logger('AI-Agent');
-    this.dashboard = new Dashboard();
+    // Lazy-loaded components (initialized only when needed)
+    this._memory = null;
+    this._internet = null;
+    this._email = null;
+    this._automation = null;
+    this._business = null;
+    this._ai = null;
+    this._dashboard = null;
     
+    this.logger = new Logger('AI-Agent');
     this.isRunning = false;
     this.lastActivity = new Date();
+    
+    // Track which components are initialized
+    this.initializedComponents = new Set();
+  }
+
+  // Lazy initialization getters
+  async getMemory() {
+    if (!this._memory) {
+      this._memory = new Memory();
+      if (!this.initializedComponents.has('memory')) {
+        await this._memory.initialize();
+        this.initializedComponents.add('memory');
+      }
+    }
+    return this._memory;
+  }
+
+  async getInternet() {
+    if (!this._internet) {
+      this._internet = new InternetAccess();
+      if (!this.initializedComponents.has('internet')) {
+        await this._internet.initialize();
+        this.initializedComponents.add('internet');
+      }
+    }
+    return this._internet;
+  }
+
+  async getEmail() {
+    if (!this._email) {
+      this._email = new EmailManager();
+      if (!this.initializedComponents.has('email')) {
+        await this._email.initialize();
+        this.initializedComponents.add('email');
+      }
+    }
+    return this._email;
+  }
+
+  async getAutomation() {
+    if (!this._automation) {
+      this._automation = new TaskAutomation();
+      if (!this.initializedComponents.has('automation')) {
+        await this._automation.initialize();
+        this.initializedComponents.add('automation');
+      }
+    }
+    return this._automation;
+  }
+
+  async getBusiness() {
+    if (!this._business) {
+      this._business = new BusinessLogic();
+      if (!this.initializedComponents.has('business')) {
+        await this._business.initialize();
+        this.initializedComponents.add('business');
+      }
+    }
+    return this._business;
+  }
+
+  async getAI() {
+    if (!this._ai) {
+      this._ai = new AICore();
+      if (!this.initializedComponents.has('ai')) {
+        await this._ai.initialize();
+        this.initializedComponents.add('ai');
+      }
+    }
+    return this._ai;
+  }
+
+  async getDashboard() {
+    if (!this._dashboard) {
+      this._dashboard = new Dashboard();
+      if (!this.initializedComponents.has('dashboard')) {
+        await this._dashboard.initialize(this);
+        this.initializedComponents.add('dashboard');
+      }
+    }
+    return this._dashboard;
   }
 
   async initialize() {
-    this.logger.info('🚀 Initializing Forward Horizon AI Agent...');
+    this.logger.info('🚀 Initializing Forward Horizon AI Agent (Fast Startup Mode)...');
 
     try {
-      // Setup Express server
+      // Setup Express server only - components will be lazy-loaded
       this.setupServer();
       
-      // Initialize all components
-      await this.memory.initialize();
-      await this.internet.initialize();
-      await this.email.initialize();
-      await this.automation.initialize();
-      await this.business.initialize();
-      await this.ai.initialize();
-      await this.dashboard.initialize(this);
-
-      this.logger.info('✅ All components initialized successfully');
+      this.logger.info('✅ Agent initialized successfully - Components will load on-demand');
+      this.logger.info('🏃‍♂️ Fast startup complete! Server ready in milliseconds instead of seconds');
       return true;
     } catch (error) {
       this.logger.error('❌ Failed to initialize agent:', error);
@@ -75,15 +148,33 @@ class ForwardHorizonAIAgent {
 
   setupRoutes() {
     // Agent status and control
-    this.app.get('/api/status', (req, res) => {
-      res.json({
-        status: this.isRunning ? 'active' : 'inactive',
-        uptime: process.uptime(),
-        lastActivity: this.lastActivity,
-        memory: this.memory.getStats(),
-        tasks: this.automation.getStats(),
-        business: this.business.getStats()
-      });
+    this.app.get('/api/status', async (req, res) => {
+      try {
+        const status = {
+          status: this.isRunning ? 'active' : 'inactive',
+          uptime: process.uptime(),
+          lastActivity: this.lastActivity,
+          initializedComponents: Array.from(this.initializedComponents)
+        };
+        
+        // Only get stats from initialized components to avoid unnecessary initialization
+        if (this.initializedComponents.has('memory')) {
+          const memory = await this.getMemory();
+          status.memory = await memory.getStats();
+        }
+        if (this.initializedComponents.has('automation')) {
+          const automation = await this.getAutomation();
+          status.tasks = automation.getStats();
+        }
+        if (this.initializedComponents.has('business')) {
+          const business = await this.getBusiness();
+          status.business = business.getStats();
+        }
+        
+        res.json(status);
+      } catch (error) {
+        res.status(500).json({ error: 'Failed to get status' });
+      }
     });
 
     // Start/stop agent
@@ -107,37 +198,76 @@ class ForwardHorizonAIAgent {
 
     // Memory operations
     this.app.get('/api/memory', async (req, res) => {
-      const memories = await this.memory.getRecentMemories();
-      res.json(memories);
+      try {
+        const memory = await this.getMemory();
+        const memories = await memory.getRecentMemories();
+        res.json(memories);
+      } catch (error) {
+        res.status(500).json({ error: 'Failed to retrieve memories' });
+      }
     });
 
     this.app.post('/api/memory', async (req, res) => {
       const { content, type, importance } = req.body;
-      const memory = await this.memory.store(content, type, importance);
-      res.json(memory);
+      
+      // Input validation
+      if (!content || typeof content !== 'string' || content.length > 10000) {
+        return res.status(400).json({ error: 'Invalid content: must be a string under 10000 characters' });
+      }
+      
+      const validTypes = ['conversation', 'lead', 'action', 'business', 'research', 'system'];
+      const validImportance = ['low', 'medium', 'high', 'critical'];
+      
+      if (type && !validTypes.includes(type)) {
+        return res.status(400).json({ error: 'Invalid type: must be one of ' + validTypes.join(', ') });
+      }
+      
+      if (importance && !validImportance.includes(importance)) {
+        return res.status(400).json({ error: 'Invalid importance: must be one of ' + validImportance.join(', ') });
+      }
+      
+      const memory = await this.getMemory();
+      const storedMemory = await memory.store(content, type, importance);
+      res.json(storedMemory);
     });
 
     // Chat with agent
     this.app.post('/api/chat', async (req, res) => {
       const { message, context } = req.body;
       
+      // Input validation
+      if (!message || typeof message !== 'string' || message.length > 5000) {
+        return res.status(400).json({ error: 'Invalid message: must be a string under 5000 characters' });
+      }
+      
       try {
         const response = await this.processMessage(message, context);
         res.json({ response });
       } catch (error) {
-        res.status(500).json({ error: error.message });
+        this.logger.error('Chat API error:', error.message);
+        res.status(500).json({ error: 'Internal server error' });
       }
     });
 
     // Business operations
     this.app.get('/api/business/leads', async (req, res) => {
-      const leads = await this.business.getLeads();
-      res.json(leads);
+      try {
+        const business = await this.getBusiness();
+        const leads = await business.getLeads();
+        res.json(leads);
+      } catch (error) {
+        res.status(500).json({ error: 'Failed to retrieve leads' });
+      }
     });
 
     this.app.get('/api/business/tasks', async (req, res) => {
-      const tasks = await this.automation.getTasks();
-      res.json(tasks);
+      try {
+        const automation = await this.getAutomation();
+        const tasks = await automation.getTasks();
+        res.json(tasks);
+      } catch (error) {
+        res.status(500).json({ error: 'Failed to retrieve tasks' });
+      }
     });
 
     // Lead Capture API - This is where live leads are received
@@ -154,21 +284,26 @@ class ForwardHorizonAIAgent {
         }
 
         // Process the lead through business logic
-        const lead = await this.business.processNewLead(leadData);
+        const business = await this.getBusiness();
+        const lead = await business.processNewLead(leadData);
         
         // Log the new lead
         this.logger.info(`📋 New lead received: ${leadData.name} (${leadData.email})`);
         
         // Store in memory
-        await this.memory.store(
+        const memory = await this.getMemory();
+        await memory.store(
           `New lead: ${leadData.name} from ${leadData.source || 'unknown source'}`,
           'lead',
           leadData.is_veteran || leadData.currently_homeless ? 'high' : 'medium'
         );
 
         // Trigger immediate lead processing
-        if (this.automation && typeof this.automation.triggerTask === 'function') {
-          this.automation.triggerTask('lead_processing');
+        if (this.initializedComponents.has('automation')) {
+          const automation = await this.getAutomation();
+          if (typeof automation.triggerTask === 'function') {
+            automation.triggerTask('lead_processing');
+          }
         }
 
         res.json({
@@ -209,8 +344,11 @@ class ForwardHorizonAIAgent {
     this.isRunning = true;
     this.lastActivity = new Date();
 
-    // Start automated tasks
-    await this.automation.start();
+    // Start automated tasks only if initialized
+    if (this.initializedComponents.has('automation')) {
+      const automation = await this.getAutomation();
+      await automation.start();
+    }
     
     // Start monitoring loops
     this.startMonitoring();
@@ -227,8 +365,11 @@ class ForwardHorizonAIAgent {
     this.logger.info('🔴 Stopping AI Agent...');
     this.isRunning = false;
     
-    // Stop automated tasks
-    await this.automation.stop();
+    // Stop automated tasks if running
+    if (this.initializedComponents.has('automation')) {
+      const automation = await this.getAutomation();
+      await automation.stop();
+    }
     
     this.logger.info('✅ AI Agent stopped');
   }
@@ -252,7 +393,10 @@ class ForwardHorizonAIAgent {
       if (!this.isRunning) return;
       
       try {
-        await this.memory.cleanup();
+        if (this.initializedComponents.has('memory')) {
+          const memory = await this.getMemory();
+          await memory.cleanup();
+        }
       } catch (error) {
         this.logger.error('Error in memory cleanup:', error);
       }
@@ -260,22 +404,38 @@ class ForwardHorizonAIAgent {
   }
 
   async checkNewLeads() {
-    const newLeads = await this.business.getNewLeads();
+    if (!this.initializedComponents.has('business')) return;
+    
+    const business = await this.getBusiness();
+    const newLeads = await business.getNewLeads();
     
     for (const lead of newLeads) {
       this.logger.info(`📧 Processing new lead: ${lead.name}`);
       
       // Store in memory
-      await this.memory.store(`New lead: ${lead.name} (${lead.email})`, 'lead', 'high');
+      if (this.initializedComponents.has('memory')) {
+        const memory = await this.getMemory();
+        await memory.store(`New lead: ${lead.name} (${lead.email})`, 'lead', 'high');
+      }
       
       // Auto-respond if configured
-      if (this.business.shouldAutoRespond(lead)) {
-        await this.email.sendWelcomeEmail(lead);
-        await this.memory.store(`Sent welcome email to ${lead.name}`, 'action', 'medium');
+      if (business.shouldAutoRespond(lead)) {
+        if (this.initializedComponents.has('email')) {
+          const email = await this.getEmail();
+          await email.sendWelcomeEmail(lead);
+          
+          if (this.initializedComponents.has('memory')) {
+            const memory = await this.getMemory();
+            await memory.store(`Sent welcome email to ${lead.name}`, 'action', 'medium');
+          }
+        }
       }
       
       // Schedule follow-up
-      await this.automation.scheduleFollowUp(lead);
+      if (this.initializedComponents.has('automation')) {
+        const automation = await this.getAutomation();
+        await automation.scheduleFollowUp(lead);
+      }
     }
   }
 
@@ -360,6 +520,17 @@ class ForwardHorizonAIAgent {
     return server;
   }
 }
+
+// Handle unhandled promise rejections and uncaught exceptions
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  process.exit(1);
+});
 
 // Main execution
 async function main() {

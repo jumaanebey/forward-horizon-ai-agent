@@ -139,7 +139,7 @@ async function testNurturingSystem() {
     console.log('-'.repeat(60));
     
     // Send a sample email from each campaign
-    console.log('\n⚠️  Note: Sending 3 test emails to:', process.env.EMAIL_USER);
+    console.log('\n⚠️  Note: Sending 3 test emails to:', process.env.EMAIL_USER ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]');
     console.log('Check your inbox to see the campaign templates!\n');
     
     for (let i = 0; i < Math.min(3, testLeads.length); i++) {

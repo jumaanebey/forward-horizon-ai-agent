@@ -12,6 +12,11 @@ class Memory {
     this.supabase = null;
     this.initialized = false;
     
+    // Simple cache for frequent queries
+    this.cache = new Map();
+    this.cacheTimeouts = new Map();
+    this.CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+    
     // Memory types
     this.types = {
       CONVERSATION: 'conversation',
@@ -132,6 +137,32 @@ class Memory {
   }
 
   /**
+   * Cache management methods
+   */
+  setCacheWithTimeout(key, value) {
+    this.cache.set(key, value);
+    
+    // Clear existing timeout
+    if (this.cacheTimeouts.has(key)) {
+      clearTimeout(this.cacheTimeouts.get(key));
+    }
+    
+    // Set new timeout
+    const timeout = setTimeout(() => {
+      this.cache.delete(key);
+      this.cacheTimeouts.delete(key);
+    }, this.CACHE_TTL);
+    
+    this.cacheTimeouts.set(key, timeout);
+  }
+  
+  clearCache() {
+    this.cache.clear();
+    this.cacheTimeouts.forEach(timeout => clearTimeout(timeout));
+    this.cacheTimeouts.clear();
+  }
+
+  /**
    * Store a memory
    */
   async store(content, type = 'system', importance = 'medium', metadata = {}) {
@@ -162,6 +193,10 @@ class Memory {
       }
 
       this.logger.debug(`💾 Stored ${importance} ${type} memory: ${content.substring(0, 50)}...`);
+      
+      // Clear relevant cache entries since we added new data
+      this.clearCache();
+      
       return data;
     } catch (error) {
       this.logger.error('Error storing memory:', error);
@@ -170,11 +205,19 @@ class Memory {
   }
 
   /**
-   * Retrieve recent memories
+   * Retrieve recent memories with caching
    */
   async getRecentMemories(limit = 50, type = null) {
     if (!this.initialized) {
       return [];
+    }
+
+    // Create cache key
+    const cacheKey = `recent_${limit}_${type || 'all'}`;
+    
+    // Check cache first
+    if (this.cache.has(cacheKey)) {
+      return this.cache.get(cacheKey);
     }
 
     try {
@@ -195,7 +238,12 @@ class Memory {
         return [];
       }
 
-      return data || [];
+      const result = data || [];
+      
+      // Cache the result
+      this.setCacheWithTimeout(cacheKey, result);
+      
+      return result;
     } catch (error) {
       this.logger.error('Error retrieving memories:', error);
       return [];

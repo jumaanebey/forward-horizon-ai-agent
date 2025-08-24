@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "forward-horizon-ai-agent",
+  "builds": [
+    {
+      "src": "simple-agent.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/simple-agent.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "simple-agent.js": {
+      "maxDuration": 60
+    }
+  }
+}

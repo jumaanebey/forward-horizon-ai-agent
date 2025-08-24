@@ -1,0 +1,18 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "node simple-agent.js"
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 3
+healthcheckPath = "/api/status"
+healthcheckTimeout = 300
+
+[[services]]
+name = "forward-horizon-ai-agent"
+icon = "🤖"
+
+[environments.production]
+PORT = 3000
+NODE_ENV = "production"

@@ -9,8 +9,8 @@ async function testEmail() {
     const nodemailer = require('nodemailer');
     
     console.log('Testing email configuration...');
-    console.log('Email user:', process.env.EMAIL_USER);
-    console.log('Email host:', process.env.EMAIL_HOST);
+    console.log('Email user:', process.env.EMAIL_USER ? '[CONFIGURED]' : '[NOT SET]');
+    console.log('Email host:', process.env.EMAIL_HOST ? '[CONFIGURED]' : '[NOT SET]');
     
     try {
         const transporter = nodemailer.createTransport({
@@ -31,7 +31,7 @@ async function testEmail() {
         console.log('✅ Email connection successful!');
         
         // Try sending a test email
-        console.log('\nSending test email to:', process.env.EMAIL_USER);
+        console.log('\nSending test email to:', process.env.EMAIL_USER ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]');
         const result = await transporter.sendMail({
             from: process.env.EMAIL_FROM || `"Forward Horizon" <${process.env.EMAIL_USER}>`,
             to: process.env.EMAIL_USER, // Send to self

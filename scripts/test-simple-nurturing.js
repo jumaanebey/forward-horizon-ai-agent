@@ -195,7 +195,7 @@ Forward Horizon - Your Service Honored, Your Future Secured
         };
         
         console.log('\n📬 Sending sample nurturing email...');
-        console.log(`To: ${process.env.EMAIL_USER}`);
+        console.log(`To: ${process.env.EMAIL_USER ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]'}`);
         console.log(`Subject: ${veteranWelcomeEmail.subject}`);
         
         const result = await transporter.sendMail({

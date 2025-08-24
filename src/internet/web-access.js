@@ -31,31 +31,40 @@ class InternetAccess {
   }
 
   async initialize() {
-    this.logger.info('🌐 Initializing Internet Access...');
+    this.logger.info('🌐 Initializing Internet Access (lazy mode)...');
     
-    try {
-      // Initialize Puppeteer for dynamic content
-      this.browser = await puppeteer.launch({
-        headless: 'new',
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-accelerated-2d-canvas',
-          '--no-first-run',
-          '--no-zygote',
-          '--disable-gpu'
-        ]
-      });
+    // Don't initialize browser immediately - do it when needed
+    this.initialized = true;
+    this.logger.info('✅ Internet Access initialized - Browser will launch on first use');
+    
+    return true;
+  }
+
+  async ensureBrowser() {
+    if (!this.browser) {
+      this.logger.info('🚀 Launching browser on-demand...');
       
-      this.initialized = true;
-      this.logger.info('✅ Internet Access initialized');
-      
-      return true;
-    } catch (error) {
-      this.logger.error('❌ Failed to initialize internet access:', error);
-      throw error;
+      try {
+        this.browser = await puppeteer.launch({
+          headless: 'new',
+          args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
+            '--disable-gpu'
+          ]
+        });
+        
+        this.logger.info('✅ Browser launched successfully');
+      } catch (error) {
+        this.logger.error('❌ Failed to launch browser:', error);
+        throw error;
+      }
     }
+    return this.browser;
   }
 
   /**
@@ -113,15 +122,17 @@ class InternetAccess {
    * Advanced scraping with Puppeteer (for dynamic content)
    */
   async scrapeDynamicWebsite(url, options = {}) {
-    if (!this.browser || !this.checkRateLimit()) {
-      throw new Error('Browser not available or rate limit exceeded');
+    if (!this.checkRateLimit()) {
+      throw new Error('Rate limit exceeded');
     }
 
     let page = null;
     try {
       this.logger.info(`🤖 Dynamic scraping: ${url}`);
       
-      page = await this.browser.newPage();
+      // Ensure browser is launched before use
+      const browser = await this.ensureBrowser();
+      page = await browser.newPage();
       
       // Set viewport and user agent
       await page.setViewport({ width: 1366, height: 768 });

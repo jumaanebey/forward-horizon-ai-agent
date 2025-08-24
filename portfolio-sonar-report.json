@@ -1,0 +1,3602 @@
+{
+  "timestamp": "2025-08-24T07:16:22.487Z",
+  "summary": {
+    "repositories": 1,
+    "totalFiles": 35,
+    "totalLines": 44271,
+    "totalIssues": 562,
+    "totalBugs": 0,
+    "totalVulnerabilities": 3,
+    "totalSecurityHotspots": 24,
+    "totalCodeSmells": 535,
+    "languages": {}
+  },
+  "repositories": {
+    "forward-horizon-ai-agent": {
+      "name": "forward-horizon-ai-agent",
+      "url": "https://github.com/jumaanebey/forward-horizon-ai-agent",
+      "language": "JavaScript",
+      "isPrivate": false,
+      "path": ".",
+      "analysis": {
+        "metrics": {
+          "totalFiles": 35,
+          "linesOfCode": 44271,
+          "complexity": 0,
+          "duplicatedLines": 0
+        },
+        "issues": [
+          {
+            "file": ".github/workflows/ci-cd.yml",
+            "line": 231,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (133 characters)"
+          },
+          {
+            "file": ".github/workflows/ci-cd.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": ".github/workflows/security.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "docker-compose.yml",
+            "line": 32,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (208 characters)"
+          },
+          {
+            "file": "docker-compose.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "google-drive-setup.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "k8s/configmap.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "k8s/deployment.yml",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 245,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 355,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 363,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (130 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "line": 430,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (243 characters)"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "multi-repo-sonar-analysis.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "package-lock.json",
+            "line": 67,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (123 characters)"
+          },
+          {
+            "file": "package-lock.json",
+            "line": 2999,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (135 characters)"
+          },
+          {
+            "file": "package-lock.json",
+            "line": 3569,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (123 characters)"
+          },
+          {
+            "file": "package-lock.json",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "package.json",
+            "line": 4,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (138 characters)"
+          },
+          {
+            "file": "package.json",
+            "line": 15,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (148 characters)"
+          },
+          {
+            "file": "package.json",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "public/dashboard.html",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 67,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (249 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 69,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 70,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (289 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 72,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 73,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 80,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (154 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 81,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (132 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 85,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (217 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 86,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (175 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 88,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (162 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 89,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (234 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 93,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (189 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 100,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (133 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 103,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (250 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 105,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 106,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (173 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 110,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (250 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 112,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 113,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (171 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 117,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (250 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 119,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (148 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 120,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (152 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 124,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (250 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 126,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (144 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 127,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (161 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 134,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 135,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (146 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 138,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 139,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (149 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 142,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (147 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 143,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 146,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (138 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 147,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 150,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (140 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 151,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 158,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (309 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 161,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (142 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 165,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (184 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 166,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (129 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 167,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (221 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 174,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (139 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "line": 182,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (131 characters)"
+          },
+          {
+            "file": "scripts/demo-final.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 32,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (248 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 34,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 35,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (536 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 37,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 38,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 45,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 46,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (139 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 49,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (217 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 50,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (202 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 52,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (146 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 53,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (245 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 57,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (189 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 63,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (133 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 66,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (270 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 68,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 69,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (173 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 73,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (270 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 75,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 76,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (171 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 80,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (270 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 82,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (148 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 83,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (152 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 87,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (270 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 89,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (144 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 90,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (161 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 96,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 97,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 100,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 101,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (149 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 104,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (147 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 105,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 108,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (138 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 109,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (145 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 112,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (140 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 113,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 119,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (331 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 122,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (140 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 125,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (183 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 126,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (125 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 127,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (228 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 134,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (139 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 142,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (131 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 163,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (136 characters)"
+          },
+          {
+            "file": "scripts/demo-nurturing-email.js",
+            "line": 178,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (133 characters)"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/fix-database.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 144,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (130 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 169,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (128 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "line": 201,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (135 characters)"
+          },
+          {
+            "file": "scripts/setup.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 42,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 45,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 46,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (125 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "line": 47,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (157 characters)"
+          },
+          {
+            "file": "scripts/test-email.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "line": 167,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (122 characters)"
+          },
+          {
+            "file": "scripts/test-nurturing.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 102,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 104,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (136 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 106,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 115,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 118,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (128 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 119,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (121 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 125,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (121 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 127,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (121 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 145,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (196 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 150,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (160 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "line": 158,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (125 characters)"
+          },
+          {
+            "file": "scripts/test-simple-nurturing.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "scripts/test.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 92,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (130 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 95,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 214,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (201 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 216,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (186 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 218,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (174 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 220,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (187 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 222,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (188 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 224,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (216 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 292,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (149 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 300,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (139 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 302,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (125 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "line": 313,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (127 characters)"
+          },
+          {
+            "file": "simple-agent.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "sonar-report.json",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "VULNERABILITY",
+            "severity": "CRITICAL",
+            "message": "Use of eval() - potential security risk"
+          },
+          {
+            "file": "sonarqube-analysis.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 347,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (126 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 348,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (126 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 349,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (130 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "line": 350,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "src/ai/ai-core.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/automation/task-automation.js",
+            "line": 301,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (141 characters)"
+          },
+          {
+            "file": "src/business/business-logic.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 414,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (142 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 415,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (122 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 416,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (133 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 424,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 427,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 454,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 466,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 511,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (142 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 525,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 568,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 583,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 635,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (142 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 649,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (137 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 689,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (192 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 694,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (156 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 702,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (151 characters)"
+          },
+          {
+            "file": "src/campaigns/nurture-campaigns.js",
+            "line": 763,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (182 characters)"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "line": 438,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (121 characters)"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "line": 489,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (175 characters)"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "line": 492,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (152 characters)"
+          },
+          {
+            "file": "src/dashboard/dashboard.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 213,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (134 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 221,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (122 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 233,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (163 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 279,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (134 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 294,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (177 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 299,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (177 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 338,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (134 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 339,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (135 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 363,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (144 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 406,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (217 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 410,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (213 characters)"
+          },
+          {
+            "file": "src/email/email-manager.js",
+            "line": 414,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (183 characters)"
+          },
+          {
+            "file": "src/email/enhanced-email-manager.js",
+            "line": 316,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (166 characters)"
+          },
+          {
+            "file": "src/internet/web-access.js",
+            "line": 24,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (140 characters)"
+          },
+          {
+            "file": "src/internet/web-access.js",
+            "line": 346,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (183 characters)"
+          },
+          {
+            "file": "src/internet/web-access.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/memory/memory.js",
+            "line": 91,
+            "type": "CODE_SMELL",
+            "severity": "MINOR",
+            "message": "Line too long (124 characters)"
+          },
+          {
+            "file": "src/memory/memory.js",
+            "type": "SECURITY_HOTSPOT",
+            "severity": "MINOR",
+            "message": "Potential sensitive data in code"
+          },
+          {
+            "file": "src/utils/logger.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "src/utils/logger.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          },
+          {
+            "file": "src/utils/logger.js",
+            "type": "CODE_SMELL",
+            "severity": "INFO",
+            "message": "Console.log statements should be removed in production"
+          }
+        ],
+        "qualityRating": "C",
+        "languages": [
+          "JavaScript"
+        ],
+        "fileTypes": {
+          ".js": 26,
+          ".yml": 5,
+          ".json": 3,
+          ".html": 1
+        }
+      },
+      "timestamp": "2025-08-24T07:16:22.452Z"
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "CODE_QUALITY",
+      "message": "High issue density (562 issues/repo average) - implement quality gates"
+    },
+    {
+      "priority": "HIGH",
+      "category": "SECURITY",
+      "message": "24 security hotspots across portfolio - immediate review needed"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "MAINTAINABILITY",
+      "message": "Establish consistent coding standards and automated quality checks across all repositories"
+    }
+  ]
+}

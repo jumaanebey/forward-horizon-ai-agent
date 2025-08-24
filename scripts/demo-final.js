@@ -9,8 +9,8 @@ async function testEmail() {
     const nodemailer = require('nodemailer');
     
     console.log('Testing email configuration...');
-    console.log('Email user:', process.env.EMAIL_USER);
-    console.log('Email host:', process.env.EMAIL_HOST);
+    console.log('Email user:', process.env.EMAIL_USER ? '[CONFIGURED]' : '[NOT SET]');
+    console.log('Email host:', process.env.EMAIL_HOST ? '[CONFIGURED]' : '[NOT SET]');
     
     try {
         const transporter = nodemailer.createTransport({
@@ -32,7 +32,7 @@ async function testEmail() {
         
         // Send professional nurturing email demo
         console.log('\nSending DEMO: Professional Veteran Nurturing Email');
-        console.log('To:', process.env.EMAIL_USER);
+        console.log('To:', process.env.EMAIL_USER ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]');
         
         const result = await transporter.sendMail({
             from: `"Forward Horizon AI Agent" <${process.env.EMAIL_USER}>`,

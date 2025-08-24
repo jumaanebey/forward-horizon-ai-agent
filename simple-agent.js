@@ -8,6 +8,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
+const Logger = require('./src/utils/logger');
 require('dotenv').config();
 
 class SimpleAIAgent {
@@ -18,12 +19,13 @@ class SimpleAIAgent {
         this.emails = [];
         this.transporter = null;
         this.googleSheets = null;
+        this.logger = new Logger('SimpleAgent');
         
         // Setup Express
         this.app.use(express.json());
         this.app.use(express.static('public'));
         
-        console.log('🚀 Initializing Simple AI Agent...');
+        this.logger.startup('Initializing Simple AI Agent...');
     }
     
     async initialize() {
@@ -33,17 +35,17 @@ class SimpleAIAgent {
             this.setupRoutes();
             this.startServer();
             this.startTasks();
-            console.log('✅ Simple AI Agent initialized successfully!');
+            this.logger.success('Simple AI Agent initialized successfully!');
         } catch (error) {
-            console.error('❌ Initialization failed:', error.message);
+            this.logger.error('Initialization failed:', error.message);
         }
     }
     
     async setupEmail() {
-        console.log('📧 Setting up email...');
+        this.logger.email('Setting up email...');
         
         if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-            console.log('⚠️  Email not configured - using simulation mode');
+            this.logger.warn('Email not configured - using simulation mode');
             return;
         }
         
@@ -59,21 +61,21 @@ class SimpleAIAgent {
             });
             
             await this.transporter.verify();
-            console.log('✅ Email system ready');
+            this.logger.success('Email system ready');
         } catch (error) {
-            console.log('⚠️  Email setup failed:', error.message);
+            this.logger.error('Email setup failed:', error.message);
         }
     }
     
     async setupGoogleDrive() {
-        console.log('📊 Setting up Google Drive integration...');
+        this.logger.info('Setting up Google Drive integration...');
         
         try {
             // For now, we'll simulate Google Drive integration
             // You'll need to add your Google credentials later
-            console.log('✅ Google Drive ready (simulation mode)');
+            this.logger.success('Google Drive ready (simulation mode)');
         } catch (error) {
-            console.log('⚠️  Google Drive setup failed:', error.message);
+            this.logger.error('Google Drive setup failed:', error.message);
         }
     }
     
@@ -204,7 +206,7 @@ class SimpleAIAgent {
         this.app.post('/api/chat', async (req, res) => {
             const { message } = req.body;
             
-            console.log('💬 Chat:', message);
+            this.logger.info('Chat:', message);
             
             // Simple AI responses based on keywords
             let response = '';
@@ -231,8 +233,18 @@ class SimpleAIAgent {
             try {
                 const leadData = req.body;
                 
+                // Enhanced input validation
                 if (!leadData.name || !leadData.email) {
                     return res.status(400).json({ error: 'Name and email required' });
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(leadData.email)) {
+                    return res.status(400).json({ error: 'Invalid email format' });
+                }
+                
+                if (leadData.name.length > 100 || leadData.email.length > 254) {
+                    return res.status(400).json({ error: 'Input too long' });
                 }
                 
                 const lead = {
@@ -247,7 +259,7 @@ class SimpleAIAgent {
                 };
                 
                 this.leads.push(lead);
-                console.log('📋 New lead:', lead.name, '(Score:', lead.score + ')');
+                this.logger.info('New lead:', lead.name, '(Score:', lead.score + ')');
                 
                 // Send welcome email if configured
                 if (this.transporter) {
@@ -320,7 +332,7 @@ class SimpleAIAgent {
             };
             
             await this.transporter.sendMail(mailOptions);
-            console.log('📧 Welcome email sent to:', lead.email);
+            this.logger.email('Welcome email sent to:', lead.email ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]');
             
             this.emails.push({
                 to: lead.email,
@@ -337,7 +349,7 @@ class SimpleAIAgent {
     async syncToGoogleDrive(lead) {
         try {
             // Simulate Google Drive sync for now
-            console.log('📊 Synced to Google Drive:', lead.name);
+            this.logger.info('Synced to Google Drive:', lead.name);
             
             // TODO: Implement actual Google Sheets integration
             // This would append the lead to a Google Sheet
@@ -350,29 +362,40 @@ class SimpleAIAgent {
     startTasks() {
         // Simple task runner - check for new leads every 5 minutes
         setInterval(() => {
-            console.log(`🔄 Task check - ${this.leads.length} leads, ${this.emails.length} emails sent`);
+            this.logger.task(`Task check - ${this.leads.length} leads, ${this.emails.length} emails sent`);
             
             // Process new leads
             const newLeads = this.leads.filter(lead => lead.status === 'new');
             if (newLeads.length > 0) {
-                console.log(`📋 Processing ${newLeads.length} new leads...`);
+                this.logger.info(`Processing ${newLeads.length} new leads...`);
                 // Here you could trigger additional processing
             }
             
         }, 5 * 60 * 1000); // 5 minutes
         
-        console.log('⚡ Task automation started');
+        this.logger.task('Task automation started');
     }
     
     startServer() {
         this.app.listen(this.port, () => {
-            console.log(`🌐 Forward Horizon AI Agent running on http://localhost:${this.port}`);
-            console.log(`📊 Dashboard: http://localhost:${this.port}`);
-            console.log(`🔗 API Status: http://localhost:${this.port}/api/status`);
-            console.log('✅ System is ready for leads!');
+            this.logger.network(`Forward Horizon AI Agent running on http://localhost:${this.port}`);
+            this.logger.info(`Dashboard: http://localhost:${this.port}`);
+            this.logger.info(`API Status: http://localhost:${this.port}/api/status`);
+            this.logger.success('System is ready for leads!');
         });
     }
 }
+
+// Handle unhandled promise rejections and uncaught exceptions
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    process.exit(1);
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+    process.exit(1);
+});
 
 // Start the agent
 const agent = new SimpleAIAgent();

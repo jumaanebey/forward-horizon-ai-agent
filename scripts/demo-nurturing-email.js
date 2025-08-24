@@ -185,7 +185,7 @@ Forward Horizon - Your Service Honored, Your Future Secured
             `.trim()
         };
         
-        console.log('📨 Sending professional nurturing email to:', process.env.EMAIL_USER);
+        console.log('📨 Sending professional nurturing email to:', process.env.EMAIL_USER ? '[CONFIGURED EMAIL]' : '[EMAIL NOT SET]');
         console.log('Subject:', veteranWelcomeEmail.subject);
         
         const result = await transporter.sendMail({
