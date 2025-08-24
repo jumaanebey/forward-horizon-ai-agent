@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+SONARQUBE-REPORT.md
+*.md
+
+# CI/CD
+.github/
+Dockerfile*
+docker-compose*
+
+# Development files
+scripts/test*.js
+scripts/demo*.js
+sonarqube-analysis.js
+google-drive-setup.js
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Security files
+*.key
+*.pem
+*.crt

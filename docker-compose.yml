@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  # Forward Horizon AI Agent
+  forward-horizon-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: forward-horizon-ai-agent
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - BUSINESS_NAME=${BUSINESS_NAME}
+      - BUSINESS_PHONE=${BUSINESS_PHONE}
+      - BUSINESS_EMAIL=${BUSINESS_EMAIL}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - GOOGLE_SHEETS_ID=${GOOGLE_SHEETS_ID}
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - forward-horizon-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/status', (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); }).on('error', () => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # SonarQube for code quality (optional)
+  sonarqube:
+    image: sonarqube:community
+    container_name: forward-horizon-sonarqube
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+      - SONAR_JDBC_URL=jdbc:postgresql://postgres:5432/sonar
+      - SONAR_JDBC_USERNAME=sonar
+      - SONAR_JDBC_PASSWORD=sonar
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    networks:
+      - forward-horizon-network
+    depends_on:
+      - postgres
+    profiles:
+      - sonarqube
+
+  # PostgreSQL for SonarQube
+  postgres:
+    image: postgres:13
+    container_name: forward-horizon-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+      - POSTGRES_DB=sonar
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - forward-horizon-network
+    profiles:
+      - sonarqube
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: forward-horizon-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - forward-horizon-network
+    profiles:
+      - cache
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgres_data:
+  redis_data:
+
+networks:
+  forward-horizon-network:
+    driver: bridge

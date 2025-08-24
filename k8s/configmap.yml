@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: forward-horizon-config
+  namespace: forward-horizon
+data:
+  business-name: "Forward Horizon"
+  business-phone: "(310) 488-5280"
+  business-email: "theforwardhorizon@gmail.com"
+  business-website: "https://theforwardhorizon.com"
+  agent-name: "Horizon AI"
+  memory-retention-days: "30"
+  max-daily-emails: "50"
+  auto-respond-leads: "true"
+  follow-up-delay-hours: "24"
+  working-hours-start: "09"
+  working-hours-end: "17"
+  timezone: "America/Los_Angeles"
+  log-level: "info"
+  debug: "false"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: forward-horizon-secrets
+  namespace: forward-horizon
+type: Opaque
+data:
+  # Base64 encoded values - replace with actual values
+  email-user: # echo -n "theforwardhorizon@gmail.com" | base64
+  email-pass: # echo -n "your-app-password" | base64
+  anthropic-api-key: # echo -n "sk-ant-api03-..." | base64
+  supabase-url: # echo -n "https://your-project.supabase.co" | base64
+  supabase-anon-key: # echo -n "eyJhbGciOi..." | base64
+  supabase-service-role-key: # echo -n "eyJhbGciOi..." | base64
+  google-sheets-id: # echo -n "your-sheet-id" | base64
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: forward-horizon-data
+  namespace: forward-horizon
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard

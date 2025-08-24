@@ -1,14 +1,40 @@
 {
   "name": "forward-horizon-ai-agent",
   "version": "1.0.0",
-  "description": "Intelligent AI agent with memory, internet access, and business automation for Forward Horizon",
-  "main": "src/agent.js",
+  "description": "Intelligent AI agent for Forward Horizon transitional housing with lead management, email automation, and 24/7 support",
+  "main": "simple-agent.js",
   "scripts": {
-    "start": "node src/agent.js",
-    "dev": "nodemon src/agent.js",
-    "setup": "node scripts/setup.js",
-    "test": "node scripts/test.js"
+    "start": "node simple-agent.js",
+    "dev": "nodemon simple-agent.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "audit": "npm audit",
+    "build": "echo 'No build step required'",
+    "docker:build": "docker build -t forward-horizon-ai .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env forward-horizon-ai",
+    "docker:dev": "docker build -t forward-horizon-ai:dev --target development . && docker run -p 3000:3000 --env-file .env forward-horizon-ai:dev",
+    "compose:up": "docker-compose up -d",
+    "compose:down": "docker-compose down",
+    "compose:logs": "docker-compose logs -f",
+    "deploy:staging": "./deployment/deploy.sh staging docker-compose",
+    "deploy:production": "./deployment/deploy.sh production kubernetes",
+    "sonar": "node sonarqube-analysis.js",
+    "security": "npm audit && node sonarqube-analysis.js",
+    "health": "curl -f http://localhost:3000/api/status || exit 1",
+    "pre-commit": "npm run lint && npm run sonar"
   },
+  "keywords": [
+    "ai-agent",
+    "lead-management",
+    "email-automation",
+    "transitional-housing",
+    "forward-horizon",
+    "veteran-housing",
+    "recovery-support",
+    "business-automation"
+  ],
+  "author": "Jumaan Ebey <jumaanebey@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.3",
     "@supabase/supabase-js": "^2.56.0",
@@ -32,5 +58,13 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jumaanebey/forward-horizon-ai-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jumaanebey/forward-horizon-ai-agent/issues"
+  },
+  "homepage": "https://github.com/jumaanebey/forward-horizon-ai-agent#readme"
 }
