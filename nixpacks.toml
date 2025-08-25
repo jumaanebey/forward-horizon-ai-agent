@@ -1,9 +1,15 @@
 # Nixpacks configuration for Railway
-[phases.setup]
-nixPkgs = ["nodejs-18_x", "chromium"]
+[variables]
+NODE_VERSION = "18"
 
-[phases.install]
-cmds = ["npm ci --only=production"]
+[phases.setup]
+nixPkgs = ["nodejs_18", "chromium"]
+
+[phases.install] 
+cmds = ["npm install --production"]
+
+[phases.build]
+cmds = ["echo 'No build step needed'"]
 
 [start]
 cmd = "node simple-agent.js"
