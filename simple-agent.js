@@ -295,11 +295,11 @@ class SimpleAIAgent {
         this.app.post('/api/sms/webhook', async (req, res) => {
             try {
                 const { From, Body, MessageSid } = req.body;
-                this.logger.info('📱 SMS received from:', From, '- Message:', Body);
+                this.logger.info('📱 SMS received from:', From || 'Unknown', '- Message:', Body || 'No message');
                 
                 // Generate AI response
                 let response = '';
-                const lowerBody = Body.toLowerCase();
+                const lowerBody = (Body || '').toLowerCase();
                 
                 if (lowerBody.includes('stop')) {
                     response = 'You have been unsubscribed from Forward Horizon messages. Reply START to resubscribe.';
@@ -474,6 +474,12 @@ class SimpleAIAgent {
     
     async sendSMSNotification(lead) {
         try {
+            // Only try to send SMS if Twilio is fully configured
+            if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN || !process.env.TWILIO_PHONE_NUMBER) {
+                this.logger.warn('Twilio not configured - skipping SMS notification');
+                return;
+            }
+            
             const twilio = require('twilio');
             const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
             
