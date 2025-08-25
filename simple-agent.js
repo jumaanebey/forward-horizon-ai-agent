@@ -9,6 +9,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const Logger = require('./src/utils/logger');
+const ChatIntegration = require('./chat-integration');
 require('dotenv').config();
 
 class SimpleAIAgent {
@@ -20,6 +21,7 @@ class SimpleAIAgent {
         this.transporter = null;
         this.googleSheets = null;
         this.logger = new Logger('SimpleAgent');
+        this.chatIntegration = null;
         
         // Setup Express
         this.app.use(express.json());
@@ -33,6 +35,7 @@ class SimpleAIAgent {
             await this.setupEmail();
             await this.setupGoogleDrive();
             this.setupExpressMiddleware();
+            this.setupChatIntegration();
             this.setupRoutes();
             this.startServer();
             this.startTasks();
@@ -82,6 +85,27 @@ class SimpleAIAgent {
             this.logger.success('Google Drive ready (simulation mode)');
         } catch (error) {
             this.logger.error('Google Drive setup failed:', error.message);
+        }
+    }
+
+    setupChatIntegration() {
+        this.logger.info('Setting up chat integration...');
+        
+        try {
+            this.chatIntegration = new ChatIntegration(this);
+            this.chatIntegration.setupRoutes(this.app);
+            
+            // Schedule session cleanup
+            setInterval(() => {
+                const cleanedUp = this.chatIntegration.cleanupSessions();
+                if (cleanedUp > 0) {
+                    this.logger.info(`Cleaned up ${cleanedUp} expired chat sessions`);
+                }
+            }, 15 * 60 * 1000); // Every 15 minutes
+            
+            this.logger.success('Chat integration ready');
+        } catch (error) {
+            this.logger.error('Chat integration setup failed:', error.message);
         }
     }
     

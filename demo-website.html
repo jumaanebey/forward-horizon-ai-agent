@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Forward Horizon - Demo Website with AI Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .services {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact {
+            background: #f8f9fa;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #666;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .chat-notice {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 9998;
+        }
+        
+        .chat-notice.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .chat-notice::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>🏠 The Forward Horizon</h1>
+        <p>Providing transitional housing and support services for veterans, individuals in recovery, and those reentering society. Your new beginning starts here.</p>
+        <button class="cta-button" onclick="openChat()">Get Help Now</button>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🎖️ Veterans Housing</h3>
+                <p>Specialized transitional housing programs designed specifically for veterans transitioning to civilian life, with comprehensive support services and priority placement.</p>
+            </div>
+            <div class="service-card">
+                <h3>🌟 Recovery Housing</h3>
+                <p>Sober living environments for individuals with 30+ days of sobriety, providing structured support to maintain recovery and build independent living skills.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔄 Reentry Support</h3>
+                <p>Housing and support services for returning citizens, helping with successful community reintegration through specialized programming and resources.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Ready to take the next step? Our team is here to help you find the right housing solution for your unique situation.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h4>📞 Phone</h4>
+                <p>(858) 299-2490</p>
+            </div>
+            <div class="contact-item">
+                <h4>✉️ Email</h4>
+                <p>admin@theforwardhorizon.com</p>
+            </div>
+            <div class="contact-item">
+                <h4>💬 AI Chat</h4>
+                <p>24/7 instant support available</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="chat-notice" id="chatNotice">
+        👋 Need help? Click the chat button below for instant assistance!
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 The Forward Horizon. All rights reserved.</p>
+    </footer>
+    
+    <!-- Chat Widget Integration - ONE LINE OF CODE -->
+    <script src="embeddable-chat.js"></script>
+    
+    <script>
+        // Show chat notice after 5 seconds
+        setTimeout(() => {
+            document.getElementById('chatNotice').classList.add('show');
+        }, 5000);
+        
+        // Hide notice after 10 seconds
+        setTimeout(() => {
+            document.getElementById('chatNotice').classList.remove('show');
+        }, 15000);
+        
+        // Function to open chat programmatically
+        function openChat() {
+            if (window.ForwardHorizonChat && window.ForwardHorizonChat.openChat) {
+                window.ForwardHorizonChat.openChat();
+            }
+        }
+    </script>
+</body>
+</html>

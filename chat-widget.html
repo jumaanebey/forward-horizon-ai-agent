@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward Horizon AI Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chat-container {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: #2563eb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .chat-header h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .chat-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .message.ai {
+            background: #f1f5f9;
+            color: #334155;
+            align-self: flex-start;
+        }
+        
+        .message.user {
+            background: #2563eb;
+            color: white;
+            align-self: flex-end;
+        }
+        
+        .chat-input-container {
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .chat-input:focus {
+            border-color: #2563eb;
+        }
+        
+        .send-button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        
+        .send-button:hover {
+            background: #1d4ed8;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 12px 16px;
+            background: #f1f5f9;
+            border-radius: 18px;
+            max-width: 80px;
+            align-self: flex-start;
+        }
+        
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .typing-dots span {
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🏠 The Forward Horizon</h2>
+            <p>AI Housing Specialist • Available 24/7</p>
+        </div>
+        
+        <div class="chat-messages" id="messages">
+            <div class="message ai">
+                Hi there! I'm your AI housing specialist for The Forward Horizon. Before we dive into how I can help you, could you tell me your first name so I can personalize our conversation?
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typing">
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="messageInput" 
+                placeholder="Type your message..."
+                maxlength="500"
+            >
+            <button class="send-button" id="sendButton">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        class ForwardHorizonChat {
+            constructor() {
+                this.messages = document.getElementById('messages');
+                this.input = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.typing = document.getElementById('typing');
+                
+                this.conversationHistory = [];
+                this.userName = null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+                
+                // Focus input on load
+                this.input.focus();
+            }
+            
+            async sendMessage() {
+                const message = this.input.value.trim();
+                if (!message) return;
+                
+                // Add user message to chat
+                this.addMessage(message, 'user');
+                this.input.value = '';
+                
+                // Show typing indicator
+                this.showTyping();
+                
+                try {
+                    // Send to AI
+                    const response = await this.callAI(message);
+                    
+                    // Hide typing and add AI response
+                    this.hideTyping();
+                    this.addMessage(response, 'ai');
+                    
+                } catch (error) {
+                    this.hideTyping();
+                    this.addMessage("I apologize, but I'm having trouble connecting right now. Please call us directly at (858) 299-2490 for immediate assistance.", 'ai');
+                }
+            }
+            
+            async callAI(message) {
+                // Store conversation context
+                this.conversationHistory.push({role: 'user', content: message});
+                
+                return await this.getAIResponse(message);
+            }
+            
+            async getAIResponse(message) {
+                // Simulate AI thinking time
+                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+                
+                const lowerMessage = message.toLowerCase();
+                
+                // Name detection and greeting
+                if (!this.userName && (lowerMessage.includes('i\'m') || lowerMessage.includes('my name') || /^[a-zA-Z\s]+$/.test(message.trim()))) {
+                    this.userName = message.replace(/i'm|my name is|i am|hi|hello/gi, '').trim();
+                    if (this.userName) {
+                        return `Nice to meet you, ${this.userName}! What brings you to The Forward Horizon today? Are you interested in our veterans program, recovery housing, or reentry support?`;
+                    }
+                }
+                
+                if (lowerMessage.includes('veteran') || lowerMessage.includes('military')) {
+                    return `${this.userName ? this.userName + ', t' : 'T'}hank you for your service! Our Veterans Transitional Housing program is designed specifically for veterans transitioning to civilian life. I'd love to schedule you for a personalized video consultation where we can discuss the program details and see if it's a good fit. Would you like me to help you schedule that?`;
+                }
+                
+                if (lowerMessage.includes('recovery') || lowerMessage.includes('sober') || lowerMessage.includes('addiction')) {
+                    return `Our Sober Living After Detox program is perfect for individuals with 30+ days of sobriety who are ready to take the next step. We provide a supportive environment with comprehensive services. I can schedule you for a video consultation to discuss the program requirements and available options. Would that be helpful?`;
+                }
+                
+                if (lowerMessage.includes('reentry') || lowerMessage.includes('prison') || lowerMessage.includes('incarceration')) {
+                    return `Our Reentry Housing program helps returning citizens successfully transition back into the community. We understand the unique challenges you face and provide specialized support services. Let me schedule you for a personalized consultation to discuss your specific needs and timeline. Sound good?`;
+                }
+                
+                if (lowerMessage.includes('cost') || lowerMessage.includes('price') || lowerMessage.includes('money') || lowerMessage.includes('payment')) {
+                    return `I'd love to discuss pricing with you, but since costs can vary based on your specific situation and the housing options available, we cover all the financial details in a personalized video consultation where we can give you exact numbers and payment options that work for your situation. Would you like to schedule that?`;
+                }
+                
+                if (lowerMessage.includes('schedule') || lowerMessage.includes('appointment') || lowerMessage.includes('consultation') || lowerMessage.includes('yes')) {
+                    return `Perfect! I can help you schedule a video consultation. These typically last 30-45 minutes and cover program details, costs, and next steps. What's the best phone number to reach you at, and do you prefer morning or afternoon appointments?`;
+                }
+                
+                if (lowerMessage.includes('crisis') || lowerMessage.includes('emergency') || lowerMessage.includes('homeless') || lowerMessage.includes('help')) {
+                    return `I understand you may be in a difficult situation right now. If this is an emergency, please call 911. For crisis support, the National Suicide Prevention Lifeline is available 24/7 at 988. For immediate housing assistance, please call our main line at (858) 299-2490. Our team can provide crisis support and resource referrals. How can I best help you right now?`;
+                }
+                
+                return `${this.userName ? this.userName + ', i' : 'I'}'m here to help you learn about The Forward Horizon's transitional housing programs. I can explain our veterans, recovery, or reentry programs, and schedule you for a personalized video consultation. What specific information would be most helpful for you?`;
+            }
+            
+            addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.textContent = text;
+                this.messages.appendChild(messageDiv);
+                this.messages.scrollTop = this.messages.scrollHeight;
+            }
+            
+            showTyping() {
+                this.typing.style.display = 'block';
+                this.messages.appendChild(this.typing);
+                this.messages.scrollTop = this.messages.scrollHeight;
+            }
+            
+            hideTyping() {
+                this.typing.style.display = 'none';
+            }
+        }
+        
+        // Initialize chat when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ForwardHorizonChat();
+        });
+    </script>
+</body>
+</html>
