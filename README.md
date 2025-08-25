@@ -388,4 +388,4 @@ npm run test
 
 **Forward Horizon AI Agent** - Intelligent business automation that works while you sleep. 
 
-Built with ❤️ for Forward Horizon's success.
+Built with ❤️ for Forward Horizon's success.# Trigger Railway redeploy
