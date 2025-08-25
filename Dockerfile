@@ -36,8 +36,7 @@ CMD ["npm", "run", "dev"]
 FROM base AS build
 RUN npm ci && npm cache clean --force
 COPY . .
-# Run any build steps (if you have them)
-RUN npm run build 2>/dev/null || echo "No build step defined"
+# No build step needed for this Node.js application
 
 # Production stage
 FROM node:18-alpine AS production
