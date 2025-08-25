@@ -269,6 +269,11 @@ class SimpleAIAgent {
                 // Sync to Google Drive
                 await this.syncToGoogleDrive(lead);
                 
+                // Send SMS notification if Twilio is configured
+                if (process.env.TWILIO_ACCOUNT_SID && process.env.BUSINESS_OWNER_PHONE) {
+                    await this.sendSMSNotification(lead);
+                }
+                
                 res.json({ success: true, lead });
             } catch (error) {
                 console.error('❌ Lead processing failed:', error);
@@ -278,6 +283,108 @@ class SimpleAIAgent {
         
         this.app.get('/api/leads', (req, res) => {
             res.json(this.leads);
+        });
+
+        // SMS Webhook (Twilio)
+        this.app.post('/api/sms/webhook', async (req, res) => {
+            try {
+                const { From, Body, MessageSid } = req.body;
+                this.logger.info('📱 SMS received from:', From, '- Message:', Body);
+                
+                // Generate AI response
+                let response = '';
+                const lowerBody = Body.toLowerCase();
+                
+                if (lowerBody.includes('stop')) {
+                    response = 'You have been unsubscribed from Forward Horizon messages. Reply START to resubscribe.';
+                } else if (lowerBody.includes('housing') || lowerBody.includes('help')) {
+                    response = 'Forward Horizon provides transitional housing for individuals and families. We have programs for veterans and those experiencing homelessness. Call (310) 488-5280 or visit our website to apply. Reply STOP to unsubscribe.';
+                } else if (lowerBody.includes('veteran')) {
+                    response = 'Thank you for your service! We have specialized housing programs for veterans with additional support services. Priority placement available. Call (310) 488-5280 to learn more. Reply STOP to unsubscribe.';
+                } else if (lowerBody.includes('tour') || lowerBody.includes('visit')) {
+                    response = 'We offer property tours weekdays 9-5 and Saturdays 10-2. Call (310) 488-5280 to schedule your tour. Reply STOP to unsubscribe.';
+                } else {
+                    response = 'Thank you for contacting Forward Horizon! For housing assistance, call (310) 488-5280 or visit our website. Reply HELP for more info or STOP to unsubscribe.';
+                }
+
+                // Send TwiML response
+                res.set('Content-Type', 'text/xml');
+                res.send(`<?xml version="1.0" encoding="UTF-8"?>
+                    <Response>
+                        <Message>${response}</Message>
+                    </Response>`);
+                    
+            } catch (error) {
+                this.logger.error('SMS webhook error:', error.message);
+                res.status(500).send('Error processing SMS');
+            }
+        });
+
+        // Voice Webhook (Twilio)
+        this.app.post('/api/voice/incoming', async (req, res) => {
+            try {
+                const { CallSid, From, To } = req.body;
+                this.logger.info('📞 Incoming call from:', From);
+                
+                // Generate TwiML voice response
+                const voiceResponse = `<?xml version="1.0" encoding="UTF-8"?>
+                    <Response>
+                        <Say voice="alice">Hello! Thank you for calling Forward Horizon. I'm your AI assistant.</Say>
+                        <Say voice="alice">We provide transitional housing for individuals and families, with special programs for veterans.</Say>
+                        <Gather input="speech" action="/api/voice/gather" timeout="5" speechTimeout="auto">
+                            <Say voice="alice">Please tell me how I can help you today. You can say things like housing information, schedule a tour, or speak to someone.</Say>
+                        </Gather>
+                        <Say voice="alice">I'm sorry, I didn't hear anything. Please call back at 310-488-5280. Thank you!</Say>
+                        <Hangup/>
+                    </Response>`;
+                
+                res.set('Content-Type', 'text/xml');
+                res.send(voiceResponse);
+                
+            } catch (error) {
+                this.logger.error('Voice webhook error:', error.message);
+                res.status(500).send('Error processing call');
+            }
+        });
+
+        // Voice Gather Handler
+        this.app.post('/api/voice/gather', async (req, res) => {
+            try {
+                const { SpeechResult, Confidence } = req.body;
+                this.logger.info('🎤 Speech:', SpeechResult, 'Confidence:', Confidence);
+                
+                const speech = (SpeechResult || '').toLowerCase();
+                let response = '';
+                
+                if (speech.includes('housing') || speech.includes('information')) {
+                    response = 'We offer transitional housing with rent based on your income. Units range from studios to family apartments. We also provide support services including job training and counseling.';
+                } else if (speech.includes('tour') || speech.includes('visit')) {
+                    response = 'I can help schedule a property tour. Tours are available weekdays from 9 AM to 5 PM and Saturdays from 10 AM to 2 PM. Please leave your name and number after the beep, and we\'ll call you back to confirm.';
+                } else if (speech.includes('veteran')) {
+                    response = 'Thank you for your service! We have dedicated housing programs for veterans with priority placement and additional support services. A specialist will call you back within 24 hours.';
+                } else if (speech.includes('speak') || speech.includes('person') || speech.includes('human')) {
+                    response = 'I\'ll connect you with a housing specialist. Please call 310-488-5280 during business hours, Monday through Friday 9 AM to 5 PM.';
+                } else {
+                    response = 'I can help with housing information, scheduling tours, or connecting you with a specialist. What would you like to know more about?';
+                }
+                
+                const voiceResponse = `<?xml version="1.0" encoding="UTF-8"?>
+                    <Response>
+                        <Say voice="alice">${response}</Say>
+                        <Gather input="speech" action="/api/voice/gather" timeout="5" speechTimeout="auto">
+                            <Say voice="alice">Is there anything else I can help you with?</Say>
+                        </Gather>
+                        <Say voice="alice">Thank you for calling Forward Horizon. Have a great day!</Say>
+                        <Hangup/>
+                    </Response>`;
+                
+                res.set('Content-Type', 'text/xml');
+                res.send(voiceResponse);
+                
+            } catch (error) {
+                this.logger.error('Voice gather error:', error.message);
+                res.status(500).send('Error processing speech');
+            }
         });
     }
     
@@ -356,6 +463,25 @@ class SimpleAIAgent {
             
         } catch (error) {
             console.error('❌ Google Drive sync failed:', error.message);
+        }
+    }
+    
+    async sendSMSNotification(lead) {
+        try {
+            const twilio = require('twilio');
+            const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+            
+            const message = `🏠 New Forward Horizon Lead!\n\nName: ${lead.name}\nEmail: ${lead.email}\nPhone: ${lead.phone || 'Not provided'}\nScore: ${lead.score}\n\nLog in to view details.`;
+            
+            await client.messages.create({
+                body: message,
+                to: process.env.BUSINESS_OWNER_PHONE,
+                from: process.env.TWILIO_PHONE_NUMBER
+            });
+            
+            this.logger.info('📱 SMS notification sent for lead:', lead.name);
+        } catch (error) {
+            console.error('❌ SMS notification failed:', error.message);
         }
     }
     
