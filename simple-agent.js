@@ -202,10 +202,12 @@ class SimpleAIAgent {
         this.app.get('/api/status', (req, res) => {
             res.json({
                 status: 'active',
+                version: '2.0-twilio',
                 leads: this.leads.length,
                 emails: this.emails.length,
                 emailConfigured: !!this.transporter,
-                googleDriveConnected: !!this.googleSheets
+                googleDriveConnected: !!this.googleSheets,
+                twilioEnabled: true
             });
         });
         
