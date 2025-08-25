@@ -32,6 +32,7 @@ class SimpleAIAgent {
         try {
             await this.setupEmail();
             await this.setupGoogleDrive();
+            this.setupExpressMiddleware();
             this.setupRoutes();
             this.startServer();
             this.startTasks();
@@ -39,6 +40,11 @@ class SimpleAIAgent {
         } catch (error) {
             this.logger.error('Initialization failed:', error.message);
         }
+    }
+    
+    setupExpressMiddleware() {
+        // Add URL-encoded parser for Twilio webhooks
+        this.app.use(express.urlencoded({ extended: true }));
     }
     
     async setupEmail() {
