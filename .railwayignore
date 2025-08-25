@@ -1,0 +1,9 @@
+# Ignore files that might confuse Railway runtime detection
+*.py
+requirements.txt
+Pipfile
+Pipfile.lock
+poetry.lock
+pyproject.toml
+.python-version
+Dockerfile.python
