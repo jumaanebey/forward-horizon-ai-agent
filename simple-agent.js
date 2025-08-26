@@ -230,8 +230,14 @@ class SimpleAIAgent {
             res.sendFile(path.join(__dirname, 'theforwardhorizon-enhanced-final.html'));
         });
         
-        // Dashboard
+        // Production website - Enhanced Final version
         this.app.get('/', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-enhanced-final.html'));
+        });
+        
+        // Dashboard
+        this.app.get('/dashboard', (req, res) => {
             res.send(`
 <!DOCTYPE html>
 <html>
