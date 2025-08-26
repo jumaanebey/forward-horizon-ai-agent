@@ -48,6 +48,53 @@ class SimpleAIAgent {
     setupExpressMiddleware() {
         // Add URL-encoded parser for Twilio webhooks
         this.app.use(express.urlencoded({ extended: true }));
+        
+        // Security middleware
+        const cors = require('cors');
+        
+        // CORS configuration
+        this.app.use(cors({
+            origin: process.env.ALLOWED_ORIGINS ? 
+                process.env.ALLOWED_ORIGINS.split(',') : 
+                ['http://localhost:3000', 'https://theforwardhorizon.com'],
+            credentials: true
+        }));
+        
+        // Basic security headers
+        this.app.use((req, res, next) => {
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+            res.setHeader('X-Frame-Options', 'DENY');
+            res.setHeader('X-XSS-Protection', '1; mode=block');
+            next();
+        });
+        
+        // Simple rate limiting
+        const rateLimitMap = new Map();
+        this.app.use('/api/', (req, res, next) => {
+            const ip = req.ip || req.connection.remoteAddress;
+            const now = Date.now();
+            const windowMs = 15 * 60 * 1000; // 15 minutes
+            const maxRequests = 100;
+            
+            if (!rateLimitMap.has(ip)) {
+                rateLimitMap.set(ip, []);
+            }
+            
+            const requests = rateLimitMap.get(ip).filter(time => now - time < windowMs);
+            
+            if (requests.length >= maxRequests) {
+                return res.status(429).json({ 
+                    error: 'Too many requests, please try again later.' 
+                });
+            }
+            
+            requests.push(now);
+            rateLimitMap.set(ip, requests);
+            
+            next();
+        });
+        
+        this.logger.info('Security middleware configured');
     }
     
     async setupEmail() {

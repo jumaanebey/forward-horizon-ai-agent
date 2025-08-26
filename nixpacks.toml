@@ -1,0 +1,12 @@
+# Force Node.js runtime for Railway
+[variables]
+NODE_VERSION = "18.20.4"
+
+[phases.setup]
+nixPkgs = ["nodejs_18", "npm-8_19_4"]
+
+[phases.install]
+cmds = ["npm ci --omit=dev"]
+
+[start]  
+cmd = "node simple-agent.js"
