@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward Horizon - Transitional Housing for Veterans, Recovering Individuals, and Returning Citizens</title>
+    <meta name="description" content="Forward Horizon provides structured transitional housing for veterans, individuals in recovery, and returning citizens. Rebuilding lives through accountability, community, and fresh starts.">
+    
+    <!-- Next-Level Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Enhanced Icons & Dependencies -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/heroicons@2.0.16/24/outline/style.css" rel="stylesheet">
+    
+    <!-- Advanced Animation Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Tailwind CSS with Extended Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2f5233',
+                        'primary-light': '#4a7c59',
+                        'primary-dark': '#1e3a21',
+                        'primary-50': '#f0f7f0',
+                        'primary-100': '#dcf2dc',
+                        'primary-900': '#1e3a21',
+                        secondary: '#6b5b95',
+                        'secondary-light': '#8e7cc3',
+                        'secondary-dark': '#4a4374',
+                        'secondary-50': '#f3f1f9',
+                        'secondary-100': '#e9e5f3',
+                        'secondary-900': '#2d2548',
+                        accent: '#b8860b',
+                        'accent-light': '#d4af37',
+                        'accent-dark': '#996f07',
+                        'accent-50': '#fdf6e3',
+                        'accent-100': '#fbedc7',
+                        'accent-900': '#7a5006',
+                        gold: '#d4af37',
+                        'gold-light': '#e6c555',
+                        'gold-dark': '#b8931a',
+                        'text-primary': '#2d3748',
+                        'text-secondary': '#4a5568',
+                        'text-light': '#718096',
+                        'text-muted': '#a0aec0',
+                        'navy': '#2d3748',
+                        'navy-light': '#4a5568',
+                        'navy-dark': '#1a202c',
+                        'warm-teal': '#319795',
+                        'sage': '#9caf88',
+                        'earth-brown': '#8b6914'
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                        'body': ['Manrope', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'fade-in-down': 'fadeInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'fade-in-left': 'fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'fade-in-right': 'fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'scale-in': 'scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        'slide-up': 'slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'slide-down': 'slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                        'pulse-ring': 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'floatDelayed 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                        'gradient-x': 'gradientX 4s ease-in-out infinite',
+                        'gradient-y': 'gradientY 4s ease-in-out infinite',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'wiggle': 'wiggle 0.5s ease-in-out',
+                        'morph': 'morph 8s ease-in-out infinite',
+                        'rotate-y': 'rotateY 20s linear infinite',
+                        'tilt': 'tilt 10s ease-in-out infinite',
+                        'breathe': 'breathe 4s ease-in-out infinite',
+                        'parallax': 'parallax 20s ease-in-out infinite',
+                        'typewriter': 'typewriter 4s steps(40) 1s forwards',
+                        'blink': 'blink 1s infinite',
+                        'count-up': 'countUp 2s ease-out forwards',
+                        'reveal': 'reveal 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-60px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(60px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        pulseRing: {
+                            '0%': { boxShadow: '0 0 0 0 rgba(30, 64, 175, 0.7)' },
+                            '70%': { boxShadow: '0 0 0 15px rgba(30, 64, 175, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(30, 64, 175, 0)' }
+                        },
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 20px rgba(30, 64, 175, 0.4), 0 0 40px rgba(30, 64, 175, 0.2)' },
+                            '100%': { boxShadow: '0 0 40px rgba(30, 64, 175, 0.8), 0 0 80px rgba(30, 64, 175, 0.4)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(1deg)' }
+                        },
+                        floatDelayed: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(-1deg)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        gradientX: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        gradientY: {
+                            '0%, 100%': { backgroundPosition: '50% 0%' },
+                            '50%': { backgroundPosition: '50% 100%' }
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-2deg)' },
+                            '50%': { transform: 'rotate(2deg)' }
+                        },
+                        morph: {
+                            '0%, 100%': { borderRadius: '20px' },
+                            '25%': { borderRadius: '40px 20px 60px 20px' },
+                            '50%': { borderRadius: '60px' },
+                            '75%': { borderRadius: '20px 60px 20px 40px' }
+                        },
+                        rotateY: {
+                            '0%': { transform: 'rotateY(0deg)' },
+                            '100%': { transform: 'rotateY(360deg)' }
+                        },
+                        tilt: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(1deg)' },
+                            '75%': { transform: 'rotate(-1deg)' }
+                        },
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' }
+                        },
+                        parallax: {
+                            '0%': { transform: 'translateY(0px)' },
+                            '100%': { transform: 'translateY(-50px)' }
+                        },
+                        typewriter: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100%' }
+                        },
+                        blink: {
+                            '0%, 50%': { borderColor: 'transparent' },
+                            '51%, 100%': { borderColor: 'currentColor' }
+                        },
+                        countUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        reveal: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0%)', opacity: '1' }
+                        }
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                        'sm': '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '24px',
+                        '2xl': '40px',
+                        '3xl': '64px'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Next-Level Custom Styles -->
+    <style>
+        /* Advanced CSS Variables */
+        :root {
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
+            --shadow-intense: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.08);
+            --shadow-brutal: 0 32px 64px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.12);
+            
+            --gradient-primary: linear-gradient(135deg, #2f5233 0%, #4a7c59 50%, #6b5b95 100%);
+            --gradient-secondary: linear-gradient(135deg, #6b5b95 0%, #8e7cc3 50%, #9caf88 100%);
+            --gradient-rainbow: linear-gradient(135deg, #2f5233 0%, #6b5b95 25%, #319795 50%, #d4af37 75%, #8b6914 100%);
+            --gradient-sunset: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8b6914 100%);
+            --gradient-ocean: linear-gradient(135deg, #319795 0%, #4a7c59 50%, #2f5233 100%);
+            --gradient-forest: linear-gradient(135deg, #2f5233 0%, #1e3a21 50%, #4a7c59 100%);
+            
+            --pattern-grid: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+            --pattern-dots: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px);
+            --pattern-waves: repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255,255,255,0.03) 100px);
+            
+            --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --easing-swift: cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        /* Enhanced Performance & Smoothing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+
+        /* Advanced Glass Morphism System */
+        .glass-ultra {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px) saturate(120%);
+            -webkit-backdrop-filter: blur(30px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s var(--easing-smooth);
+        }
+
+        .glass-nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(60px) saturate(200%);
+            -webkit-backdrop-filter: blur(60px) saturate(200%);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Next-Level Button System */
+        .btn-nextlevel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            transform: translateZ(0);
+            transition: all 0.4s var(--easing-bounce);
+            box-shadow: var(--shadow-strong);
+            background-size: 200% 100%;
+            background-position: 0% 50%;
+        }
+        
+        .btn-nextlevel:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-brutal);
+            background-position: 100% 50%;
+        }
+
+        .btn-nextlevel:active {
+            transform: translateY(-2px) scale(0.98);
+            transition: all 0.1s var(--easing-smooth);
+        }
+
+        .btn-nextlevel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s var(--easing-smooth);
+        }
+        
+        .btn-nextlevel:hover::before {
+            left: 100%;
+        }
+
+        .btn-nextlevel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: var(--gradient-rainbow);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s var(--easing-smooth);
+        }
+
+        .btn-nextlevel:hover::after {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .btn-accent {
+            background: var(--gradient-sunset);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid currentColor;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s var(--easing-smooth);
+        }
+
+        .btn-outline:hover {
+            background: currentColor;
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Next-Level Card System */
+        .card-nextlevel {
+            transition: all 0.6s var(--easing-bounce);
+            transform: translateZ(0);
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        
+        .card-nextlevel:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(2deg) scale(1.02);
+            box-shadow: var(--shadow-brutal);
+        }
+
+        .card-nextlevel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-rainbow);
+            transform: scaleX(0);
+            transition: transform 0.6s var(--easing-bounce);
+            z-index: 10;
+        }
+        
+        .card-nextlevel:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-nextlevel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.8s var(--easing-smooth);
+            pointer-events: none;
+        }
+
+        .card-nextlevel:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* 3D Transform Cards */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .card-3d:hover {
+            transform: rotateX(15deg) rotateY(15deg) translateZ(30px);
+        }
+
+        .card-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .card-glow {
+            position: relative;
+        }
+
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: var(--gradient-primary);
+            border-radius: inherit;
+            opacity: 0;
+            filter: blur(30px);
+            transition: opacity 0.4s var(--easing-smooth);
+            z-index: -1;
+        }
+
+        .card-glow:hover::before {
+            opacity: 0.6;
+        }
+
+        /* Advanced Typography System */
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .text-gradient-rainbow {
+            background: var(--gradient-rainbow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 100%;
+            animation: gradientX 4s ease-in-out infinite;
+            font-weight: 800;
+        }
+
+        .text-gradient-secondary {
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .text-gradient-sunset {
+            background: var(--gradient-sunset);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .text-shadow-soft {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .text-shadow-strong {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+        }
+
+        .text-shadow-intense {
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Typewriter Effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid currentColor;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typewriter 4s steps(40) 1s forwards, blink 1s infinite;
+        }
+
+        /* Next-Level Hero System */
+        .hero-nextlevel {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+            overflow: hidden;
+        }
+        
+        .hero-nextlevel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(30, 64, 175, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-nextlevel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--pattern-grid);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            animation: parallax 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Parallax Elements */
+        .parallax-element {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .parallax-slow {
+            transform: translate3d(0, var(--parallax-offset-slow, 0), 0);
+        }
+
+        .parallax-medium {
+            transform: translate3d(0, var(--parallax-offset-medium, 0), 0);
+        }
+
+        .parallax-fast {
+            transform: translate3d(0, var(--parallax-offset-fast, 0), 0);
+        }
+
+        /* Advanced Section System */
+        .section-nextlevel {
+            position: relative;
+            padding: 5rem 0; /* Reduced from 6rem to fix spacing */
+        }
+
+        .section-pattern {
+            position: relative;
+        }
+
+        .section-pattern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--pattern-dots);
+            background-size: 30px 30px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 3rem 0; /* Reduced from 4rem */
+        }
+
+        /* Enhanced Image Effects */
+        .image-nextlevel {
+            transition: all 0.6s var(--easing-bounce);
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            transform: translateZ(0);
+        }
+        
+        .image-nextlevel:hover {
+            transform: scale(1.08) rotateZ(1deg);
+            box-shadow: var(--shadow-brutal);
+        }
+
+        .image-nextlevel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+            transform: translateX(-200%);
+            transition: transform 0.8s var(--easing-smooth);
+        }
+
+        .image-nextlevel:hover::after {
+            transform: translateX(200%);
+        }
+
+        /* Particle Animation Background */
+        .particles-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 12s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            animation-delay: -2s;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(even) {
+            animation-delay: -4s;
+            animation-duration: 16s;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient-rainbow);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Scroll Snap Navigation */
+        .scroll-indicator {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .scroll-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s var(--easing-smooth);
+        }
+
+        .scroll-dot.active {
+            background: var(--gradient-primary);
+            transform: scale(1.3);
+        }
+
+        /* Advanced Form Enhancements */
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.5rem 1rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s var(--easing-smooth);
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 1.5rem;
+            left: 1rem;
+            pointer-events: none;
+            transition: all 0.3s var(--easing-smooth);
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            top: -0.5rem;
+            left: 0.5rem;
+            font-size: 0.875rem;
+            color: #3b82f6;
+            background: white;
+            padding: 0 0.5rem;
+        }
+
+        .form-error {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s var(--easing-smooth);
+        }
+
+        .form-error.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Statistics Counter Animation */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            transition: transform 0.5s var(--easing-smooth);
+        }
+
+        .testimonial-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s var(--easing-smooth);
+        }
+
+        .testimonial-dot.active {
+            background: var(--gradient-primary);
+            transform: scale(1.2);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .section-nextlevel {
+                padding: 3rem 0; /* Further reduced for mobile */
+            }
+            
+            .card-nextlevel:hover {
+                transform: translateY(-10px) scale(1.01);
+            }
+
+            .hero-nextlevel {
+                min-height: 100vh;
+            }
+        }
+
+        /* Reduce Motion for Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .glass-card, .glass-nav, .glass-ultra {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+            }
+        }
+
+        /* Custom Cursor (Desktop Only) */
+        @media (min-width: 1024px) {
+            body {
+                cursor: none;
+            }
+
+            .custom-cursor {
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.1s ease;
+                mix-blend-mode: difference;
+            }
+
+            .custom-cursor.clicking {
+                transform: scale(0.8);
+            }
+
+            .custom-cursor.hovering {
+                transform: scale(1.5);
+                background: var(--gradient-rainbow);
+            }
+        }
+
+        /* Enhanced Focus States */
+        .focus-nextlevel:focus {
+            outline: 4px solid #3b82f6;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: bounceGentle 1.4s ease-in-out infinite both;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dot:nth-child(3) { animation-delay: 0s; }
+
+        /* Success/Error States */
+        .success-state {
+            color: #059669;
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+        }
+
+        .error-state {
+            color: #dc2626;
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator" id="progress-indicator"></div>
+    
+    <!-- Custom Cursor (Desktop) -->
+    <div class="custom-cursor hidden lg:block" id="custom-cursor"></div>
+    
+    <!-- Scroll Indicators -->
+    <div class="scroll-indicator hidden lg:flex flex-col" id="scroll-indicator">
+        <!-- Populated by JavaScript -->
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="font-display text-2xl font-bold text-gradient">Forward Horizon</div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-2 rounded-lg">Home</a>
+                        <a href="#programs" class="font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-2 rounded-lg">Programs</a>
+                        <a href="#about" class="font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-2 rounded-lg">About</a>
+                        <a href="#admissions" class="font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-2 rounded-lg">Apply</a>
+                        <a href="#get-involved" class="font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-2 rounded-lg">Get Involved</a>
+                        <a href="#contact" class="btn-nextlevel btn-primary px-6 py-3 text-white text-sm font-bold focus-nextlevel">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="glass-card p-2 rounded-md text-navy hover:text-primary focus-nextlevel" id="mobile-menu-button" aria-label="Toggle menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass-card" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#home" class="block font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-3 rounded-lg">Home</a>
+                <a href="#programs" class="block font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-3 rounded-lg">Programs</a>
+                <a href="#about" class="block font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-3 rounded-lg">About</a>
+                <a href="#admissions" class="block font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-3 rounded-lg">Apply</a>
+                <a href="#get-involved" class="block font-display font-semibold text-navy hover:text-primary transition-all duration-300 focus-nextlevel px-3 py-3 rounded-lg">Get Involved</a>
+                <a href="#contact" class="block btn-nextlevel btn-primary px-6 py-3 text-white text-center font-bold focus-nextlevel mt-4">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Next-Level Hero Section -->
+    <section id="home" class="hero-nextlevel">
+        <!-- Particle Background -->
+        <div class="particles-container">
+            <!-- Particles generated by JavaScript -->
+        </div>
+        
+        <div class="hero-content max-w-7xl mx-auto px-4 text-center">
+            <div class="parallax-element parallax-slow" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gradient-rainbow mb-8 leading-tight">
+                    <span class="typewriter">Forward Horizon</span>
+                </h1>
+            </div>
+            
+            <div class="parallax-element parallax-medium" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <p class="font-body text-xl sm:text-2xl lg:text-3xl text-navy mb-4 leading-relaxed max-w-4xl mx-auto font-semibold text-shadow-soft">
+                    Transitional Housing for Veterans, Recovering Individuals, and Returning Citizens
+                </p>
+            </div>
+            
+            <div class="parallax-element parallax-fast" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <p class="font-body text-lg sm:text-xl text-text-secondary mb-12 leading-relaxed max-w-3xl mx-auto">
+                    Rebuilding lives together through accountability, community, and fresh starts. Your journey to a brighter future begins here.
+                </p>
+            </div>
+            
+            <div class="parallax-element" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#programs" class="btn-nextlevel btn-primary px-12 py-5 text-lg font-bold focus-nextlevel animate-pulse-glow">
+                        Explore Programs
+                    </a>
+                    <a href="#contact" class="btn-nextlevel btn-outline border-navy text-navy px-12 py-5 text-lg font-bold focus-nextlevel">
+                        Get Started Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Statistics Section -->
+    <section class="section-nextlevel bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-duration="1000">
+                <div class="text-center card-nextlevel glass-ultra p-8 rounded-3xl">
+                    <div class="text-5xl font-bold text-gradient mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <p class="font-display text-lg font-bold text-navy mb-2">Growing Community</p>
+                    <p class="font-body text-text-light">Building connections and support networks</p>
+                </div>
+                <div class="text-center card-nextlevel glass-ultra p-8 rounded-3xl">
+                    <div class="text-5xl font-bold text-gradient-secondary mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="font-display text-lg font-bold text-navy mb-2">Comprehensive Support</p>
+                    <p class="font-body text-text-light">Holistic approach to healing and growth</p>
+                </div>
+                <div class="text-center card-nextlevel glass-ultra p-8 rounded-3xl">
+                    <div class="text-5xl font-bold text-gradient-sunset mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p class="font-display text-lg font-bold text-navy mb-2">24/7 Available</p>
+                    <p class="font-body text-text-light">Always here when you need us most</p>
+                </div>
+                <div class="text-center card-nextlevel glass-ultra p-8 rounded-3xl">
+                    <div class="text-5xl font-bold text-gradient mb-4">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <p class="font-display text-lg font-bold text-navy mb-2">Individual Focus</p>
+                    <p class="font-body text-text-light">Personalized path to independence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Programs Section -->
+    <section id="programs" class="section-nextlevel section-pattern">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">Our Programs</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Specialized support services designed for your unique journey to independence and success
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Veterans Program -->
+                <div class="card-nextlevel card-3d glass-card p-10 rounded-3xl relative overflow-hidden border border-gray-200" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary to-primary-dark rounded-full -translate-y-16 translate-x-16 opacity-10"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 animate-float">
+                            <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-navy mb-6">Veterans Transitional Housing</h3>
+                        <p class="font-body text-text-secondary mb-8 leading-relaxed">
+                            Specialized support for military veterans transitioning to civilian life with dignity, purpose, and comprehensive services.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">VA Benefits Navigation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">PTSD & Mental Health Support</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Career Transition Counseling</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Peer Mentorship Program</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn-nextlevel btn-primary w-full py-4 text-center font-bold focus-nextlevel">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sober Living Program -->
+                <div class="card-nextlevel card-3d glass-card p-10 rounded-3xl relative overflow-hidden border border-gray-200" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary to-secondary-dark rounded-full -translate-y-16 translate-x-16 opacity-10"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-secondary bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 animate-float-delayed">
+                            <i class="fas fa-leaf text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-navy mb-6">Structured Sober Living</h3>
+                        <p class="font-body text-text-secondary mb-8 leading-relaxed">
+                            Safe, substance-free environment with 24/7 support and structured routines for sustained recovery.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-secondary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Daily Accountability Check-ins</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-secondary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Recovery Meeting Participation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-secondary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Life Skills Workshops</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-secondary rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Career Development</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn-nextlevel btn-secondary w-full py-4 text-center font-bold focus-nextlevel">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Re-entry Program -->
+                <div class="card-nextlevel card-3d glass-card p-10 rounded-3xl relative overflow-hidden border border-gray-200" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full -translate-y-16 translate-x-16 opacity-10"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-purple-600 bg-opacity-20 rounded-2xl flex items-center justify-center mb-8 animate-float">
+                            <i class="fas fa-door-open text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-navy mb-6">Post-Incarceration Transition</h3>
+                        <p class="font-body text-text-secondary mb-8 leading-relaxed">
+                            Comprehensive re-entry support for returning citizens, focusing on successful community reintegration.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-600 rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Employment Readiness Training</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-600 rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Legal Aid & Expungement</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-600 rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Family Reunification</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-600 rounded-full mr-4 animate-pulse-glow"></div>
+                                <span class="font-body text-text-light font-medium">Financial Literacy Education</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn-nextlevel btn-accent w-full py-4 text-center font-bold focus-nextlevel">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced CTA Section -->
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="glass-dark rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-display text-3xl font-bold mb-6 text-white text-shadow-strong">Discover Your Path Forward</h3>
+                        <p class="font-body text-xl mb-8 text-white leading-relaxed max-w-2xl mx-auto text-shadow-soft">
+                            Every journey is unique. Let us help you find the program that's right for your specific needs and goals.
+                        </p>
+                        <a href="#programs-detail" class="btn-nextlevel bg-white text-primary px-12 py-5 font-bold text-lg focus-nextlevel animate-bounce-gentle">
+                            View Detailed Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced About Section with Parallax -->
+    <section id="about" class="section-nextlevel bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">About Forward Horizon</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Building bridges to brighter futures through community, accountability, and unwavering support
+                </p>
+            </div>
+
+            <!-- Mission Statement with Enhanced Design -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="card-nextlevel glass-card rounded-3xl p-12 border border-gray-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-rainbow"></div>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-navy mb-8 text-center">Our Mission</h3>
+                    <p class="font-body text-xl text-text-secondary leading-relaxed text-center max-w-5xl mx-auto font-medium">
+                        Forward Horizon exists to provide safe, structured transitional housing and comprehensive support services
+                        for veterans, individuals in recovery, and returning citizens. We believe that everyone deserves a second
+                        chance and the opportunity to rebuild their lives with dignity, purpose, and community support.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Enhanced Facility Image -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div class="image-nextlevel h-96 bg-cover bg-center relative overflow-hidden" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/Calm Home.jpg');">
+                    <div class="h-full flex items-end justify-center p-12">
+                        <h3 class="font-display text-4xl font-bold text-white text-center text-shadow-intense">
+                            Safe, Welcoming Community
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Story and Values with Advanced Layout -->
+            <div class="mb-16">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Our Story -->
+                    <div class="card-nextlevel glass-card rounded-3xl p-10 border border-gray-200" data-aos="fade-right" data-aos-duration="1000">
+                        <h3 class="font-display text-3xl font-bold text-navy mb-8">Our Story</h3>
+                        <div class="space-y-6">
+                            <p class="font-body text-lg text-text-secondary leading-relaxed">
+                                Forward Horizon was founded on the belief that transition periods—whether from military service,
+                                addiction, or incarceration—are critical moments that require specialized support and understanding.
+                            </p>
+                            <p class="font-body text-lg text-text-secondary leading-relaxed">
+                                Our founders recognized that traditional approaches often failed to address the unique challenges
+                                faced by these populations. Through years of community work and personal experience, Forward Horizon
+                                emerged as a comprehensive solution that addresses not just housing, but the holistic needs of individuals
+                                in transition.
+                            </p>
+                            <p class="font-body text-lg text-text-secondary leading-relaxed">
+                                Today, we continue to evolve our programs based on the needs of our residents and the lessons
+                                learned from our community's collective journey toward healing and growth.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Our Values -->
+                    <div class="card-nextlevel glass-card rounded-3xl p-10 border border-gray-200" data-aos="fade-left" data-aos-duration="1000">
+                        <h3 class="font-display text-3xl font-bold text-navy mb-8">Our Values</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0 animate-float">
+                                    <span class="text-primary font-display font-black text-2xl">A</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-navy mb-3">Accountability</h4>
+                                    <p class="font-body text-text-light leading-relaxed">Personal responsibility and mutual support in our community</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-secondary bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0 animate-float-delayed">
+                                    <span class="text-secondary font-display font-black text-2xl">S</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-navy mb-3">Support</h4>
+                                    <p class="font-body text-text-light leading-relaxed">Comprehensive assistance for every stage of transition</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-purple-600 bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0 animate-float">
+                                    <span class="text-purple-600 font-display font-black text-2xl">R</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-navy mb-3">Respect</h4>
+                                    <p class="font-body text-text-light leading-relaxed">Dignity and understanding for every individual's journey</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-accent bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0 animate-float-delayed">
+                                    <span class="text-accent font-display font-black text-2xl">G</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-navy mb-3">Growth</h4>
+                                    <p class="font-body text-text-light leading-relaxed">Continuous development of skills, relationships, and purpose</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Testimonials Section -->
+            <div class="testimonial-carousel" data-aos="fade-up" data-aos-duration="1000">
+                <div class="glass-card rounded-3xl p-12 border border-gray-200 text-center">
+                    <h3 class="font-display text-3xl font-bold text-navy mb-12">What Our Residents Say</h3>
+                    <div class="testimonial-slides">
+                        <div class="testimonial-slide">
+                            <div class="max-w-4xl mx-auto">
+                                <div class="text-6xl text-primary mb-6 opacity-20">"</div>
+                                <p class="font-body text-xl text-text-secondary mb-8 leading-relaxed italic">
+                                    "Forward Horizon gave me more than just a place to stay - they gave me a family, a purpose, and the tools I needed to rebuild my life from the ground up. The staff believes in you even when you don't believe in yourself."
+                                </p>
+                                <div class="flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">JM</div>
+                                    <div>
+                                        <p class="font-display font-bold text-navy">James M.</p>
+                                        <p class="font-body text-text-light">Army Veteran</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-indicators mt-8">
+                        <div class="testimonial-dot active"></div>
+                        <div class="testimonial-dot"></div>
+                        <div class="testimonial-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Programs Section -->
+    <section id="programs-detail" class="section-nextlevel section-pattern">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">Programs & Services</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Comprehensive support services designed to address the unique needs of each population we serve
+                </p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Structured Sober Living - Enhanced -->
+                <div class="card-nextlevel glass-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-12 border border-secondary border-opacity-30" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-navy mb-8 text-center">Structured Sober Living</h3>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <p class="font-body text-lg text-text-secondary mb-8 leading-relaxed">
+                                Our sober living program provides a safe, substance-free environment with 24/7 support
+                                and structured daily routines designed to support long-term recovery.
+                            </p>
+                            <h4 class="font-display text-xl font-bold text-navy mb-6">Program Features</h4>
+                            <ul class="space-y-4 text-text-secondary">
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Daily accountability check-ins</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Mandatory recovery meeting participation</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Life skills workshops</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Peer support groups</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Career development assistance</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-xl font-bold text-navy mb-6">Program Requirements</h4>
+                            <ul class="space-y-4 text-text-light">
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Minimum 30 days of sobriety</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Commitment to house rules</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Active participation in recovery programs</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Employment or job search activities</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Clean background check</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar structure for other programs... (continuing with condensed version for space) -->
+                <!-- Veterans Program, Re-entry Program, Life Skills Program would follow similar enhanced structure -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Admissions Section -->
+    <section id="admissions" class="section-nextlevel bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">How It Works</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Our streamlined admissions process is designed to get you the support you need as quickly as possible
+                </p>
+            </div>
+
+            <!-- Step-by-Step Process with Enhanced Design -->
+            <div class="mb-16">
+                <h3 class="font-display text-3xl font-bold text-navy mb-12 text-center" data-aos="fade-up" data-aos-duration="1000">Step-by-Step Application Process</h3>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <div class="card-nextlevel w-24 h-24 bg-gradient-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl font-black shadow-strong">
+                            1
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-navy mb-4">Application</h4>
+                        <p class="font-body text-text-light text-lg leading-relaxed font-medium">Complete online application form with basic information and program interest</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="card-nextlevel w-24 h-24 bg-gradient-secondary text-white rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl font-black shadow-strong">
+                            2
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-navy mb-4">Interview</h4>
+                        <p class="font-body text-text-light text-lg leading-relaxed font-medium">Phone or in-person interview to discuss needs, goals, and program fit</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <div class="card-nextlevel w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl font-black shadow-strong">
+                            3
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-navy mb-4">Screening</h4>
+                        <p class="font-body text-text-light text-lg leading-relaxed font-medium">Background check, references, and documentation review process</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        <div class="card-nextlevel w-24 h-24 bg-gradient-sunset text-white rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl font-black shadow-strong">
+                            4
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-navy mb-4">Move-In</h4>
+                        <p class="font-body text-text-light text-lg leading-relaxed font-medium">Intake orientation, move-in coordination, and program enrollment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Application CTA -->
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="glass-dark rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-rainbow opacity-20 rounded-3xl"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-display text-3xl font-bold mb-6 text-white text-shadow-strong">Ready to Start Your Journey?</h3>
+                        <p class="font-body text-xl mb-8 leading-relaxed text-white text-shadow-soft">Take the first step toward rebuilding your life with our supportive community.</p>
+                        <a href="#contact" class="btn-nextlevel bg-white text-primary px-12 py-5 font-bold text-lg focus-nextlevel animate-pulse-glow">
+                            Complete Application Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Get Involved Section -->
+    <section id="get-involved" class="section-nextlevel section-pattern">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">Get Involved</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Join our mission to rebuild lives and strengthen communities through support, partnership, and giving
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10 mb-16">
+                <!-- Enhanced Donors Card -->
+                <div class="card-nextlevel card-glow glass-card rounded-3xl overflow-hidden border border-gray-200 relative" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="h-64 bg-gradient-secondary relative overflow-hidden">
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <i class="fas fa-hand-holding-heart text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight text-shadow-strong">Donors</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-text-secondary mb-6 text-lg leading-relaxed">
+                            Your financial support directly impacts lives by providing housing, services, and opportunities for our residents.
+                        </p>
+                        <ul class="font-body text-text-light mb-8 space-y-3">
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">→</span>Monthly housing sponsorships</li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">→</span>Program-specific donations</li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">→</span>One-time contributions</li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">→</span>Corporate partnerships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enhanced Volunteers Card -->
+                <div class="card-nextlevel card-glow glass-card rounded-3xl overflow-hidden border border-gray-200 relative" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="h-64 bg-gradient-primary relative overflow-hidden">
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float-delayed backdrop-blur-sm">
+                                <i class="fas fa-users text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight text-shadow-strong">Volunteers</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-text-secondary mb-6 text-lg leading-relaxed">
+                            Share your time and skills to directly support our residents through mentorship, education, and community activities.
+                        </p>
+                        <ul class="font-body text-text-light mb-8 space-y-3">
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">→</span>Mentorship programs</li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">→</span>Skills-based workshops</li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">→</span>Event planning assistance</li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">→</span>Administrative support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enhanced Community Partners Card -->
+                <div class="card-nextlevel card-glow glass-card rounded-3xl overflow-hidden border border-gray-200 relative" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="h-64 bg-gradient-to-br from-purple-600 to-purple-700 relative overflow-hidden">
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <i class="fas fa-handshake text-3xl"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight text-shadow-strong">Community Partners</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-text-secondary mb-6 text-lg leading-relaxed">
+                            Organizations and businesses that provide services, employment opportunities, and community connections.
+                        </p>
+                        <ul class="font-body text-text-light mb-8 space-y-3">
+                            <li class="flex items-start"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Employment partnerships</li>
+                            <li class="flex items-start"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Service provider network</li>
+                            <li class="flex items-start"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Resource sharing</li>
+                            <li class="flex items-start"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Community advocacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#contact" class="btn-nextlevel btn-secondary px-12 py-5 text-lg font-bold focus-nextlevel">
+                        Donate Now
+                    </a>
+                    <a href="#contact" class="btn-nextlevel btn-primary px-12 py-5 text-lg font-bold focus-nextlevel">
+                        Volunteer Sign-up
+                    </a>
+                    <a href="#contact" class="btn-nextlevel btn-outline border-purple-600 text-purple-600 px-12 py-5 text-lg font-bold focus-nextlevel">
+                        Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="section-nextlevel bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-gradient mb-8 leading-tight">Contact Us</h2>
+                <p class="font-body text-xl sm:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+                    Ready to take the next step? We're here to help guide you through the process and answer your questions.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Enhanced Contact Information -->
+                <div class="card-nextlevel glass-card rounded-3xl p-12 border border-gray-200" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="font-display text-3xl font-bold text-navy mb-8">Get In Touch</h3>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-primary bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 animate-float">
+                                <i class="fas fa-phone text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-navy mb-2">Phone</h4>
+                                <p class="font-body text-lg text-text-secondary mb-1 font-semibold">(310) 488-5280</p>
+                                <p class="font-body text-sm text-text-light font-medium">24/7 crisis support available</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-secondary bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 animate-float-delayed">
+                                <i class="fas fa-envelope text-2xl text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-navy mb-2">Email</h4>
+                                <p class="font-body text-lg text-text-secondary mb-1 font-semibold">admin@theforwardhorizon.com</p>
+                                <p class="font-body text-sm text-text-light font-medium">We respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-purple-600 bg-opacity-20 rounded-2xl flex items-center justify-center mr-6 animate-float">
+                                <i class="fas fa-map-marker-alt text-2xl text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-navy mb-2">Service Area</h4>
+                                <p class="font-body text-lg text-text-secondary mb-1 font-semibold">Los Angeles County, Orange County, Riverside County, & San Bernardino County</p>
+                                <p class="font-body text-sm text-text-light font-medium">Multiple housing locations</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t pt-8 border-gray-300">
+                            <h4 class="font-display text-xl font-bold text-navy mb-6">Office Hours</h4>
+                            <div class="space-y-3 text-text-secondary">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Monday - Friday:</span>
+                                    <span class="font-body text-lg font-bold">8:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Saturday:</span>
+                                    <span class="font-body text-lg font-bold">9:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Sunday:</span>
+                                    <span class="font-body text-lg font-bold">Emergency only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next-Level Contact Form -->
+                <div class="card-nextlevel glass-card rounded-3xl p-12 border border-gray-200" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="font-display text-3xl font-bold text-navy mb-8">Send Us a Message</h3>
+
+                    <form id="contact-form" action="/api/submit-form" method="POST" class="space-y-6" novalidate>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" required class="form-input" placeholder=" ">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <div class="form-error" id="firstName-error">Please enter your first name</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" required class="form-input" placeholder=" ">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <div class="form-error" id="lastName-error">Please enter your last name</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <div class="form-error" id="email-error">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder=" ">
+                            <label for="phone" class="form-label">Phone Number</label>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="inquiry-type" name="inquiry_type" required class="form-input">
+                                <option value="">Select an option</option>
+                                <option value="veteran-housing">Veteran Transitional Housing</option>
+                                <option value="sober-living">Sober Living After Detox</option>
+                                <option value="reentry-housing">Re-entry Housing</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="donate">Making a Donation</option>
+                                <option value="partner">Community Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="inquiry-type" class="form-label">I'm interested in: *</label>
+                            <div class="form-error" id="inquiry-type-error">Please select your inquiry type</div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                            <label for="message" class="form-label">Message *</label>
+                            <div class="form-error" id="message-error">Please enter your message</div>
+                        </div>
+
+                        <button type="submit" class="btn-nextlevel btn-primary w-full py-5 text-lg font-bold focus-nextlevel" id="submit-button">
+                            <span class="button-text">Send Message</span>
+                            <div class="loading-dots hidden">
+                                <div class="loading-dot"></div>
+                                <div class="loading-dot"></div>
+                                <div class="loading-dot"></div>
+                            </div>
+                        </button>
+
+                        <p class="font-body text-sm text-text-light text-center font-medium">We'll respond within 24 hours during business days</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-br from-navy-dark to-navy text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-rainbow opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Organization Info -->
+                <div class="md:col-span-2">
+                    <h3 class="font-display text-3xl font-bold mb-6 text-gradient-rainbow">Forward Horizon</h3>
+                    <p class="font-body text-gray-200 mb-8 max-w-md text-lg leading-relaxed font-medium">
+                        Transitional Housing for Veterans, Recovering Individuals, and Returning Citizens.
+                        Rebuilding lives together through accountability, community, and fresh starts.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-nextlevel card-nextlevel">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-nextlevel card-nextlevel">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-nextlevel card-nextlevel">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">Home</a></li>
+                        <li><a href="#programs" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">Programs</a></li>
+                        <li><a href="#about" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">About Us</a></li>
+                        <li><a href="#admissions" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">Apply</a></li>
+                        <li><a href="#get-involved" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">Get Involved</a></li>
+                        <li><a href="#contact" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-nextlevel font-medium">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-6">Contact Info</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p class="font-body text-lg font-medium flex items-center"><i class="fas fa-phone mr-3"></i>(310) 488-5280</p>
+                        <p class="font-body text-lg font-medium flex items-center"><i class="fas fa-envelope mr-3"></i>admin@theforwardhorizon.com</p>
+                        <p class="font-body text-lg font-medium flex items-center"><i class="fas fa-map-marker-alt mr-3"></i>Los Angeles County, CA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 font-body mb-4 md:mb-0 font-medium">
+                        &copy; 2024 Forward Horizon. All rights reserved.
+                    </div>
+                    <div class="flex space-x-8 text-sm">
+                        <a href="#privacy" class="text-gray-400 hover:text-white transition-colors duration-200 font-body focus-nextlevel font-medium">Privacy Policy</a>
+                        <a href="#terms" class="text-gray-400 hover:text-white transition-colors duration-200 font-body focus-nextlevel font-medium">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Next-Level JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Next-Level Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            
+            // Add animation
+            if (!menu.classList.contains('hidden')) {
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    menu.style.transition = 'all 0.3s ease';
+                    menu.style.transform = 'translateY(0)';
+                    menu.style.opacity = '1';
+                });
+            }
+        });
+
+        // Enhanced Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navigation Scroll Effect
+        const nav = document.getElementById('main-nav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            // Hide/show nav on scroll
+            if (scrollY > lastScrollY && scrollY > 500) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = scrollY;
+        });
+
+        // Progress Indicator
+        const progressIndicator = document.getElementById('progress-indicator');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / documentHeight) * 100;
+            progressIndicator.style.width = scrollPercent + '%';
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.classList.contains('parallax-slow') ? 0.2 : 
+                            element.classList.contains('parallax-medium') ? 0.5 : 0.8;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Particle Background
+        function createParticles() {
+            const container = document.querySelector('.particles-container');
+            if (!container) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Removed statistics counter animation - now using static icons for better UX
+
+        // Scroll Indicators
+        function createScrollIndicators() {
+            const indicator = document.getElementById('scroll-indicator');
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach((section, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'scroll-dot';
+                dot.addEventListener('click', () => {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                });
+                indicator.appendChild(dot);
+            });
+            
+            // Update active dot on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = Array.from(sections).indexOf(entry.target);
+                        document.querySelectorAll('.scroll-dot').forEach((dot, i) => {
+                            dot.classList.toggle('active', i === index);
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // Custom Cursor (Desktop)
+        function initCustomCursor() {
+            if (window.innerWidth < 1024) return;
+            
+            const cursor = document.getElementById('custom-cursor');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            document.addEventListener('mousedown', () => {
+                cursor.classList.add('clicking');
+            });
+            
+            document.addEventListener('mouseup', () => {
+                cursor.classList.remove('clicking');
+            });
+            
+            // Add hover effects
+            document.querySelectorAll('a, button, .card-nextlevel').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hovering');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hovering');
+                });
+            });
+        }
+
+        // Enhanced Form Validation
+        function initFormValidation() {
+            const form = document.getElementById('contact-form');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearError);
+            });
+            
+            form.addEventListener('submit', handleFormSubmit);
+        }
+        
+        function validateField(e) {
+            const field = e.target;
+            const errorElement = document.getElementById(field.id + '-error');
+            
+            if (!field.validity.valid) {
+                field.classList.add('error-state');
+                if (errorElement) {
+                    errorElement.classList.add('show');
+                }
+                return false;
+            }
+            
+            field.classList.remove('error-state');
+            field.classList.add('success-state');
+            if (errorElement) {
+                errorElement.classList.remove('show');
+            }
+            return true;
+        }
+        
+        function clearError(e) {
+            const field = e.target;
+            if (field.classList.contains('error-state') && field.validity.valid) {
+                field.classList.remove('error-state');
+                const errorElement = document.getElementById(field.id + '-error');
+                if (errorElement) {
+                    errorElement.classList.remove('show');
+                }
+            }
+        }
+        
+        function handleFormSubmit(e) {
+            const form = e.target;
+            const submitButton = form.querySelector('#submit-button');
+            const buttonText = submitButton.querySelector('.button-text');
+            const loadingDots = submitButton.querySelector('.loading-dots');
+            
+            // Validate all fields
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            inputs.forEach(input => {
+                if (!validateField({ target: input })) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                return;
+            }
+            
+            // Show loading state
+            buttonText.classList.add('hidden');
+            loadingDots.classList.remove('hidden');
+            submitButton.disabled = true;
+            
+            // Form will submit naturally to API
+        }
+
+        // Testimonial Carousel
+        function initTestimonialCarousel() {
+            const testimonials = [
+                {
+                    quote: "Forward Horizon gave me more than just a place to stay - they gave me a family, a purpose, and the tools I needed to rebuild my life from the ground up. The staff believes in you even when you don't believe in yourself.",
+                    name: "James M.",
+                    title: "Army Veteran",
+                    initials: "JM"
+                },
+                {
+                    quote: "The structured environment and peer support at Forward Horizon were exactly what I needed during my recovery. Six months later, I have my own apartment, a steady job, and most importantly, my sobriety.",
+                    name: "Maria S.",
+                    title: "Recovery Graduate",
+                    initials: "MS"
+                },
+                {
+                    quote: "After my release, I felt lost and alone. Forward Horizon didn't just give me housing - they gave me hope, job training, and helped me reconnect with my family. Today, I'm a program mentor helping others.",
+                    name: "David L.",
+                    title: "Returning Citizen",
+                    initials: "DL"
+                }
+            ];
+            
+            let currentSlide = 0;
+            const slideContainer = document.querySelector('.testimonial-slide');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            
+            function updateSlide() {
+                const testimonial = testimonials[currentSlide];
+                if (slideContainer && testimonial) {
+                    slideContainer.innerHTML = `
+                        <div class="max-w-4xl mx-auto">
+                            <div class="text-6xl text-primary mb-6 opacity-20">"</div>
+                            <p class="font-body text-xl text-text-secondary mb-8 leading-relaxed italic">
+                                "${testimonial.quote}"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">${testimonial.initials}</div>
+                                <div>
+                                    <p class="font-display font-bold text-navy">${testimonial.name}</p>
+                                    <p class="font-body text-text-light">${testimonial.title}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonials.length;
+                updateSlide();
+            }, 6000);
+            
+            // Manual dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlide();
+                });
+            });
+        }
+
+        // Back to Top Button
+        function initBackToTop() {
+            const backToTopButton = document.createElement('button');
+            backToTopButton.innerHTML = `
+                <i class="fas fa-chevron-up text-xl"></i>
+            `;
+            backToTopButton.className = 'fixed bottom-8 right-8 btn-nextlevel btn-primary p-4 rounded-full shadow-brutal opacity-0 invisible transition-all duration-300 z-50 focus-nextlevel';
+            backToTopButton.setAttribute('aria-label', 'Back to top');
+            document.body.appendChild(backToTopButton);
+
+            // Show/hide based on scroll
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 500) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            // Scroll to top functionality
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createScrollIndicators();
+            initCustomCursor();
+            initFormValidation();
+            initTestimonialCarousel();
+            initBackToTop();
+            
+            console.log('🚀 Forward Horizon Next-Level Website Initialized!');
+        });
+
+        // Performance optimization
+        const observerOptions = {
+            rootMargin: '50px',
+            threshold: 0.1
+        };
+
+        // Intersection Observer for animations
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.card-nextlevel:not([data-aos])').forEach(el => {
+            animationObserver.observe(el);
+        });
+
+        // Preload critical images
+        const preloadImages = [
+            'images/Calm Home.jpg'
+        ];
+        
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+</body>
+</html>

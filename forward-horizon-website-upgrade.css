@@ -1,0 +1,623 @@
+/**
+ * Forward Horizon Website Enhancement CSS
+ * Professional upgrade package for theforwardhorizon.com
+ * 
+ * INSTRUCTIONS:
+ * 1. Add this CSS to your website's main stylesheet
+ * 2. Include font imports in your HTML <head>
+ * 3. Test across all pages and devices
+ */
+
+/* ===============================================
+   PROFESSIONAL FONT SYSTEM
+   =============================================== */
+
+/* Add this to your HTML <head> section:
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+*/
+
+/* Professional Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+body, p, span, div, a, li {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    line-height: 1.7;
+    color: #334155;
+}
+
+/* Enhanced Text Sizes */
+h1 { 
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    font-weight: 700; 
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+h2 { 
+    font-size: clamp(2rem, 4vw, 3rem); 
+    font-weight: 600; 
+    margin-bottom: 1.25rem;
+}
+
+h3 { 
+    font-size: clamp(1.5rem, 3vw, 2rem); 
+    font-weight: 600; 
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 65ch; /* Optimal reading width */
+}
+
+/* ===============================================
+   ENHANCED COLOR SYSTEM
+   =============================================== */
+
+:root {
+    /* Trust and Professional Colors */
+    --primary: #2563eb;        /* Trust blue */
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    
+    /* Hope and Growth Colors */
+    --secondary: #10b981;      /* Hope green */
+    --secondary-light: #34d399;
+    --secondary-dark: #059669;
+    
+    /* Accent Colors */
+    --accent: #f59e0b;         /* Warm amber */
+    --accent-light: #fbbf24;
+    
+    /* Text Colors */
+    --text-primary: #0f172a;   /* Rich black */
+    --text-secondary: #475569; /* Medium gray */
+    --text-light: #64748b;     /* Light gray */
+    --text-muted: #94a3b8;     /* Very light gray */
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;     /* Clean white */
+    --bg-secondary: #f8fafc;   /* Light gray */
+    --bg-tertiary: #f1f5f9;    /* Slightly darker gray */
+    
+    /* Border and Surface */
+    --border: #e2e8f0;         /* Soft border */
+    --border-light: #f1f5f9;
+    --surface: rgba(255, 255, 255, 0.8);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================================
+   ENHANCED BUTTONS AND INTERACTIONS
+   =============================================== */
+
+/* Primary Buttons */
+.btn, button, input[type="submit"], .button {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.btn-primary, .button-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover, .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+}
+
+.btn-secondary, .button-secondary {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover, .button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 100%);
+}
+
+/* Outline Buttons */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===============================================
+   ENHANCED LINKS
+   =============================================== */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Animated underlines for content links */
+a:not(.btn):not(.button)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.3s ease;
+}
+
+a:not(.btn):not(.button):hover::after {
+    width: 100%;
+}
+
+/* ===============================================
+   ENHANCED CARDS AND SECTIONS
+   =============================================== */
+
+.card, .section-card, [class*="card"] {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.card::before, .section-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before, .section-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover, .section-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* ===============================================
+   IMPROVED NAVIGATION
+   =============================================== */
+
+nav, .navigation, .nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-link, nav a {
+    position: relative;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.nav-link:hover, nav a:hover {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1), 
+        rgba(16, 185, 129, 0.05));
+    color: var(--primary);
+}
+
+.nav-link.active, nav a.active {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.15), 
+        rgba(16, 185, 129, 0.08));
+    color: var(--primary);
+}
+
+.nav-link.active::after, nav a.active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* ===============================================
+   ENHANCED HERO SECTIONS
+   =============================================== */
+
+.hero, .hero-section, [class*="hero"] {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.08) 0%, 
+        rgba(16, 185, 129, 0.04) 50%,
+        rgba(245, 158, 11, 0.02) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.hero::before, .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, 
+        rgba(37, 99, 235, 0.1) 0%, 
+        transparent 60%);
+    pointer-events: none;
+}
+
+.hero h1, .hero-section h1 {
+    background: linear-gradient(135deg, 
+        var(--text-primary) 0%, 
+        var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===============================================
+   ENHANCED FORMS
+   =============================================== */
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="password"],
+textarea, 
+select {
+    font-family: 'Open Sans', sans-serif !important;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="password"]:focus,
+textarea:focus, 
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Form Labels */
+label {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* ===============================================
+   ENHANCED SPACING AND LAYOUT
+   =============================================== */
+
+/* Better section spacing */
+section, .section {
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Container improvements */
+.container, .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Grid improvements */
+.grid, .row {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ===============================================
+   ENHANCED LIST STYLING
+   =============================================== */
+
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+ul li, ol li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Enhanced bullet points */
+ul li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+ul li::before {
+    content: "→";
+    position: absolute;
+    left: -0.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ===============================================
+   ENHANCED TABLES
+   =============================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1), 
+        rgba(16, 185, 129, 0.05));
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+tr:hover {
+    background: var(--bg-secondary);
+}
+
+/* ===============================================
+   MOBILE RESPONSIVENESS ENHANCEMENTS
+   =============================================== */
+
+@media (max-width: 768px) {
+    .container, .wrapper {
+        padding: 0 1rem;
+    }
+    
+    section, .section {
+        padding: 2rem 0;
+    }
+    
+    .grid, .row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card, .section-card {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* ===============================================
+   ACCESSIBILITY ENHANCEMENTS
+   =============================================== */
+
+/* Focus styles for keyboard navigation */
+*:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --border: #666666;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===============================================
+   SPECIAL FORWARD HORIZON ENHANCEMENTS
+   =============================================== */
+
+/* Enhanced CTA sections */
+.cta, .call-to-action {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.05) 0%, 
+        rgba(16, 185, 129, 0.03) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/* Program highlight boxes */
+.program-highlight, .service-box {
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.program-highlight:hover, .service-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Contact information styling */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.contact-info:hover {
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateX(4px);
+}
+
+/* Application status indicators */
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-approved {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary-dark);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.status-review {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-dark);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* ===============================================
+   PERFORMANCE OPTIMIZATIONS
+   =============================================== */
+
+/* Hardware acceleration for animations */
+.card, .btn, .nav-link {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===============================================
+   USAGE NOTES
+   ===============================================
+   
+   To implement these enhancements:
+   
+   1. Add the Google Fonts link to your HTML <head>
+   2. Include this CSS file in your website
+   3. Apply classes like .btn-primary, .card, etc. to existing elements
+   4. Test across all browsers and devices
+   5. Use browser dev tools to fine-tune spacing
+   
+   Key improvements:
+   - Professional Inter/Open Sans typography
+   - Enhanced color system with CSS variables
+   - Smooth animations and hover effects  
+   - Better accessibility and mobile responsiveness
+   - Glass morphism and modern visual effects
+   
+   =============================================== */

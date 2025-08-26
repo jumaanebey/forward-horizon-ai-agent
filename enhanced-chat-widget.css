@@ -1,0 +1,250 @@
+/* Enhanced Chat Widget Styles - Professional Design System */
+
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap');
+
+/* Custom CSS Variables for Design System */
+:root {
+    /* Colors */
+    --fh-primary: #2563eb;
+    --fh-primary-hover: #1d4ed8;
+    --fh-secondary: #10b981;
+    --fh-accent: #f59e0b;
+    --fh-background: #ffffff;
+    --fh-surface: #f8fafc;
+    --fh-text-primary: #0f172a;
+    --fh-text-secondary: #64748b;
+    --fh-border: #e2e8f0;
+    --fh-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --fh-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --fh-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --fh-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    
+    /* Typography */
+    --fh-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --fh-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animations */
+    --fh-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fh-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fh-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fh-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Glass Morphism Effect for Widget */
+.fh-chat-widget {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 
+        0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 10px 10px -5px rgb(0 0 0 / 0.04),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced Chat Button with Pulse Animation */
+.fh-chat-button {
+    font-family: var(--fh-font-heading);
+    background: linear-gradient(135deg, var(--fh-primary) 0%, var(--fh-primary-hover) 100%);
+    box-shadow: 
+        var(--fh-shadow-lg),
+        0 0 0 0 rgba(37, 99, 235, 0.7);
+    animation: pulse-shadow 2s infinite;
+    transition: all var(--fh-transition-base);
+}
+
+.fh-chat-button:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 
+        var(--fh-shadow-xl),
+        0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.fh-chat-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 
+            var(--fh-shadow-lg),
+            0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        box-shadow: 
+            var(--fh-shadow-lg),
+            0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 
+            var(--fh-shadow-lg),
+            0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+/* Chat Header with Gradient */
+.fh-chat-header {
+    background: linear-gradient(135deg, var(--fh-primary) 0%, var(--fh-primary-hover) 100%);
+    font-family: var(--fh-font-heading);
+}
+
+.fh-chat-header h3 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+/* Messages with Better Typography and Animations */
+.fh-chat-messages {
+    font-family: var(--fh-font-body);
+    background: var(--fh-surface);
+}
+
+.fh-message {
+    animation: messageSlideIn var(--fh-transition-base) var(--fh-ease-bounce);
+    transition: all var(--fh-transition-fast);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.fh-message:hover {
+    transform: translateX(2px);
+}
+
+.fh-message.ai {
+    background: white;
+    box-shadow: 
+        var(--fh-shadow-sm),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--fh-border);
+}
+
+.fh-message.user {
+    background: linear-gradient(135deg, var(--fh-primary) 0%, var(--fh-primary-hover) 100%);
+    box-shadow: var(--fh-shadow-md);
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Enhanced Typing Indicator */
+.fh-typing-indicator {
+    background: white;
+    border: 1px solid var(--fh-border);
+    box-shadow: var(--fh-shadow-sm);
+}
+
+.fh-typing-dots span {
+    background: linear-gradient(135deg, var(--fh-primary) 0%, var(--fh-secondary) 100%);
+    animation: typing 1.4s infinite;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { 
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    30% { 
+        transform: translateY(-12px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Input Field with Focus Effects */
+.fh-chat-input {
+    font-family: var(--fh-font-body);
+    border: 2px solid var(--fh-border);
+    transition: all var(--fh-transition-fast);
+    background: white;
+}
+
+.fh-chat-input:focus {
+    border-color: var(--fh-primary);
+    box-shadow: 
+        0 0 0 3px rgba(37, 99, 235, 0.1),
+        var(--fh-shadow-sm);
+    background: var(--fh-background);
+}
+
+/* Send Button with Hover Effect */
+.fh-send-button {
+    background: linear-gradient(135deg, var(--fh-primary) 0%, var(--fh-primary-hover) 100%);
+    transition: all var(--fh-transition-fast);
+    box-shadow: var(--fh-shadow-md);
+}
+
+.fh-send-button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: var(--fh-shadow-lg);
+}
+
+.fh-send-button:active {
+    transform: scale(0.95);
+}
+
+.fh-send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Smooth Widget Open Animation */
+.fh-chat-widget.open {
+    animation: widgetSlideUp var(--fh-transition-slow) var(--fh-ease-bounce);
+}
+
+@keyframes widgetSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .fh-chat-widget {
+        border-radius: 0;
+        animation: mobileSlideIn var(--fh-transition-slow) ease-out;
+    }
+    
+    @keyframes mobileSlideIn {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fh-background: #0f172a;
+        --fh-surface: #1e293b;
+        --fh-text-primary: #f1f5f9;
+        --fh-text-secondary: #94a3b8;
+        --fh-border: #334155;
+    }
+    
+    .fh-chat-widget {
+        background: rgba(15, 23, 42, 0.95) !important;
+        border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    
+    .fh-message.ai {
+        background: var(--fh-surface);
+        color: var(--fh-text-primary);
+    }
+}

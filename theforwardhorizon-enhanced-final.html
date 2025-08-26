@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward Horizon - Transitional Housing for Veterans, Recovering Individuals, and Returning Citizens</title>
+    <meta name="description" content="Forward Horizon provides structured transitional housing for veterans, individuals in recovery, and returning citizens. Rebuilding lives through accountability, community, and fresh starts.">
+    
+    <!-- Enhanced Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Professional Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/heroicons@2.0.16/24/outline/style.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS with Custom Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        'primary-light': '#3b82f6',
+                        'primary-dark': '#1e3a8a',
+                        'primary-50': '#eff6ff',
+                        'primary-100': '#dbeafe',
+                        'primary-900': '#1e3a8a',
+                        secondary: '#059669',
+                        'secondary-light': '#10b981',
+                        'secondary-dark': '#047857',
+                        'secondary-50': '#ecfdf5',
+                        'secondary-100': '#d1fae5',
+                        'secondary-900': '#064e3b',
+                        accent: '#dc2626',
+                        'accent-light': '#ef4444',
+                        'accent-dark': '#b91c1c',
+                        'accent-50': '#fef2f2',
+                        'accent-100': '#fee2e2',
+                        'accent-900': '#7f1d1d',
+                        gold: '#f59e0b',
+                        'gold-light': '#fbbf24',
+                        'gold-dark': '#d97706',
+                        'text-primary': '#0f172a',
+                        'text-secondary': '#374151',
+                        'text-light': '#4b5563',
+                        'text-muted': '#6b7280',
+                        'navy': '#1e293b',
+                        'navy-light': '#334155',
+                        'navy-dark': '#0f172a'
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                        'body': ['Open Sans', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'fade-in-left': 'fadeInLeft 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.5s ease-out',
+                        'slide-in-left': 'slideInLeft 0.5s ease-out',
+                        'pulse-ring': 'pulseRing 2s infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'float-delayed': 'floatDelayed 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'gradient-x': 'gradientX 3s ease-in-out infinite',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'bounce-slow': 'bounceSlow 2s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        pulseRing: {
+                            '0%': { boxShadow: '0 0 0 0 rgba(30, 64, 175, 0.7)' },
+                            '70%': { boxShadow: '0 0 0 10px rgba(30, 64, 175, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(30, 64, 175, 0)' }
+                        },
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 20px rgba(30, 64, 175, 0.4)' },
+                            '100%': { boxShadow: '0 0 40px rgba(30, 64, 175, 0.8)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        floatDelayed: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        gradientX: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        bounceSlow: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' }
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Ultimate Professional Agency-Level Styles -->
+    <style>
+        /* Root Variables for Consistent Theming */
+        :root {
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #2563eb 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%);
+            --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+            --pattern-dots: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+        }
+
+        /* Enhanced Glass Morphism Effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Ultimate Button Enhancements */
+        .btn-enhanced {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 600;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-enhanced:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .btn-enhanced:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+        
+        .btn-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-enhanced:hover::before {
+            left: 100%;
+        }
+
+        .btn-enhanced::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-enhanced:hover::after {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid currentColor;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: currentColor;
+            color: white;
+        }
+        
+        /* Ultimate Card Enhancements */
+        .card-enhanced {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateZ(0);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-enhanced:hover {
+            transform: translateY(-12px) rotateX(5deg) rotateY(2deg);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+        }
+        
+        .card-enhanced:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .card-enhanced:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* Professional Card Variants */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .card-3d:hover {
+            transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
+        }
+
+        .card-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-glow {
+            position: relative;
+        }
+
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: var(--gradient-primary);
+            border-radius: inherit;
+            opacity: 0;
+            filter: blur(20px);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .card-glow:hover::before {
+            opacity: 0.7;
+        }
+        
+        /* Enhanced Typography */
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .text-gradient-secondary {
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .text-gradient-gold {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-shadow-md {
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-shadow-lg {
+            text-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Professional Hero Enhancements */
+        .hero-enhanced {
+            position: relative;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+        }
+        
+        .hero-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(30, 64, 175, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(5, 150, 105, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        .hero-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--pattern-dots);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .hero-overlay-pattern {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.02) 50%, transparent 60%);
+            background-size: 50px 50px;
+            animation: shimmer 4s linear infinite;
+        }
+        
+        /* Professional Section Enhancements */
+        .section-enhanced {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-pattern {
+            position: relative;
+        }
+
+        .section-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--pattern-dots);
+            background-size: 30px 30px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 2.5rem 0;
+        }
+        
+        /* Better Typography Spacing */
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.2;
+            margin-bottom: 0.75em;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+        
+        /* Improved Content Spacing */
+        .content-spacing > * + * {
+            margin-top: 1.5rem;
+        }
+        
+        .content-spacing h2 + p,
+        .content-spacing h3 + p,
+        .content-spacing h4 + p {
+            margin-top: 0.75rem;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .section-enhanced {
+                padding: 2.5rem 0;
+            }
+            
+            .card-enhanced:hover {
+                transform: translateY(-6px);
+            }
+            
+            /* Better mobile spacing */
+            h1 { font-size: clamp(2rem, 5vw, 3rem) !important; }
+            h2 { font-size: clamp(1.75rem, 4vw, 2.5rem) !important; }
+            h3 { font-size: clamp(1.5rem, 3.5vw, 2rem) !important; }
+            
+            .grid {
+                gap: 1.5rem !important;
+            }
+        }
+        
+        /* Enhanced Accessibility */
+        .focus-enhanced:focus {
+            outline: 3px solid #3b82f6;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Smooth Scrolling and Performance */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Enhanced Image Effects */
+        .image-enhanced {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-enhanced:hover {
+            transform: scale(1.05);
+        }
+
+        .image-enhanced::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .image-enhanced:hover::after {
+            transform: translateX(100%);
+        }
+
+        .image-overlay {
+            position: relative;
+        }
+
+        .image-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(5, 150, 105, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-overlay:hover::before {
+            opacity: 1;
+        }
+        
+        /* Professional Form Enhancements */
+        .form-input {
+            border: 2px solid #e5e7eb;
+            background: #ffffff;
+            color: #1f2937;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-input:hover {
+            border-color: #d1d5db;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .form-label {
+            color: #374151;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            transition: color 0.3s ease;
+        }
+
+        .form-input:focus + .form-icon {
+            color: #3b82f6;
+        }
+        
+        /* Professional Background Enhancements */
+        .bg-readable-light {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .bg-readable-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+            position: relative;
+        }
+
+        .bg-pattern-dots {
+            background-image: var(--pattern-dots);
+            background-size: 20px 20px;
+        }
+
+        .bg-mesh {
+            background: 
+                linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, transparent 50%),
+                linear-gradient(-135deg, rgba(5, 150, 105, 0.02) 0%, transparent 50%);
+        }
+        
+        /* Enhanced List Items */
+        .list-item-enhanced {
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+        }
+
+        .list-item-enhanced:hover {
+            color: #1e40af;
+            border-left-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
+            transform: translateX(4px);
+        }
+        
+        /* Better Text Contrast */
+        .text-readable-secondary {
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .text-readable-light {
+            color: #4b5563;
+            font-weight: 500;
+        }
+        
+        /* Ultimate CTA Enhancements */
+        .cta-enhanced {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-enhanced::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Professional Icon Enhancements */
+        .icon-enhanced {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .icon-enhanced:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .icon-pulse {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Professional Dividers */
+        .divider-gradient {
+            height: 2px;
+            background: var(--gradient-primary);
+            margin: 2rem 0;
+            border-radius: 1px;
+        }
+
+        .divider-dots {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .divider-dots::before {
+            content: '• • •';
+            color: #d1d5db;
+            font-size: 1.5rem;
+            letter-spacing: 1rem;
+        }
+
+        /* Loading and Animation States */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: loading 2s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Utility Classes for Ultimate Enhancement */
+        .transform-gpu {
+            transform: translateZ(0);
+        }
+
+        .will-change-transform {
+            will-change: transform;
+        }
+
+        .perspective {
+            perspective: 1000px;
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            .glass-card, .glass-nav, .glass-dark {
+                background: white !important;
+                backdrop-filter: none !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            
+            .btn-enhanced {
+                box-shadow: none !important;
+            }
+            
+            .hero-enhanced::before,
+            .hero-enhanced::after,
+            .section-pattern::before {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-text-secondary">
+    <!-- Ultimate Professional Navigation -->
+    <nav class="glass-nav shadow-xl sticky top-0 w-full z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <a href="#" class="text-2xl font-display font-bold text-gradient hover:text-primary-dark transition-all duration-300 transform hover:scale-105">
+                            Forward Horizon
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center space-x-2">
+                    <a href="#home" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-home group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#programs" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-users group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Programs</span>
+                    </a>
+                    <a href="#about" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-info-circle group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>About Us</span>
+                    </a>
+                    <a href="#admissions" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-file-alt group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Admissions</span>
+                    </a>
+                    <a href="#get-involved" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-hands-helping group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Get Involved</span>
+                    </a>
+                    <a href="#faq" class="nav-link font-semibold text-text-secondary hover:text-primary transition-all duration-300 px-4 py-3 rounded-xl hover:bg-primary hover:bg-opacity-10 focus-enhanced flex items-center space-x-2 group">
+                        <i class="fas fa-question-circle group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <div class="divider-gradient w-px h-8 mx-2"></div>
+                    <a href="#contact" class="btn-enhanced btn-primary px-6 py-3 rounded-xl font-display font-bold text-white shadow-lg flex items-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="btn-enhanced text-text-secondary p-3 min-h-[48px] min-w-[48px] flex items-center justify-center hover:bg-primary hover:bg-opacity-10 rounded-xl focus-enhanced transition-all duration-300 group">
+                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Ultimate Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t shadow-2xl">
+            <div class="px-4 pt-6 pb-6 space-y-3">
+                <a href="#home" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-home text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#programs" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-users text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>Programs</span>
+                </a>
+                <a href="#about" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-info-circle text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="#admissions" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-file-alt text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>Admissions</span>
+                </a>
+                <a href="#get-involved" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-hands-helping text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>Get Involved</span>
+                </a>
+                <a href="#faq" class="block px-6 py-4 font-semibold text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-10 rounded-xl min-h-[56px] flex items-center space-x-3 transition-all duration-300 focus-enhanced group">
+                    <i class="fas fa-question-circle text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                    <span>FAQ</span>
+                </a>
+                <div class="divider-gradient my-4"></div>
+                <a href="#contact" class="block btn-enhanced btn-primary px-6 py-4 rounded-xl font-display font-bold text-white text-center shadow-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ultimate Professional Hero Section -->
+    <header id="home" class="relative bg-cover bg-center text-white hero-enhanced section-enhanced min-h-screen flex items-center" style="background-image: url('images/American Flag.jpg');">
+        <!-- Professional Overlay System -->
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-primary-dark to-secondary-dark opacity-75"></div>
+        <div class="hero-overlay-pattern"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full blur-xl animate-float"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-secondary bg-opacity-10 rounded-full blur-2xl animate-float-delayed"></div>
+        <div class="absolute bottom-32 left-1/4 w-16 h-16 bg-gold bg-opacity-10 rounded-full blur-lg animate-pulse-glow"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 py-20 z-10">
+            <div class="text-center">
+
+                <!-- Main Heading -->
+                <h1 class="font-display text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white text-shadow-lg animate-fade-in-up">
+                    <span class="block text-gradient-gold">Forward</span>
+                    <span class="block">Horizon</span>
+                </h1>
+                
+                <!-- Subheading -->
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-8 text-blue-50 leading-relaxed text-shadow-md animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Transitional Housing for Veterans,<br class="hidden sm:block">
+                    <span class="text-green-100">Recovering Individuals</span>, and 
+                    <span class="text-yellow-100">Returning Citizens</span>
+                </h2>
+                
+                <!-- Description -->
+                <p class="font-body text-xl sm:text-2xl lg:text-3xl font-medium mb-12 text-gray-100 max-w-5xl mx-auto leading-relaxed text-shadow-md animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Where Healing Begins and Hope Flourishes — Through 
+                    <span class="text-gradient-gold font-bold">Community Belonging</span>, 
+                    <span class="text-gradient-secondary font-bold">Mutual Support</span>, 
+                    and a <span class="text-gradient font-bold">Path to Independence</span>
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <a href="#admissions" class="btn-enhanced btn-primary px-10 py-4 rounded-2xl font-display font-bold text-xl shadow-2xl min-h-[60px] flex items-center justify-center space-x-3 group animate-pulse-glow">
+                        <i class="fas fa-key group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Reserve Your Housing Spot</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </a>
+                    <a href="#contact" class="btn-enhanced btn-outline border-3 border-white text-white bg-white bg-opacity-10 backdrop-blur-sm px-10 py-4 rounded-2xl font-display font-bold text-xl hover:bg-white hover:text-primary-dark min-h-[60px] flex items-center justify-center space-x-3 group">
+                        <i class="fas fa-info-circle group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </a>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="glass-dark p-6 rounded-2xl text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl font-bold text-gold mb-2">10+</div>
+                        <div class="text-gray-200 font-medium">Years of Service</div>
+                    </div>
+                    <div class="glass-dark p-6 rounded-2xl text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl font-bold text-secondary mb-2">Growing</div>
+                        <div class="text-gray-200 font-medium">Community</div>
+                    </div>
+                    <div class="glass-dark p-6 rounded-2xl text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl font-bold text-primary-light mb-2">24/7</div>
+                        <div class="text-gray-200 font-medium">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#programs" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors duration-300">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Enhanced Featured Programs Section -->
+    <section id="programs" class="section-enhanced bg-readable-gradient">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">Featured Programs</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Comprehensive transitional housing programs designed to meet the unique needs of our diverse community members
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Enhanced Veteran Transitional Housing -->
+                <div class="card-enhanced glass-card rounded-2xl shadow-lg overflow-hidden border border-gray-200 relative">
+                    <div class="h-56 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L13.09 8.26L19 6L16.74 11.74L23 12L16.74 12.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L7.26 12.26L1 12L7.26 11.74L5 6L10.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Veteran Transitional Housing</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Specialized support for veterans transitioning to civilian life. We understand the unique challenges of military service and provide tailored resources for successful reintegration.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>VA benefits assistance</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>PTSD and mental health support</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Career transition services</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Peer veteran mentorship</li>
+                        </ul>
+                        <a href="#admissions" class="btn-enhanced inline-flex items-center font-display font-bold text-primary hover:text-primary-dark transition-colors duration-200 focus-enhanced">
+                            Learn More 
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enhanced Sober Living -->
+                <div class="card-enhanced glass-card rounded-2xl shadow-lg overflow-hidden border border-gray-200 relative">
+                    <div class="h-56 bg-gradient-to-br from-secondary to-secondary-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9L12 8L9 9V7.5L3 7V9L7 10.5V15C7 16.1 7.9 17 9 17H15C16.1 17 17 16.1 17 15V10.5L21 9ZM12 10.5L15 11.5V15H9V11.5L12 10.5Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Sober Living After Detox</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Continued support for individuals completing detox programs. Our structured environment provides the stability needed for long-term recovery success.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>24/7 sober living environment</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Recovery program coordination</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Relapse prevention support</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Life skills development</li>
+                        </ul>
+                        <a href="#admissions" class="btn-enhanced inline-flex items-center font-display font-bold text-secondary hover:text-secondary-dark transition-colors duration-200 focus-enhanced">
+                            Learn More 
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enhanced Re-entry Housing -->
+                <div class="card-enhanced glass-card rounded-2xl shadow-lg overflow-hidden border border-gray-200 relative">
+                    <div class="h-56 bg-gradient-to-br from-purple-600 to-purple-700 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 1L8 5V11C8 16.55 11.84 21.74 12 22C12.16 21.74 16 16.55 16 11V5L12 1ZM12 7C13.1 7 14 7.9 14 9S13.1 11 12 11 10 10.1 10 9 10.9 7 12 7Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Re-entry Housing</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Comprehensive reintegration support for individuals returning from incarceration. We provide the tools and community needed for successful re-entry.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Employment placement assistance</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Legal aid connections</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Family reunification support</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Community reintegration programs</li>
+                        </ul>
+                        <a href="#admissions" class="btn-enhanced inline-flex items-center font-display font-bold text-purple-600 hover:text-purple-700 transition-colors duration-200 focus-enhanced">
+                            Learn More 
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced CTA Section with Better Contrast -->
+            <div class="text-center">
+                <div class="cta-enhanced rounded-3xl p-10 max-w-4xl mx-auto relative overflow-hidden shadow-xl">
+                    <div class="relative z-10">
+                        <h3 class="font-display text-3xl font-bold mb-6 text-white drop-shadow-md">Learn More About Our Programs</h3>
+                        <p class="font-body text-xl mb-8 text-white leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+                            Discover the comprehensive services designed to meet the unique needs of each population we serve.
+                        </p>
+                        <a href="#programs-detail" class="btn-enhanced bg-white text-primary px-10 py-4 rounded-xl font-display font-bold shadow-lg min-h-[48px] inline-flex items-center justify-center text-lg transition-all duration-300 focus-enhanced hover:shadow-2xl">
+                            View Detailed Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced About Us Section -->
+    <section id="about" class="section-enhanced bg-readable-light">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">About Us</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Building bridges to brighter futures through community, accountability, and unwavering support
+                </p>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="mb-12">
+                <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-6 text-center">Our Mission</h3>
+                    <p class="font-body text-xl text-readable-secondary leading-relaxed text-center max-w-5xl mx-auto">
+                        Forward Horizon exists to provide safe, structured transitional housing and comprehensive support services
+                        for veterans, individuals in recovery, and returning citizens. We believe that everyone deserves a second
+                        chance and the opportunity to rebuild their lives with dignity, purpose, and community support.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Facility Image -->
+            <div class="mb-16">
+                <div class="h-80 bg-cover bg-center rounded-3xl shadow-xl relative overflow-hidden image-enhanced" style="background-image: url('images/Calm Home.jpg');">
+                    <div class="h-full bg-gradient-to-t from-gray-900 via-transparent to-transparent rounded-3xl flex items-end justify-center p-8">
+                        <h3 class="font-display text-4xl font-bold text-white text-center drop-shadow-lg">Safe, Welcoming Community</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Story and Values -->
+            <div class="mb-16">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                        <h3 class="font-display text-3xl font-bold text-text-primary mb-8">Our Story</h3>
+                        <div class="space-y-6">
+                            <p class="font-body text-lg text-readable-secondary leading-relaxed">
+                                Forward Horizon was founded on the belief that transition periods—whether from military service,
+                                addiction, or incarceration—are critical moments that require specialized support and understanding.
+                            </p>
+                            <p class="font-body text-lg text-readable-secondary leading-relaxed">
+                                Our founders recognized that traditional approaches often failed to address the unique challenges
+                                faced by these populations. Through years of community work and personal experience, Forward Horizon
+                                emerged as a comprehensive solution that addresses not just housing, but the holistic needs of individuals
+                                in transition.
+                            </p>
+                            <p class="font-body text-lg text-readable-secondary leading-relaxed">
+                                Today, we continue to evolve our programs based on the needs of our residents and the lessons
+                                learned from our community's collective journey toward healing and growth.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                        <h3 class="font-display text-3xl font-bold text-text-primary mb-8">Our Values</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-primary bg-opacity-15 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                                    <span class="text-primary font-display font-bold text-2xl">A</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-text-primary mb-3">Accountability</h4>
+                                    <p class="font-body text-readable-light leading-relaxed">Personal responsibility and mutual support in our community</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-secondary bg-opacity-15 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                                    <span class="text-secondary font-display font-bold text-2xl">S</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-text-primary mb-3">Support</h4>
+                                    <p class="font-body text-readable-light leading-relaxed">Comprehensive assistance for every stage of transition</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-purple-600 bg-opacity-15 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                                    <span class="text-purple-600 font-display font-bold text-2xl">R</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-text-primary mb-3">Respect</h4>
+                                    <p class="font-body text-readable-light leading-relaxed">Dignity and understanding for every individual's journey</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 bg-accent bg-opacity-15 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                                    <span class="text-accent font-display font-bold text-2xl">G</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-text-primary mb-3">Growth</h4>
+                                    <p class="font-body text-readable-light leading-relaxed">Continuous development of skills, relationships, and purpose</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Programs & Services Detailed Section -->
+    <section id="programs-detail" class="section-enhanced bg-readable-gradient">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">Programs & Services</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Comprehensive support services designed to address the unique needs of each population we serve
+                </p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Structured Sober Living -->
+                <div class="glass-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-10 border border-secondary border-opacity-30 shadow-xl">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-8 text-center">Structured Sober Living</h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <p class="font-body text-lg text-readable-secondary mb-8 leading-relaxed">
+                                Our sober living program provides a safe, substance-free environment with <strong>24/7 on-site support staff</strong>,
+                                comprehensive case management services, and structured daily routines designed to support long-term recovery and independence.
+                            </p>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Program Features</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">24/7 on-site support staff</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Individual and group counseling sessions</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Case management services</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Life skills training and workshops</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Job placement assistance and career development</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Transportation assistance for appointments and work</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Medical referrals and healthcare coordination</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Program Requirements</h4>
+                            <ul class="space-y-4 text-readable-light">
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Minimum 30 days of sobriety</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Commitment to house rules</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Active participation in recovery programs</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Employment or job search activities</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Clean background check</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Veteran Re-entry Housing Support -->
+                <div class="glass-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 border border-primary border-opacity-30 shadow-xl">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-8 text-center">Veteran Re-entry Housing Support</h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <p class="font-body text-lg text-readable-secondary mb-8 leading-relaxed">
+                                Specialized housing and support services for veterans transitioning to civilian life, featuring <strong>24/7 on-site support staff</strong> 
+                                trained in trauma-informed care, comprehensive case management, and services addressing the unique challenges of military service.
+                            </p>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Support Services</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">24/7 on-site support staff with veteran experience</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Individual and group counseling for PTSD and trauma</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Case management and VA benefits navigation</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Job placement assistance and career transition support</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Transportation assistance for VA appointments</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Medical referrals and healthcare coordination</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Veteran peer mentorship and family support</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Available Resources</h4>
+                            <ul class="space-y-4 text-readable-light">
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">VA healthcare enrollment</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Disability claims assistance</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Education and training programs</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Job placement services</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Legal aid connections</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-Incarceration Transition Program -->
+                <div class="glass-card bg-gradient-to-br from-purple-50 to-violet-50 rounded-3xl p-10 border border-purple-500 border-opacity-30 shadow-xl">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-8 text-center">Post-Incarceration Transition Program</h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <p class="font-body text-lg text-readable-secondary mb-8 leading-relaxed">
+                                Comprehensive re-entry housing support for returning citizens featuring <strong>24/7 on-site support staff</strong>, 
+                                case management services, and holistic support programs focused on successful community reintegration and reducing recidivism.
+                            </p>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Reintegration Services</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">24/7 on-site support staff and case management</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Individual and group counseling sessions</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Employment readiness and job placement assistance</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Life skills training and financial literacy education</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Transportation assistance for work and appointments</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Medical referrals and healthcare coordination</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Legal aid and family reunification support</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Support Resources</h4>
+                            <ul class="space-y-4 text-readable-light">
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">ID and documentation assistance</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Transportation support</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Healthcare enrollment</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Housing stability planning</span></li>
+                                <li class="flex items-start"><span class="text-purple-600 mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Mentorship matching</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Life Skills & Job Readiness -->
+                <div class="glass-card bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-10 border border-accent border-opacity-30 shadow-xl">
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-8 text-center">Life Skills & Job Readiness</h3>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <p class="font-body text-lg text-readable-secondary mb-8 leading-relaxed">
+                                Essential skills development programs that prepare residents for independent living
+                                and sustainable employment opportunities.
+                            </p>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Skills Development</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Resume writing and interview skills</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Financial planning and budgeting</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Computer and digital literacy</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Communication and conflict resolution</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Time management and organization</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Career Services</h4>
+                            <ul class="space-y-4 text-readable-light">
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Job placement assistance</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Trade skills training partnerships</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Professional development workshops</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Employer relationship building</span></li>
+                                <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">✓</span><span class="font-body text-lg font-medium">Follow-up support services</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Storytelling Grid Layout Section -->
+    <section id="community-life" class="section-enhanced bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-primary mb-6 animate-fade-in-up">
+                    Life at Forward Horizon
+                </h2>
+                <p class="font-body text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Where healing begins, community thrives, and independence grows through shared experiences and mutual support.
+                </p>
+            </div>
+
+            <!-- Visual Story Grid -->
+            <div class="space-y-20">
+                <!-- Daily Life Section -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 animate-fade-in-left">
+                        <div class="glass-card p-8 rounded-3xl shadow-lg bg-gradient-to-br from-white to-blue-50">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-primary rounded-full p-3 mr-4">
+                                    <i class="fas fa-sun text-white text-xl"></i>
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-primary">Daily Life & Structure</h3>
+                            </div>
+                            <p class="font-body text-text-secondary leading-relaxed mb-6">
+                                Start each day with purpose in our structured yet flexible environment. From morning check-ins to evening reflection, 
+                                every day brings opportunities for growth, learning, and building lasting connections with your community family.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-clock text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Structured daily routines that build stability</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-users text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Community meals and shared activities</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-heart text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Safe spaces for personal reflection and growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 animate-fade-in-right">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <div class="bg-gradient-to-br from-primary to-primary-dark h-80 flex items-center justify-center text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-home text-6xl mb-4 opacity-80"></i>
+                                    <p class="font-display text-xl font-semibold">Daily Life at Forward Horizon</p>
+                                    <p class="font-body opacity-90 mt-2">Community • Structure • Growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Activities Section -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in-left">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <div class="bg-gradient-to-br from-secondary to-secondary-dark h-80 flex items-center justify-center text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-hands-helping text-6xl mb-4 opacity-80"></i>
+                                    <p class="font-display text-xl font-semibold">Community Activities</p>
+                                    <p class="font-body opacity-90 mt-2">Connection • Support • Friendship</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-fade-in-right">
+                        <div class="glass-card p-8 rounded-3xl shadow-lg bg-gradient-to-br from-white to-green-50">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-secondary rounded-full p-3 mr-4">
+                                    <i class="fas fa-puzzle-piece text-white text-xl"></i>
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-secondary">Community & Connection</h3>
+                            </div>
+                            <p class="font-body text-text-secondary leading-relaxed mb-6">
+                                Build meaningful relationships through shared activities, group outings, and community service projects. 
+                                Our residents form bonds that often last well beyond their time in our program, creating a network of lifelong support.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-calendar-check text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Weekly group activities and community events</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-handshake text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Peer mentorship and mutual support</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-gift text-secondary mr-3"></i>
+                                    <span class="font-body font-medium">Community service and giving back opportunities</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Milestones Section -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 animate-fade-in-left">
+                        <div class="glass-card p-8 rounded-3xl shadow-lg bg-gradient-to-br from-white to-amber-50">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-gold rounded-full p-3 mr-4">
+                                    <i class="fas fa-trophy text-white text-xl"></i>
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-gold-dark">Success Milestones</h3>
+                            </div>
+                            <p class="font-body text-text-secondary leading-relaxed mb-6">
+                                Celebrate every victory, big and small. From securing employment to completing educational programs, 
+                                from rebuilding family relationships to achieving personal goals - every milestone is recognized and celebrated.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-briefcase text-gold mr-3"></i>
+                                    <span class="font-body font-medium">Employment achievement celebrations</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-graduation-cap text-gold mr-3"></i>
+                                    <span class="font-body font-medium">Educational and certification completions</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-star text-gold mr-3"></i>
+                                    <span class="font-body font-medium">Personal growth and recovery milestones</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 animate-fade-in-right">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <div class="bg-gradient-to-br from-gold to-gold-dark h-80 flex items-center justify-center text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-medal text-6xl mb-4 opacity-80"></i>
+                                    <p class="font-display text-xl font-semibold">Success Stories</p>
+                                    <p class="font-body opacity-90 mt-2">Achievement • Progress • Independence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Services in Action -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in-left">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <div class="bg-gradient-to-br from-purple-600 to-purple-800 h-80 flex items-center justify-center text-white">
+                                <div class="text-center">
+                                    <i class="fas fa-life-ring text-6xl mb-4 opacity-80"></i>
+                                    <p class="font-display text-xl font-semibold">24/7 Support Services</p>
+                                    <p class="font-body opacity-90 mt-2">Always Here • Always Caring • Always Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-fade-in-right">
+                        <div class="glass-card p-8 rounded-3xl shadow-lg bg-gradient-to-br from-white to-purple-50">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-purple-600 rounded-full p-3 mr-4">
+                                    <i class="fas fa-shield-alt text-white text-xl"></i>
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-purple-600">Comprehensive Support</h3>
+                            </div>
+                            <p class="font-body text-text-secondary leading-relaxed mb-6">
+                                Our dedicated support team is available around the clock, providing everything from crisis intervention 
+                                to daily encouragement. Whether it's a late-night conversation or help with a job interview, we're here for you.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-clock text-purple-600 mr-3"></i>
+                                    <span class="font-body font-medium">24/7 on-site support and crisis intervention</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-user-friends text-purple-600 mr-3"></i>
+                                    <span class="font-body font-medium">One-on-one counseling and case management</span>
+                                </div>
+                                <div class="flex items-center text-text-secondary">
+                                    <i class="fas fa-map-marked-alt text-purple-600 mr-3"></i>
+                                    <span class="font-body font-medium">Guidance on your journey to independence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community CTA -->
+            <div class="text-center mt-20">
+                <div class="glass-card p-10 rounded-3xl max-w-3xl mx-auto bg-gradient-to-br from-white to-primary-50 border border-primary-200">
+                    <h3 class="font-display text-3xl font-bold text-primary mb-6">Join Our Thriving Community</h3>
+                    <p class="font-body text-xl text-text-secondary mb-8 leading-relaxed">
+                        Experience the transformation that comes from being part of a community where healing happens, 
+                        friendships flourish, and new beginnings become reality.
+                    </p>
+                    <a href="#contact" class="btn-enhanced bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-xl font-display font-bold shadow-lg inline-flex items-center space-x-3 transition-all duration-300 focus-enhanced hover:shadow-2xl animate-pulse-glow">
+                        <i class="fas fa-home"></i>
+                        <span>Secure Your Place Today</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Admissions Section -->
+    <section id="admissions" class="section-enhanced bg-readable-light">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">How It Works / Admissions</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Our streamlined admissions process is designed to get you the support you need as quickly as possible
+                </p>
+            </div>
+
+            <!-- Eligibility Requirements -->
+            <div class="mb-16">
+                <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-10 text-center">Eligibility Requirements</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-enhanced glass-card rounded-3xl shadow-xl p-8 relative border border-gray-200">
+                        <h4 class="font-display text-2xl font-bold text-text-primary mb-6 text-center">All Programs</h4>
+                        <ul class="space-y-4 text-readable-secondary">
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">18 years of age or older</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Commitment to program rules</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Willingness to participate in services</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">No violent criminal history</span></li>
+                            <li class="flex items-start"><span class="text-primary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Pass background screening</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-enhanced glass-card rounded-3xl shadow-xl p-8 relative border border-gray-200">
+                        <h4 class="font-display text-2xl font-bold text-text-primary mb-6 text-center">Sober Living</h4>
+                        <ul class="space-y-4 text-readable-secondary">
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Minimum 30 days sobriety</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Completed detox program</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Recovery program participation</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Employment or job search</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Clean drug/alcohol screening</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-enhanced glass-card rounded-3xl shadow-xl p-8 relative border border-gray-200">
+                        <h4 class="font-display text-2xl font-bold text-text-primary mb-6 text-center">Veteran Program</h4>
+                        <ul class="space-y-4 text-readable-secondary">
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Verified military service</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Honorable discharge preferred</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">VA enrollment assistance</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Mental health screening</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 text-xl font-bold">•</span><span class="font-body text-lg font-medium">Commitment to peer support</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="mb-16">
+                <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-10 text-center">What to Expect</h3>
+                <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <h4 class="font-display text-2xl font-bold text-text-primary mb-8">Daily Structure</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">6:00 AM - Wake up and personal care</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">7:00 AM - Community breakfast</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">8:00 AM - Work/job search/services</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">6:00 PM - Community dinner</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">7:00 PM - Group meetings/programs</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">10:00 PM - Quiet hours begin</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-2xl font-bold text-text-primary mb-8">Living Environment</h4>
+                            <ul class="space-y-4 text-readable-secondary">
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Shared bedrooms (2-3 residents)</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Common areas for meals and activities</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">24/7 staff supervision</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Substance-free environment</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Community chores and responsibilities</span></li>
+                                <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Visitors by appointment only</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Process -->
+            <div class="mb-16">
+                <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-10 text-center">Step-by-Step Application Process</h3>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-primary to-primary-dark text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-xl">
+                            1
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-text-primary mb-4">Application</h4>
+                        <p class="font-body text-readable-light text-lg leading-relaxed font-medium">Complete online application form with basic information and program interest</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-secondary to-secondary-dark text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-xl">
+                            2
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-text-primary mb-4">Interview</h4>
+                        <p class="font-body text-readable-light text-lg leading-relaxed font-medium">Phone or in-person interview to discuss needs, goals, and program fit</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-xl">
+                            3
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-text-primary mb-4">Screening</h4>
+                        <p class="font-body text-readable-light text-lg leading-relaxed font-medium">Background check, references, and documentation review process</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-accent to-orange-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-xl">
+                            4
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-text-primary mb-4">Move-In</h4>
+                        <p class="font-body text-readable-light text-lg leading-relaxed font-medium">Intake orientation, move-in coordination, and program enrollment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Form CTA -->
+            <div class="text-center">
+                <div class="cta-enhanced rounded-3xl p-10 max-w-4xl mx-auto relative overflow-hidden shadow-xl">
+                    <div class="relative z-10">
+                        <h3 class="font-display text-3xl font-bold mb-6 text-white drop-shadow-md">Secure Your Place in Our Community</h3>
+                        <p class="font-body text-xl mb-8 leading-relaxed text-white drop-shadow-sm">Join our supportive housing community where healing begins, independence grows, and new beginnings flourish.</p>
+                        <a href="#contact" class="btn-enhanced bg-white text-primary px-10 py-4 rounded-xl font-display font-bold shadow-lg min-h-[48px] inline-flex items-center justify-center text-lg transition-all duration-300 focus-enhanced hover:shadow-2xl space-x-2 animate-pulse-ring">
+                            <i class="fas fa-star"></i>
+                            <span>Start Your Housing Application</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Get Involved Section -->
+    <section id="get-involved" class="section-enhanced bg-readable-gradient">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">Get Involved</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Join our mission to rebuild lives and strengthen communities through support, partnership, and giving
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Enhanced Donors Card -->
+                <div class="card-enhanced glass-card rounded-3xl shadow-xl overflow-hidden border border-gray-200 relative">
+                    <div class="h-64 bg-gradient-to-br from-secondary to-secondary-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 8.5C14 8.5 16 9.5 16 11.5V14.5C16 15.1 15.6 15.5 15 15.5H13V22H11V15.5H9C8.4 15.5 8 15.1 8 14.5V11.5C8 9.5 10 8.5 12 8.5Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Donors</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Your financial support directly impacts lives by providing housing, services, and opportunities for our residents.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Monthly housing sponsorships</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Program-specific donations</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>One-time contributions</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-secondary mr-3 text-xl font-bold">→</span>Corporate partnerships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enhanced Volunteers Card -->
+                <div class="card-enhanced glass-card rounded-3xl shadow-xl overflow-hidden border border-gray-200 relative">
+                    <div class="h-64 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM8 4C10.2 4 12 5.8 12 8C12 10.2 10.2 12 8 12C5.8 12 4 10.2 4 8C4 5.8 5.8 4 8 4ZM8 13C10.7 13 16 14.3 16 17V20H0V17C0 14.3 5.3 13 8 13ZM16 13C18.7 13 24 14.3 24 17V20H18V17C18 15.4 17.2 14.1 15.5 13.4C15.8 13.1 16.9 13 16 13Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Volunteers</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Share your time and skills to directly support our residents through mentorship, education, and community activities.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Mentorship programs</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Skills-based workshops</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Event planning assistance</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-primary mr-3 text-xl font-bold">→</span>Administrative support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enhanced Community Partners Card -->
+                <div class="card-enhanced glass-card rounded-3xl shadow-xl overflow-hidden border border-gray-200 relative">
+                    <div class="h-64 bg-gradient-to-br from-purple-600 to-purple-700 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="h-full flex flex-col items-center justify-center text-white px-6 relative z-10">
+                            <div class="w-20 h-20 bg-white bg-opacity-25 rounded-full flex items-center justify-center mb-6 animate-float backdrop-blur-sm">
+                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L13.09 8.26L19 6L16.74 11.74L23 12L16.74 12.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L7.26 12.26L1 12L7.26 11.74L5 6L10.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-center leading-tight drop-shadow-md">Community Partners</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="font-body text-readable-secondary mb-6 text-lg leading-relaxed">
+                            Organizations and businesses that provide services, employment opportunities, and community connections.
+                        </p>
+                        <ul class="font-body text-readable-light mb-8 space-y-3">
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Employment partnerships</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Service provider network</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Resource sharing</li>
+                            <li class="flex items-start list-item-enhanced"><span class="text-purple-600 mr-3 text-xl font-bold">→</span>Community advocacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ways to Support -->
+            <div class="glass-card bg-gradient-to-br from-gray-100 to-blue-100 rounded-3xl p-10 mb-12 border border-gray-200 shadow-xl">
+                <h3 class="font-display text-3xl sm:text-4xl font-bold text-text-primary mb-10 text-center">Ways to Support Forward Horizon</h3>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="font-display text-2xl font-bold text-text-primary mb-8">Financial Contributions</h4>
+                        <ul class="space-y-4 text-readable-secondary">
+                            <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">$</span><span class="font-body text-lg font-medium">Provides meals for one resident for a week</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">$</span><span class="font-body text-lg font-medium">Supports job training for one resident</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">$</span><span class="font-body text-lg font-medium">Sponsors housing for one resident</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-4 text-xl font-bold">$</span><span class="font-body text-lg font-medium">Funds comprehensive program services</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-display text-2xl font-bold text-text-primary mb-8">In-Kind Donations</h4>
+                        <ul class="space-y-4 text-readable-secondary">
+                            <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Household items and furniture</span></li>
+                            <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Professional clothing for job interviews</span></li>
+                            <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Transportation vouchers</span></li>
+                            <li class="flex items-start"><span class="text-accent mr-4 text-xl font-bold">→</span><span class="font-body text-lg font-medium">Computer equipment and technology</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="text-center">
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#contact" class="btn-enhanced bg-gradient-to-r from-secondary to-secondary-dark text-white px-10 py-4 rounded-xl font-display font-bold shadow-lg min-h-[48px] flex items-center justify-center text-center text-lg transition-all duration-300 focus-enhanced">
+                        Donate Now
+                    </a>
+                    <a href="#contact" class="btn-enhanced bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-xl font-display font-bold shadow-lg min-h-[48px] flex items-center justify-center text-center text-lg transition-all duration-300 focus-enhanced">
+                        Volunteer Sign-up
+                    </a>
+                    <a href="#contact" class="btn-enhanced border-2 border-purple-600 text-purple-600 bg-purple-50 px-10 py-4 rounded-xl font-display font-bold hover:bg-purple-100 min-h-[48px] flex items-center justify-center text-center text-lg transition-all duration-300 focus-enhanced">
+                        Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive FAQ Section -->
+    <section id="faq" class="section-enhanced bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-primary mb-6 animate-fade-in-up">
+                    Frequently Asked Questions
+                </h2>
+                <p class="font-body text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Get answers to the most common questions about our housing programs, services, and application process.
+                </p>
+            </div>
+
+            <!-- FAQ Grid -->
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- FAQ Item 1 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-clipboard-list text-secondary mr-3"></i>
+                            What's the application process for housing?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Our streamlined application process includes completing our online form, participating in a brief interview, and providing basic documentation. We work with you every step of the way to ensure a smooth transition into our community.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-calendar-alt text-secondary mr-3"></i>
+                            How long can residents stay in transitional housing?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Our transitional housing programs typically range from 6 months to 2 years, depending on individual progress and program type. We focus on helping you achieve sustainable independence at your own pace.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-hands-helping text-secondary mr-3"></i>
+                            What support services are included?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Our comprehensive services include 24/7 on-site support staff, individual and group counseling, case management, life skills training, job placement assistance, transportation help, and medical referrals.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-gavel text-secondary mr-3"></i>
+                            What are the house rules and expectations?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Our community guidelines promote safety, respect, and recovery. This includes maintaining sobriety, participating in required programs, contributing to household responsibilities, and treating all community members with dignity.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-dollar-sign text-secondary mr-3"></i>
+                            Is there a cost for housing services?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Our programs are designed to be affordable and accessible. Costs vary by program, and we work with residents to develop payment plans. Many services are covered through partnerships with local agencies and organizations.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-star text-secondary mr-3"></i>
+                            What makes Forward Horizon different from other programs?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            We focus on individualized care, community building, and long-term success. Our experienced staff, peer support model, and comprehensive wrap-around services create an environment where healing and growth naturally occur.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.7s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-medal text-secondary mr-3"></i>
+                            Do you accept veterans with PTSD or other conditions?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Absolutely. We specialize in serving veterans with various conditions including PTSD, TBI, and substance use disorders. Our staff is trained in trauma-informed care and veteran-specific challenges and strengths.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.8s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-suitcase text-secondary mr-3"></i>
+                            Can I bring my belongings and personal items?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Yes, residents are encouraged to bring personal belongings that help make their space feel like home. We provide secure storage and work with you to ensure your important items are safely kept during your stay.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 9 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 0.9s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-heart text-secondary mr-3"></i>
+                            What happens if I relapse or have a setback?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            Recovery is a journey with ups and downs. We provide compassionate support during difficult times, connecting you with appropriate resources and working together to get back on track. Your success is our priority.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 10 -->
+                    <div class="glass-card p-8 rounded-2xl shadow-lg animate-fade-in-up" style="animation-delay: 1.0s;">
+                        <h3 class="font-display text-xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-briefcase text-secondary mr-3"></i>
+                            How do you help with employment and job training?
+                        </h3>
+                        <p class="font-body text-text-secondary leading-relaxed">
+                            We offer comprehensive employment support including resume building, interview preparation, job search assistance, skills training, and connections with local employers. Our goal is to help you achieve financial independence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ CTA -->
+                <div class="text-center mt-16">
+                    <div class="glass-card p-10 rounded-3xl max-w-2xl mx-auto">
+                        <h3 class="font-display text-2xl font-bold text-primary mb-4">Still Have Questions?</h3>
+                        <p class="font-body text-text-secondary mb-6 leading-relaxed">
+                            Our team is here to help. Contact us directly to get personalized answers about our programs and services.
+                        </p>
+                        <a href="#contact" class="btn-enhanced bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-3 rounded-xl font-display font-bold shadow-lg inline-flex items-center space-x-2 transition-all duration-300 focus-enhanced hover:shadow-2xl">
+                            <i class="fas fa-phone"></i>
+                            <span>Contact Our Team</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="section-enhanced bg-readable-light">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-8 leading-tight">Contact Us</h2>
+                <p class="font-body text-xl sm:text-2xl text-readable-light max-w-4xl mx-auto leading-relaxed">
+                    Ready to take the next step? We're here to help guide you through the process and answer your questions.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                    <h3 class="font-display text-3xl font-bold text-text-primary mb-8">Get In Touch</h3>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-primary bg-opacity-15 rounded-2xl flex items-center justify-center mr-6">
+                                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-text-primary mb-2">Phone</h4>
+                                <p class="font-body text-lg text-readable-secondary mb-1 font-semibold">(310) 488-5280</p>
+                                <p class="font-body text-sm text-readable-light font-medium">24/7 crisis support available</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-secondary bg-opacity-15 rounded-2xl flex items-center justify-center mr-6">
+                                <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-text-primary mb-2">Email</h4>
+                                <p class="font-body text-lg text-readable-secondary mb-1 font-semibold">admin@theforwardhorizon.com</p>
+                                <p class="font-body text-sm text-readable-light font-medium">We respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-purple-600 bg-opacity-15 rounded-2xl flex items-center justify-center mr-6">
+                                <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-display text-xl font-bold text-text-primary mb-2">Location</h4>
+                                <p class="font-body text-lg text-readable-secondary mb-1 font-semibold">Serving Los Angeles County, Orange County, Riverside County, & San Bernardino County</p>
+                                <p class="font-body text-sm text-readable-light font-medium">Multiple housing locations</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t pt-8 border-gray-300">
+                            <h4 class="font-display text-xl font-bold text-text-primary mb-6">Office Hours</h4>
+                            <div class="space-y-3 text-readable-secondary">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Monday - Friday:</span>
+                                    <span class="font-body text-lg font-bold">8:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Saturday:</span>
+                                    <span class="font-body text-lg font-bold">9:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-body text-lg font-medium">Sunday:</span>
+                                    <span class="font-body text-lg font-bold">Emergency only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Contact Form with Better Readability -->
+                <div class="glass-card rounded-3xl shadow-xl p-10 border border-gray-200">
+                    <h3 class="font-display text-3xl font-bold text-text-primary mb-8">Send Us a Message</h3>
+
+                    <form id="contact-form" action="/api/submit-form" method="POST" class="space-y-6" novalidate>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block form-label font-display font-bold text-text-secondary mb-3">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none min-h-[56px] transition-all duration-200 font-body">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block form-label font-display font-bold text-text-secondary mb-3">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none min-h-[56px] transition-all duration-200 font-body">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block form-label font-display font-bold text-text-secondary mb-3">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none min-h-[56px] transition-all duration-200 font-body">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block form-label font-display font-bold text-text-secondary mb-3">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none min-h-[56px] transition-all duration-200 font-body" placeholder="(555) 123-4567">
+                        </div>
+
+                        <div>
+                            <label for="inquiry-type" class="block form-label font-display font-bold text-text-secondary mb-3">I'm interested in: *</label>
+                            <select id="inquiry-type" name="inquiry_type" required class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none min-h-[56px] transition-all duration-200 font-body">
+                                <option value="">Select an option</option>
+                                <option value="veteran-housing">Veteran Transitional Housing</option>
+                                <option value="sober-living">Sober Living After Detox</option>
+                                <option value="reentry-housing">Re-entry Housing</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="donate">Making a Donation</option>
+                                <option value="partner">Community Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block form-label font-display font-bold text-text-secondary mb-3">Message *</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input w-full px-4 py-4 text-lg rounded-xl focus:outline-none transition-all duration-200 font-body" placeholder="Tell us how we can help you or how you'd like to get involved..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-enhanced w-full bg-gradient-to-r from-primary to-primary-dark text-white py-4 px-6 rounded-xl font-display font-bold shadow-lg min-h-[56px] text-lg transition-all duration-300 focus-enhanced">
+                            Send Message
+                        </button>
+
+                        <p class="font-body text-sm text-readable-light text-center font-medium">We'll respond within 24 hours during business days</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <!-- Organization Info -->
+                <div class="md:col-span-2">
+                    <h3 class="font-display text-3xl font-bold mb-6">Forward Horizon</h3>
+                    <p class="font-body text-gray-200 mb-8 max-w-md text-lg leading-relaxed font-medium">
+                        Transitional Housing for Veterans, Recovering Individuals, and Returning Citizens.
+                        Rebuilding lives together through accountability, community, and fresh starts.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-enhanced">
+                            <span class="font-display font-semibold">FB</span>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-enhanced">
+                            <span class="font-display font-semibold">TW</span>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 focus-enhanced">
+                            <span class="font-display font-semibold">IG</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">Home</a></li>
+                        <li><a href="#programs" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">Programs</a></li>
+                        <li><a href="#about" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">About Us</a></li>
+                        <li><a href="#admissions" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">Apply</a></li>
+                        <li><a href="#get-involved" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">Get Involved</a></li>
+                        <li><a href="#faq" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">FAQ</a></li>
+                        <li><a href="#contact" class="font-body text-gray-300 hover:text-white transition-colors duration-200 focus-enhanced font-medium">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-display text-xl font-bold mb-6">Contact Info</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p class="font-body text-lg font-medium">📞 (310) 488-5280</p>
+                        <p class="font-body text-lg font-medium">✉️ admin@theforwardhorizon.com</p>
+                        <p class="font-body text-lg font-medium">📍 Los Angeles County, CA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 font-body mb-4 md:mb-0 font-medium">
+                        &copy; 2024 Forward Horizon. All rights reserved.
+                    </div>
+                    <div class="flex space-x-8 text-sm">
+                        <a href="#privacy" class="text-gray-400 hover:text-white transition-colors duration-200 font-body focus-enhanced font-medium">Privacy Policy</a>
+                        <a href="#terms" class="text-gray-400 hover:text-white transition-colors duration-200 font-body focus-enhanced font-medium">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript for interactions -->
+    <script>
+        // Enhanced mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Enhanced smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Enhanced form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const submitButton = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Let the form submit naturally to the API, which will redirect
+        });
+
+        // Enhanced back to top button
+        const backToTopButton = document.createElement('button');
+        backToTopButton.innerHTML = `
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        `;
+        backToTopButton.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-primary to-primary-dark text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible btn-enhanced focus-enhanced z-50';
+        backToTopButton.setAttribute('aria-label', 'Back to top');
+        document.body.appendChild(backToTopButton);
+
+        // Show/hide back to top button with enhanced animations
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        // Back to top functionality
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

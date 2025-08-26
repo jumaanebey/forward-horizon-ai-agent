@@ -157,6 +157,79 @@ class SimpleAIAgent {
     }
     
     setupRoutes() {
+        // Enhanced chat widget demo
+        this.app.get('/demo', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'demo-enhanced.html'));
+        });
+        
+        // Serve the enhanced embeddable chat widget
+        this.app.get('/chat.js', (req, res) => {
+            const path = require('path');
+            res.setHeader('Content-Type', 'application/javascript');
+            res.sendFile(path.join(__dirname, 'embeddable-chat.js'));
+        });
+        
+        // Enhanced Forward Horizon website preview (partial)
+        this.app.get('/enhanced', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-enhanced.html'));
+        });
+        
+        // Complete Enhanced Forward Horizon website
+        this.app.get('/complete', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-complete-enhanced.html'));
+        });
+        
+        // Readable Enhanced Forward Horizon website (latest version)
+        this.app.get('/final', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-readable-enhanced.html'));
+        });
+        
+        // Ultimate Enhanced Forward Horizon website (production-ready)
+        this.app.get('/ultimate', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-ultimate-enhanced.html'));
+        });
+        
+        // Next-Level Forward Horizon website (Apple/Google/Tesla quality)
+        this.app.get('/nextlevel', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-nextlevel.html'));
+        });
+        
+        // Final Forward Horizon website (audience-optimized, authentic content)
+        this.app.get('/final', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-final.html'));
+        });
+        
+        // Perfect Forward Horizon website (ultimate colors + authentic content)
+        this.app.get('/perfect', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-perfect.html'));
+        });
+        
+        // Spaced Forward Horizon website (perfect version with improved spacing)
+        this.app.get('/spaced', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-spaced.html'));
+        });
+        
+        // Clean Forward Horizon website (removed house icon above Forward)
+        this.app.get('/clean', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-clean.html'));
+        });
+        
+        // Enhanced Final Forward Horizon website (Clearway-inspired improvements)
+        this.app.get('/enhanced-final', (req, res) => {
+            const path = require('path');
+            res.sendFile(path.join(__dirname, 'theforwardhorizon-enhanced-final.html'));
+        });
+        
         // Dashboard
         this.app.get('/', (req, res) => {
             res.send(`
