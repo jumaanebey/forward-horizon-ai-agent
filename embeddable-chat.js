@@ -32,7 +32,10 @@
         
         injectStyles() {
             const styles = `
-                /* Chat Button Styles */
+                /* Import Professional Fonts */
+                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap');
+                
+                /* Enhanced Chat Button with Pulse Animation */
                 .fh-chat-button {
                     position: fixed;
                     bottom: 20px;
@@ -42,28 +45,62 @@
                     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
                     border-radius: 50%;
                     cursor: pointer;
-                    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+                    box-shadow: 
+                        0 8px 32px rgba(37, 99, 235, 0.3),
+                        0 0 0 0 rgba(37, 99, 235, 0.7);
                     z-index: 10000;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                     border: none;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                    animation: pulse-shadow 3s infinite;
                 }
                 
                 .fh-chat-button:hover {
-                    transform: scale(1.1);
-                    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+                    transform: scale(1.08) translateY(-2px);
+                    box-shadow: 
+                        0 12px 40px rgba(37, 99, 235, 0.4),
+                        0 0 20px rgba(37, 99, 235, 0.3);
+                }
+                
+                .fh-chat-button:active {
+                    transform: scale(0.95);
                 }
                 
                 .fh-chat-button svg {
                     width: 24px;
                     height: 24px;
                     fill: white;
+                    transition: transform 0.2s ease;
+                }
+                
+                .fh-chat-button:hover svg {
+                    transform: scale(1.1);
                 }
                 
                 .fh-chat-button.active {
-                    background: #ef4444;
+                    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+                    animation: none;
+                }
+                
+                @keyframes pulse-shadow {
+                    0% {
+                        box-shadow: 
+                            0 8px 32px rgba(37, 99, 235, 0.3),
+                            0 0 0 0 rgba(37, 99, 235, 0.7);
+                    }
+                    70% {
+                        box-shadow: 
+                            0 8px 32px rgba(37, 99, 235, 0.3),
+                            0 0 0 10px rgba(37, 99, 235, 0);
+                    }
+                    100% {
+                        box-shadow: 
+                            0 8px 32px rgba(37, 99, 235, 0.3),
+                            0 0 0 0 rgba(37, 99, 235, 0);
+                    }
                 }
                 
                 /* Notification Badge */
@@ -90,63 +127,89 @@
                     100% { opacity: 1; transform: scale(1); }
                 }
                 
-                /* Chat Widget Styles */
+                /* Chat Widget Styles with Glass Morphism */
                 .fh-chat-widget {
                     position: fixed;
                     bottom: 90px;
                     right: 20px;
                     width: 350px;
                     height: 500px;
-                    background: white;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(20px) saturate(180%);
+                    -webkit-backdrop-filter: blur(20px) saturate(180%);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 20px;
+                    box-shadow: 
+                        0 25px 50px rgba(0, 0, 0, 0.15),
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
                     z-index: 9999;
                     display: none;
                     flex-direction: column;
                     overflow: hidden;
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
                 }
                 
                 .fh-chat-widget.open {
                     display: flex;
-                    animation: slideUp 0.3s ease-out;
+                    animation: widgetSlideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 }
                 
                 .fh-chat-widget.minimized {
                     height: 60px;
+                    backdrop-filter: blur(10px);
                 }
                 
-                @keyframes slideUp {
+                @keyframes widgetSlideUp {
                     from { 
                         opacity: 0;
-                        transform: translateY(20px);
+                        transform: translateY(30px) scale(0.9);
                     }
                     to {
                         opacity: 1;
-                        transform: translateY(0);
+                        transform: translateY(0) scale(1);
                     }
                 }
                 
                 .fh-chat-header {
                     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
                     color: white;
-                    padding: 15px 20px;
+                    padding: 20px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .fh-chat-header::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                    transition: left 0.5s ease;
+                }
+                
+                .fh-chat-header:hover::before {
+                    left: 100%;
                 }
                 
                 .fh-chat-header-content h3 {
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 17px;
                     font-weight: 600;
+                    letter-spacing: -0.025em;
+                    font-family: 'Inter', sans-serif;
                 }
                 
                 .fh-chat-header-content p {
-                    margin: 2px 0 0 0;
-                    font-size: 12px;
+                    margin: 4px 0 0 0;
+                    font-size: 13px;
                     opacity: 0.9;
+                    font-family: 'Open Sans', sans-serif;
                 }
                 
                 .fh-chat-controls {
@@ -184,36 +247,59 @@
                 
                 .fh-chat-messages {
                     flex: 1;
-                    padding: 15px;
+                    padding: 20px;
                     overflow-y: auto;
                     display: flex;
                     flex-direction: column;
-                    gap: 12px;
-                    background: #f8fafc;
+                    gap: 16px;
+                    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+                    font-family: 'Open Sans', sans-serif;
                 }
                 
                 .fh-message {
-                    max-width: 80%;
-                    padding: 10px 14px;
-                    border-radius: 15px;
+                    max-width: 85%;
+                    padding: 12px 16px;
+                    border-radius: 16px;
                     font-size: 14px;
-                    line-height: 1.4;
+                    line-height: 1.5;
                     word-wrap: break-word;
+                    animation: messageSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    transition: all 0.2s ease;
+                    position: relative;
+                }
+                
+                .fh-message:hover {
+                    transform: translateY(-1px);
                 }
                 
                 .fh-message.ai {
-                    background: white;
-                    color: #374151;
+                    background: rgba(255, 255, 255, 0.9);
+                    color: #1e293b;
                     align-self: flex-start;
-                    border-bottom-left-radius: 5px;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                    border-bottom-left-radius: 6px;
+                    border: 1px solid rgba(226, 232, 240, 0.5);
+                    box-shadow: 
+                        0 4px 12px rgba(0, 0, 0, 0.05),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
                 }
                 
                 .fh-message.user {
-                    background: #2563eb;
+                    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
                     color: white;
                     align-self: flex-end;
-                    border-bottom-right-radius: 5px;
+                    border-bottom-right-radius: 6px;
+                    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+                }
+                
+                @keyframes messageSlideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px) scale(0.95);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                    }
                 }
                 
                 .fh-typing-indicator {
